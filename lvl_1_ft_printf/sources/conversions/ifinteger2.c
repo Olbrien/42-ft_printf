@@ -1,0 +1,142 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ifinteger2.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/18 04:05:54 by tisantos          #+#    #+#             */
+/*   Updated: 2021/01/18 04:06:51 by tisantos         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../includes/ft_printf.h"
+
+char	*integer_precision_with_zeros(s_list *slist, char *string, char *send)
+{
+	int i;
+	int to_cut_len;
+	char *temp;
+
+	to_cut_len = slist->zero - ft_strlen(string);
+	i = 0;
+	if (slist->zero > 0 && to_cut_len > 0 && slist->precision > 0)
+	{
+		if(!(temp = malloc(sizeof(char) * ft_strlen(string) + to_cut_len + 2)))
+			return (NULL);
+		while (to_cut_len > 0)
+		{
+			temp[i++] = ' ';
+			to_cut_len--;
+		}
+		temp[i] = '\0';
+		temp = ft_strjoin(temp, string);
+		return (temp);
+	}
+	return (send);
+}
+
+
+
+char	*integer_write_zeros(p_list *plist, s_list *slist, char *string)
+{
+	int i;
+	char *send;
+	int add_zeros;
+
+	add_zeros = slist->zero - ft_strlen(string);
+	i = 0;
+	if (add_zeros > 0)
+	{
+		if(!(send = malloc(sizeof(char) * (ft_strlen(string) + add_zeros + 2))))
+			return (NULL);
+		if (string[i] == '-')
+			send[i++] = '-';
+		while(add_zeros > 0)
+		{
+			send[i++] = '0';
+			add_zeros--;
+		}
+		send[i] = '\0';
+		if (string[0] == '-')
+			send = ft_strjoin(send, string+1);
+		else
+			send = ft_strjoin(send, string);
+		send = integer_precision_with_zeros(slist, string, send);
+		return (send);
+	}
+	return(string);
+}
+
+int		integer_write_minus_greater(p_list *plist, s_list *slist, int i, int length)
+{
+	int count;
+
+	count = i + length;
+	if (length >= slist->minus)
+	{
+		slist->minus = 0;
+		return(0);
+	}
+	else if (length < slist->minus)
+	{
+		while (count < slist->minus)
+		{
+			write(1, " ", 1);
+			plist->final_format_lenght++;
+			count++;
+		}
+	}
+	slist->minus = 0;
+	return(i);
+}
+
+int		integer_write_width_greater(p_list *plist, s_list *slist, int i, int length)
+{
+	int count;
+
+	count = i + length;
+	if (length >= slist->width)
+	{
+		slist->width = 0;
+		return(0);
+	}
+	else if (length < slist->width)
+	{
+		while (count < slist->width)
+		{
+			write(1, " ", 1);
+			plist->final_format_lenght++;
+			count++;
+		}
+	}
+	slist->width = 0;
+	return(i);
+}
+
+
+void	integer_write(p_list *plist, char *string, s_list *slist)
+{
+	int i;
+	int length;
+
+	i = 0;
+	if (!plist || !string)
+		return ;
+	length = ft_strlen(string);
+	if (slist->zero > length)
+	{
+		string = integer_write_zeros(plist, slist, string);
+		length = ft_strlen(string);
+	}
+	if (slist->width > 0 && slist->minus == 0)
+		i = integer_write_width_greater(plist, slist, i, length);
+	write(1, string, length);
+	if (slist->minus > 0)
+		i = integer_write_minus_greater(plist, slist, i, length);
+	if (plist->final_format == NULL)
+		plist->final_format = ft_strdup(string);
+	else
+		plist->final_format = ft_strjoin(plist->final_format, string);
+	plist->final_format_lenght += length;
+}
