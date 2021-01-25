@@ -1,0 +1,42 @@
+gcc ft_printf.c sources/initializers.c sources/ft_strjoinchr.c sources/conversion.c sources/conversions/ifpercent.c	sources/conversions/ifcharacter.c sources/conversions/ifstring.c sources/conversions/ifpointer.c sources/conversions/ifpointer2.c sources/conversions/ifinteger.c sources/conversions/ifinteger2.c sources/conversions/ifinteger3.c sources/conversions/ifhexadecimallower.c sources/conversions/ifhexadecimallower2.c sources/conversions/ifhexadecimallower3.c sources/conversions/ifhexadecimalupper.c sources/conversions/ifhexadecimalupper2.c sources/conversions/ifhexadecimalupper3.c sources/conversions/ifunsigned.c sources/conversions/ifunsigned2.c sources/conversions/ifunsigned3.c	sources/conversions/ifdigit.c	sources/conversions/ifdigit2.c sources/conversions/ifdigit3.c sources/specifier.c sources/ft_itoa_unsigned.c sources/specifiers/hasflags.c sources/specifiers/haslength.c sources/specifiers/flags/hasminus.c sources/specifiers/flags/haszeros.c sources/specifiers/haswidth.c sources/specifiers/hasprecision.c libft/ft_atoi.c libft/ft_strchr.c libft/ft_strlen.c libft/ft_strdup.c libft/ft_strjoin.c libft/ft_itoa.c main.c
+
+gcc -g -Og -std=gnu99 ft_printf.c sources/initializers.c sources/ft_strjoinchr.c sources/conversion.c sources/conversions/ifpercent.c sources/conversions/ifcharacter.c sources/conversions/ifstring.c sources/conversions/ifpointer.c sources/conversions/ifpointer2.c sources/conversions/ifinteger.c sources/conversions/ifinteger2.c sources/conversions/ifinteger3.c sources/conversions/ifhexadecimallower.c sources/conversions/ifhexadecimallower2.c sources/conversions/ifhexadecimallower3.c sources/conversions/ifhexadecimalupper.c sources/conversions/ifhexadecimalupper2.c sources/conversions/ifhexadecimalupper3.c sources/conversions/ifunsigned.c sources/conversions/ifunsigned2.c sources/conversions/ifunsigned3.c sources/conversions/ifdigit.c sources/conversions/ifdigit2.c sources/conversions/ifdigit3.c sources/specifier.c sources/ft_itoa_unsigned.c sources/specifiers/hasflags.c sources/specifiers/haslength.c sources/specifiers/flags/hasminus.c sources/specifiers/flags/haszeros.c sources/specifiers/haswidth.c sources/specifiers/hasprecision.c libft/ft_atoi.c libft/ft_strchr.c libft/ft_strlen.c libft/ft_strdup.c libft/ft_strjoin.c libft/ft_itoa.c main.c -o memoryleak
+valgrind --leak-check=full ./memoryleak
+
+
+
+ft_printf.c 			--- Norm Done
+
+specifier.c 			--- Norm Done
+initializers.c 			--- Norm Done
+ft_strjoinchr.c			--- Norm Done
+ft_itoa_unsigned		--- Norm Done
+conversion.c			--- Norm Done
+
+hasflags.c 				--- Norm Done
+haslength.c				--- Norm Done
+hasprecision.c			--- Norm Done
+haswidth.c				--- Norm Done
+hasminus.c				--- Norm Done
+haszeros.c				--- Norm Done
+
+ifpercent.c				--- Norm Done
+ifcharacter.c			--- Norm Done
+ifstring.c				--- Norm Done
+ifpointer.c				--- Norm Done
+ifpointer2.c			--- Norm Done
+ifdigit.c				--- Norm Done
+ifdigit2.c				--- Norm Done
+ifdigit3.c				--- Norm Done
+ifinteger.c				--- Norm Done
+ifinteger2.c			--- Norm Done
+ifinteger3.c			--- Norm Done
+ifunsigned.c			--- Norm Done
+ifunsigned2.c			--- Norm Done
+ifunsigned3.c			--- Norm Done
+ifhexadecimallower.c	--- Norm Done
+ifhexadecimallower2.c	--- Norm Done
+ifhexadecimallower3.c	--- Norm Done
+ifhexadecimalupper.c	--- Norm Done
+ifhexadecimalupper2.c	--- Norm Done
+ifhexadecimalupper3.c	--- Norm Done
