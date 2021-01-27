@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 18:33:47 by marvin            #+#    #+#             */
-/*   Updated: 2021/01/25 18:27:03 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/25 19:36:32 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void				*ft_memchr(const void *str, int c, size_t n);
 int					ft_memcmp(const void *str1, const void *str2, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t nitems, size_t size);
-char				*ft_strdup(const char *s);
+char				*ft_strdup(char *s);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char *s1, char *s2);
 char				*ft_strtrim(char const *s1, char const *set);

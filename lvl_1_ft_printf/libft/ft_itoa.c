@@ -3,86 +3,84 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 17:15:08 by marvin            #+#    #+#             */
-/*   Updated: 2020/12/19 17:49:25 by ncameiri         ###   ########.fr       */
+/*   Updated: 2021/01/25 22:46:02 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_reverse(char *str, int sig)
+static void		ft_itoa_minus(int *n, int *minus, int *temp)
 {
-	int		i;
-	int		end;
-	char	*aux;
-
-	i = 0;
-	end = ft_strlen(str);
-	if (!(aux = malloc(sizeof(char) * (end + 1 + sig))))
-		return (NULL);
-	if (sig)
+	if (*n == -2147483648)
 	{
-		aux[0] = '-';
-		end++;
+		*n = *n + 1;
+		*minus = -1;
+		*temp = 1;
+		*n = *n * -1;
 	}
-	while (str[i])
-		aux[--end] = str[i++];
-	free(str);
-	if (sig == 0)
-		aux[i] = '\0';
-	else
-		aux[++i] = '\0';
-	return (aux);
+	else if (*n < 0)
+	{
+		*minus = -1;
+		*n = *n * -1;
+		*temp = 0;
+	}
+	else if (*n >= 0)
+	{
+		*minus = 1;
+		*temp = 0;
+	}
 }
 
-static int		digits(int n)
+static int		ft_itoa_len(int n)
 {
-	int		dig;
+	int			len;
 
-	dig = 1;
-	if (n == (-2147483648))
-		return (dig = 12);
+	len = 0;
 	while (n > 9)
 	{
-		dig++;
 		n = n / 10;
+		len++;
 	}
-	return (dig);
+	len++;
+	return (len);
 }
 
-static char		*min_value(char *ret)
+static void		ft_itoa_write(char *finish, int len, int n, int temp)
 {
-	free(ret);
-	ret = ft_strdup("-2147483648");
-	return (ret);
+	while (n > 9)
+	{
+		finish[len--] = (n % 10) + '0' + temp;
+		n = n / 10;
+		temp = 0;
+	}
+	finish[len] = n + '0';
 }
 
 char			*ft_itoa(int n)
 {
-	char	*ret;
-	int		i;
-	int		sig;
+	int			minus;
+	int			temp;
+	int			len;
+	char		*finish;
 
-	sig = 0;
-	i = 0;
-	if (!(ret = malloc(sizeof(char) * (digits(n) + 1))))
-		return (NULL);
-	if (n == (-2147483648))
-		return (min_value(ret));
-	if (n < 0)
+	ft_itoa_minus(&n, &minus, &temp);
+	len = ft_itoa_len(n);
+	if (minus == -1)
 	{
-		n = n * (-1);
-		sig = 1;
+		if (!(finish = malloc((len + 2) * sizeof(char))))
+			return (NULL);
+		len++;
+		finish[0] = '-';
 	}
-	while (n > 9)
+	else
 	{
-		ret[i++] = (n % 10) + '0';
-		n = n / 10;
+		if (!(finish = malloc((len + 1) * sizeof(char))))
+			return (NULL);
 	}
-	ret[i++] = n + '0';
-	ret[i] = '\0';
-	ret = ft_reverse(ret, sig);
-	return (ret);
+	finish[len--] = '\0';
+	ft_itoa_write(finish, len, n, temp);
+	return (finish);
 }

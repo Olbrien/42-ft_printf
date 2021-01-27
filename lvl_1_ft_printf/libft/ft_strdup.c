@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/06 17:58:12 by marvin            #+#    #+#             */
-/*   Updated: 2021/01/25 03:33:04 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/26 05:27:28 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup(char *s)
 {
 	char	*dest;
 	int		len;

@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 20:44:50 by marvin            #+#    #+#             */
-/*   Updated: 2021/01/25 18:38:43 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/26 23:02:52 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[b] != '\0')
 		string[i++] = s2[b++];
 	string[i] = '\0';
-	free (s1);
+	free(s1);
 	return (string);
 }
