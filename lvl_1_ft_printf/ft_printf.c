@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 13:43:24 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/25 18:10:49 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/26 23:01:49 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void		write_char(t_plist *plist, char character, t_slist *slist)
 	plist->final_format_lenght++;
 }
 
-void		parse(t_plist *plist, va_list *args, t_slist *slist)
+void			parse(t_plist *plist, va_list *args, t_slist *slist)
 {
 	int		i;
 	char	*format;
@@ -95,8 +95,7 @@ int				ft_printf(const char *format, ...)
 		}
 		else if (format[plist.format_count] != '%')
 		{
-			write_char(&plist, plist.format[plist.format_count], &slist);
-			plist.format_count++;
+			write_char(&plist, plist.format[plist.format_count++], &slist);
 			initialize_slist(&slist);
 		}
 	}

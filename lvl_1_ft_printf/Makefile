@@ -10,6 +10,7 @@ SOURCES = 	ft_printf.c\
 			sources/conversions/ifpercent.c\
 			sources/conversions/ifcharacter.c\
 			sources/conversions/ifstring.c\
+			sources/conversions/ifstring2.c\
 			sources/conversions/ifpointer.c\
 			sources/conversions/ifpointer2.c\
 			sources/conversions/ifdigit.c\
