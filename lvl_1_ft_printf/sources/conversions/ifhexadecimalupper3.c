@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 22:23:07 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/24 22:28:53 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 04:23:27 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ char	*return_if_one_hexaupperdigit(t_slist *slist, char *send,
 	send = ft_strjoin(send, temp);
 	if (slist->precision >= 0)
 		send = reverse_hexadecimalupper(send, slist);
+	free(temp);
 	return (send);
 }

@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:16:07 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/25 18:57:54 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 05:36:27 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,8 @@ static char		*string_precision(t_slist *slist, char *string)
 
 	i = 0;
 	remove_length = slist->precision;
-	if (slist->precision == 0)
-		return (ft_strdup(""));
-	if (slist->precision >= (int)ft_strlen(string))
-		return (string);
+	if (slist->precision == 0 || slist->precision >= (int)ft_strlen(string))
+		return (string_precision2(slist, string));
 	if (remove_length > 0)
 	{
 		if (!(send = malloc(sizeof(char) * (remove_length + 1))))
@@ -84,6 +82,7 @@ static char		*string_precision(t_slist *slist, char *string)
 		}
 		send[i] = '\0';
 		slist->precision = -1;
+		slist->free = 1;
 		return (send);
 	}
 	return (string);
@@ -98,14 +97,7 @@ static char		*string_process(t_plist *plist, t_slist *slist, char *string)
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
 		slist->precision = slist->star_precision;
 	if (string == NULL)
-	{
-		if (slist->precision >= 6)
-			string = ft_strdup("(null)");
-		else if (slist->precision >= 0 && slist->precision < 6)
-			string = ft_strdup("");
-		else if (slist->precision < 0)
-			string = ft_strdup("(null)");
-	}
+		string = string_process2(slist, string);
 	if (slist->precision >= 0)
 		string = string_precision(slist, string);
 	length = ft_strlen(string);
@@ -128,5 +120,7 @@ void			ifstring(t_plist *plist, t_slist *slist, va_list *args)
 		plist->final_format = ft_strdup(string);
 	else
 		plist->final_format = ft_strjoin(plist->final_format, string);
+	if (slist->free == 1)
+		free(string);
 	plist->format_count++;
 }

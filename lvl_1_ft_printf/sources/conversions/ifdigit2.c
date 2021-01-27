@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/17 06:07:07 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/24 18:35:44 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 04:12:39 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ char			*digit_precision_with_zeros(t_slist *slist, char *string,
 		}
 		temp[i] = '\0';
 		temp = ft_strjoin(temp, string);
+		free(send);
+		if (slist->free == 0)
+			free(string);
 		return (temp);
 	}
 	return (send);
@@ -58,6 +61,9 @@ static char		*digit_write_zeros(t_slist *slist, char *string)
 		}
 		s[i] = '\0';
 		s = digit_write_zeros2(slist, s, string);
+		if (slist->free == 0)
+			free(string);
+		slist->free = 1;
 		return (s);
 	}
 	return (string);
@@ -137,4 +143,5 @@ void			digit_write(t_plist *plist, char *string, t_slist *slist)
 	else
 		plist->final_format = ft_strjoin(plist->final_format, string);
 	plist->final_format_lenght += length;
+	free_string_digit(string, slist);
 }

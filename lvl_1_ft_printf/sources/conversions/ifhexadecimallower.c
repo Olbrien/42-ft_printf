@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 05:45:33 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/24 18:32:39 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 06:22:35 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ static char		*convert_hexadecimallower_hash(char *string)
 		return (NULL);
 	temp[0] = '0';
 	temp[1] = 'x';
+	temp[2] = '\0';
 	temp = ft_strjoin(temp, string);
+	free(string);
 	return (temp);
 }
 
@@ -36,7 +38,7 @@ static char		*precision_hexadecimallower(char *string, t_slist *slist)
 	start = 0;
 	length_to_zeros = slist->precision - (ft_strlen(string));
 	total_length = ft_strlen(string) + length_to_zeros + 1;
-	if (!(temp = malloc(sizeof(char) * total_length)))
+	if (!(temp = malloc(sizeof(char) * total_length + 1)))
 		return (NULL);
 	while (length_to_zeros > 0)
 	{
@@ -46,6 +48,7 @@ static char		*precision_hexadecimallower(char *string, t_slist *slist)
 	while (string[start] != '\0')
 		temp[i++] = string[start++];
 	temp[i] = '\0';
+	free(string);
 	return (temp);
 }
 
@@ -59,13 +62,15 @@ char			*reverse_hexadecimallower(char *string, t_slist *slist)
 	i = 0;
 	if (!(temp = malloc(sizeof(char) * (ft_strlen(string) + 1))))
 		return (NULL);
-	while (string[end] != '\0')
+	while (end > 0)
 	{
 		temp[i] = string[end];
 		end--;
 		i++;
 	}
+	temp[i++] = string[end];
 	temp[i] = '\0';
+	free(string);
 	if (slist->precision >= 0 && slist->precision > (int)ft_strlen(temp) - 2)
 		temp = precision_hexadecimallower(temp, slist);
 	return (temp);
@@ -119,7 +124,8 @@ void			ifhexadecimallower(t_plist *plist, t_slist *slist,
 			slist->zero = slist->star_precision;
 	}
 	send = convert_return_hexadecimallower(hexadecimal_value, send, slist);
-	if (slist->precision == 0 && hexadecimal_value == 0)
+	if (slist->precision == 0 && hexadecimal_value == 0 &&
+									slist->has_star_precision == 0)
 		send[0] = '\0';
 	if (slist->hash == 1 && send != NULL && hexadecimal_value != 0)
 		send = convert_hexadecimallower_hash(send);

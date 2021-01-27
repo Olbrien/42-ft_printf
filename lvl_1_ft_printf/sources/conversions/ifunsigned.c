@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 04:35:53 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/24 17:12:24 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 04:54:05 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static char		*unsigned_precision(char *string, t_slist *slist)
 	while (string[start] != '\0')
 		temp[i++] = string[start++];
 	temp[i] = '\0';
+	free(string);
 	return (temp);
 }
 
@@ -59,6 +60,7 @@ void			ifunsigned(t_plist *plist, t_slist *slist, va_list *args)
 	value = (unsigned int)va_arg(*args, unsigned int);
 	temp = ft_itoa_unsigned(value);
 	send = ft_strdup(temp);
+	free(temp);
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
 		unsigned_star(slist, value);
 	if (send[0] == '-')

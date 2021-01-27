@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:17:07 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/24 13:48:03 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 04:24:11 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static char		*precision_hexadecimal(char *string, t_slist *slist)
 		temp[i++] = string[start++];
 	temp[i] = '\0';
 	slist->precision = -1;
+	free(string);
 	return (temp);
 }
 
@@ -61,6 +62,7 @@ static char		*reverse_hexadecimal(char *string, t_slist *slist)
 	temp[i] = '\0';
 	if (slist->precision >= 0 && slist->precision > (int)ft_strlen(temp) - 2)
 		temp = precision_hexadecimal(temp, slist);
+	free(string);
 	return (temp);
 }
 
@@ -70,6 +72,7 @@ static char		*return_if_one_digit(char *send, long long int value)
 
 	temp = ft_itoa(value);
 	send = ft_strjoin(send, temp);
+	free(temp);
 	return (send);
 }
 
@@ -80,6 +83,7 @@ static char		*convert_return_hexadecimal(long long int pointer_value,
 	long long int	remainder;
 	int				hexa;
 
+	slist->free = 1;
 	value = pointer_value;
 	if (value >= 0 && value < 10)
 		return (return_if_one_digit(send, value));
@@ -111,6 +115,7 @@ void			ifpointer(t_plist *plist, t_slist *slist, va_list *args)
 	if (pointer_value == '\0')
 	{
 		send = ft_strdup("(nil)");
+		slist->free = 1;
 	}
 	else if (pointer_value != '\0')
 	{
@@ -119,5 +124,7 @@ void			ifpointer(t_plist *plist, t_slist *slist, va_list *args)
 	}
 	slist->precision = -1;
 	pointer_write(plist, send, slist);
+	if (slist->free == 1)
+		free(send);
 	plist->format_count++;
 }

@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 17:05:42 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/24 17:10:00 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 05:08:15 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,18 @@ char	*unsigned_write_zeros2(t_slist *slist, char *s, char *string)
 		s = ft_strjoin(s, string);
 	s = unsigned_precision_with_zeros(slist, string, s);
 	return (s);
+}
+
+void	unsigned_write2(t_plist *plist, char *string)
+{
+	if (plist->final_format == NULL)
+	{
+		plist->final_format = ft_strdup(string);
+		free(string);
+	}
+	else
+	{
+		plist->final_format = ft_strjoin(plist->final_format, string);
+		free(string);
+	}
 }

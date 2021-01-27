@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:13:32 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/25 03:14:43 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 05:27:35 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ static void		char_process(t_plist *plist, char character, t_slist *slist)
 
 void			ifcharacter(t_plist *plist, t_slist *slist, va_list *args)
 {
-	unsigned char send;
+	char send;
 
-	send = (unsigned char)va_arg(*args, int);
+	send = (char)va_arg(*args, int);
 	char_process(plist, send, slist);
 	plist->format_count++;
 }

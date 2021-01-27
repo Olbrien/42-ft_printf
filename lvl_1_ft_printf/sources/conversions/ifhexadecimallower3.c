@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 17:36:21 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/24 18:40:14 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 04:22:13 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ char	*return_if_one_hexalowerdigit(t_slist *slist, char *send,
 	send = ft_strjoin(send, temp);
 	if (slist->precision >= 0)
 		send = reverse_hexadecimallower(send, slist);
+	free(temp);
 	return (send);
 }

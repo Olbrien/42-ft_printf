@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 05:56:55 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/24 22:37:03 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 04:22:01 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ char			*hexadecimallower_precision_with_zeros(t_slist *slist,
 		}
 		temp[i] = '\0';
 		temp = ft_strjoin(temp, string);
+		free(send);
 		return (temp);
 	}
 	return (send);
@@ -59,6 +60,7 @@ static char		*hexadecimallower_write_zeros(t_slist *slist, char *string)
 		}
 		send[i] = '\0';
 		send = hexalower_write_zeros2(slist, send, string);
+		free(string);
 		return (send);
 	}
 	return (string);
@@ -137,4 +139,5 @@ void			hexadecimallower_write(t_plist *plist,
 	else
 		plist->final_format = ft_strjoin(plist->final_format, string);
 	plist->final_format_lenght += length;
+	free(string);
 }
