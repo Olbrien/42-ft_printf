@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:32:06 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/25 03:04:40 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 04:04:44 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	haszeros2(t_plist *plist, t_slist *slist, int i)
 		i++;
 	}
 	slist->zero = ft_atoi(temp);
-	free (temp);
+	free(temp);
 	return (i);
 }
 

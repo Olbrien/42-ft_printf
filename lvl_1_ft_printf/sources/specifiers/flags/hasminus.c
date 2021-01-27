@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:30:28 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/25 03:03:53 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 04:04:37 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	hasminus(t_plist *plist, t_slist *slist)
 		}
 		slist->minus = ft_atoi(temp);
 	}
-	free (temp);
+	free(temp);
 	slist->width = 0;
 	plist->format_count = i - 1;
 }
