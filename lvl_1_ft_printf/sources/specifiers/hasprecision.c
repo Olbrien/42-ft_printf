@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:26:00 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/25 18:55:21 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/27 04:04:53 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void		hasprecision3(t_plist *plist, t_slist *slist, int i)
 	}
 	if (slist->precision == 0)
 		slist->precision_error = 1;
-	free (temp);
+	free(temp);
 	plist->format_count = i;
 }
 
