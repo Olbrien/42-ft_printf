@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 05:41:20 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/23 20:19:03 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/26 06:29:46 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,6 @@ char			*ft_itoa_unsigned(long n)
 	long number;
 
 	number = n;
-	if (!(str = malloc(length_unsigned(n) * sizeof(str))))
-		return (NULL);
 	if (number == 0 || number == -0)
 		str = ifzero_unsigned(n);
 	else if (number < 0)

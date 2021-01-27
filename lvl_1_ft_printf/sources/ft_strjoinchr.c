@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:05:12 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/25 04:55:09 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/26 23:03:21 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoinchr(char *s1, char s2)
 	i = 0;
 	if (!s1 || !s2)
 	{
-		free (s1);
+		free(s1);
 		return (NULL);
 	}
 	len = ft_strlen(s1);

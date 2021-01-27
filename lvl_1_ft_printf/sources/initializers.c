@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:00:25 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/23 20:13:41 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/25 19:32:28 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	initialize_slist(t_slist *slist)
 	slist->l = 0;
 	slist->h = 0;
 	slist->length = 0;
+	slist->free = 0;
 }
 
 void	initialize_plist(t_plist *plist, char *format)
