@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 03:51:25 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/27 05:08:38 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/29 06:24:30 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@
 # define LENGTH			"lh"
 # define STAR			"*"
 # define NUMBERS		"0123456789"
-
 
 typedef struct 	s_printflist
 {
@@ -73,6 +72,8 @@ void	parse(t_plist *plist, va_list *args, t_slist *slist);
 
 char	*ft_strjoinchr(char *s1, char s2);
 char	*ft_itoa_unsigned(long n);
+char	*ft_itoa_long(long n);
+char	*ft_itoa_longlong(long long n);
 
 void	initialize_slist(t_slist *slist);
 void	initialize_plist(t_plist *plist, char *format);
@@ -92,12 +93,24 @@ void	ifpointer(t_plist *plist, t_slist *slist, va_list *args);
 void	pointer_write(t_plist *plist, char *string, t_slist *slist);
 
 void	ifdigit(t_plist *plist, t_slist *slist, va_list *args);
+char	*digit_plus(t_slist *slist, int value);
 void	digit_write(t_plist *plist, char *string, t_slist *slist);
+char	*digit_precision(char *string, t_slist *slist);
+char	*digit_precision_error(char *string, t_slist *slist, int value);
 int		digit_write_width_greater(t_plist *plist, t_slist *slist, int i, int length);
 char	*digit_write_zeros2(t_slist *slist, char *s, char *string);
 char	*digit_precision_with_zeros(t_slist *slist, char *string, char *send);
 void	digit_space(t_plist *plist, t_slist *slist, char *string, int length);
 void	free_string_digit(char *string, t_slist *slist);
+
+void	ifdigithh(t_plist *plist, t_slist *slist, va_list *args);
+void	ifdigith(t_plist *plist, t_slist *slist, va_list *args);
+void	ifdigitll(t_plist *plist, t_slist *slist, va_list *args);
+void	ifdigitl(t_plist *plist, t_slist *slist, va_list *args);
+char	*digit_plus_long(t_slist *slist, long value);
+char	*digit_plus_longlong(t_slist *slist, long long value);
+
+
 
 void	ifinteger(t_plist *plist, t_slist *slist, va_list *args);
 void	integer_write(t_plist *plist, char *string, t_slist *slist);

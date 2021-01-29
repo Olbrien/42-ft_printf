@@ -5,6 +5,8 @@ SOURCES = 	ft_printf.c\
 			sources/initializers.c\
 			sources/ft_strjoinchr.c\
 			sources/ft_itoa_unsigned.c\
+			sources/ft_itoa_long.c\
+			sources/ft_itoa_longlong.c\
 			\
 			sources/conversion.c\
 			sources/conversions/ifpercent.c\
@@ -28,6 +30,9 @@ SOURCES = 	ft_printf.c\
 			sources/conversions/ifhexadecimalupper.c\
 			sources/conversions/ifhexadecimalupper2.c\
 			sources/conversions/ifhexadecimalupper3.c\
+			\
+			sources/conversions/lengths/ifdigitlength.c\
+			sources/conversions/lengths/ifdigitlength2.c\
 			\
 			sources/specifier.c\
 			sources/specifiers/hasflags.c\

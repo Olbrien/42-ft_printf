@@ -6,13 +6,37 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:07:37 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/23 20:20:50 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/29 06:24:27 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	conversion(t_plist *plist, va_list *args, t_slist *slist)
+static void		conversionpaths(t_plist *plist, va_list *args, t_slist *slist)
+{
+	char	*format;
+	int		i;
+
+	i = plist->format_count;
+	format = plist->format;
+
+	if (format[i] == 'd')
+	{
+		if (slist->l == 1)
+			ifdigitl(plist, slist, args);
+		else if (slist->l == 2)
+			ifdigitll(plist, slist, args);
+		else if (slist->h == 1)
+			ifdigith(plist, slist, args);
+		else if (slist->h == 2)
+			ifdigithh(plist, slist, args);
+		else
+			ifdigit(plist, slist, args);
+	}
+}
+
+
+void		conversion(t_plist *plist, va_list *args, t_slist *slist)
 {
 	int		i;
 	char	*format;
@@ -28,7 +52,7 @@ void	conversion(t_plist *plist, va_list *args, t_slist *slist)
 	else if (format[i] == 'p')
 		ifpointer(plist, slist, args);
 	else if (format[i] == 'd')
-		ifdigit(plist, slist, args);
+		conversionpaths(plist, args, slist);
 	else if (format[i] == 'i')
 		ifinteger(plist, slist, args);
 	else if (format[i] == 'u')
