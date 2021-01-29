@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:07:37 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/29 06:24:27 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/29 18:34:17 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,19 @@ static void		conversionpaths(t_plist *plist, va_list *args, t_slist *slist)
 		else
 			ifdigit(plist, slist, args);
 	}
+	else if (format[i] == 'i')
+	{
+		if (slist->l == 1)
+			ifintegerl(plist, slist, args);
+		else if (slist->l == 2)
+			ifintegerll(plist, slist, args);
+		else if (slist->h == 1)
+			ifintegerh(plist, slist, args);
+		else if (slist->h == 2)
+			ifintegerhh(plist, slist, args);
+		else
+			ifinteger(plist, slist, args);
+	}
 }
 
 
@@ -54,7 +67,7 @@ void		conversion(t_plist *plist, va_list *args, t_slist *slist)
 	else if (format[i] == 'd')
 		conversionpaths(plist, args, slist);
 	else if (format[i] == 'i')
-		ifinteger(plist, slist, args);
+		conversionpaths(plist, args, slist);
 	else if (format[i] == 'u')
 		ifunsigned(plist, slist, args);
 	else if (format[i] == 'x')

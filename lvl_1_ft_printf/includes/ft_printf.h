@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 03:51:25 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/29 06:24:30 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/29 18:22:51 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,12 +113,24 @@ char	*digit_plus_longlong(t_slist *slist, long long value);
 
 
 void	ifinteger(t_plist *plist, t_slist *slist, va_list *args);
+char	*integer_plus(t_slist *slist, int value);
 void	integer_write(t_plist *plist, char *string, t_slist *slist);
+char	*integer_precision(char *string, t_slist *slist);
+char	*integer_precision_error(char *string, t_slist *slist, int value);
 int		integer_write_width_greater(t_plist *plist, t_slist *slist, int i, int length);
 char	*integer_write_zeros2(t_slist *slist, char *s, char *string);
 char	*integer_precision_with_zeros(t_slist *slist, char *string, char *send);
 void	integer_space(t_plist *plist, t_slist *slist, char *string, int length);
 void	free_string_integer(char *string, t_slist *slist);
+
+void	ifintegerhh(t_plist *plist, t_slist *slist, va_list *args);
+void	ifintegerh(t_plist *plist, t_slist *slist, va_list *args);
+void	ifintegerll(t_plist *plist, t_slist *slist, va_list *args);
+void	ifintegerl(t_plist *plist, t_slist *slist, va_list *args);
+char	*integer_plus_long(t_slist *slist, long value);
+char	*integer_plus_longlong(t_slist *slist, long long value);
+
+
 
 void	ifunsigned(t_plist *plist, t_slist *slist, va_list *args);
 void	unsigned_write(t_plist *plist, char *string, t_slist *slist);

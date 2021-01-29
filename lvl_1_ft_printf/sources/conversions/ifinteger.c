@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 04:01:49 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/27 04:18:22 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/29 18:17:28 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-static char		*integer_precision(char *string, t_slist *slist)
+char			*integer_precision(char *string, t_slist *slist)
 {
 	int		len_zeros;
 	int		i;
@@ -41,7 +41,7 @@ static char		*integer_precision(char *string, t_slist *slist)
 	return (temp);
 }
 
-static char		*integer_precision_error(char *string, t_slist *slist,
+char		*integer_precision_error(char *string, t_slist *slist,
 											int value)
 {
 	if (slist->precision_error == 1 && slist->plus == 0)
@@ -57,7 +57,7 @@ static char		*integer_precision_error(char *string, t_slist *slist,
 	return (string);
 }
 
-static	char	*integer_plus(t_slist *slist, int value)
+char			*integer_plus(t_slist *slist, int value)
 {
 	char	*temp;
 	char	*send;

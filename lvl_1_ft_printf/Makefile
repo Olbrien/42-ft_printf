@@ -33,6 +33,8 @@ SOURCES = 	ft_printf.c\
 			\
 			sources/conversions/lengths/ifdigitlength.c\
 			sources/conversions/lengths/ifdigitlength2.c\
+			sources/conversions/lengths/ifdigitinteger.c\
+			sources/conversions/lengths/ifdigitinteger2.c\
 			\
 			sources/specifier.c\
 			sources/specifiers/hasflags.c\
