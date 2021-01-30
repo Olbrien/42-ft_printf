@@ -76,6 +76,15 @@ d,i,u,x,X		long long int / unsigned long long int
 
 
 
+Não deveria de dar um warning ao passar uma variável que não seja igual ao argumento?
+
+int função(long long int);
+int main()
+{
+	int a = 5;
+	função(a);
+}
+
 
 
 Pedir explicações ao Gueifão linha 57 do ifdigit. Porque é que aquele free funciona ali.
