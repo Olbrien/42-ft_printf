@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ifhexadecimallowerlength.c                         :+:      :+:    :+:   */
+/*   ifhexadecimalupperlength.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/30 07:22:14 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/30 16:06:46 by tisantos         ###   ########.fr       */
+/*   Created: 2021/01/30 16:45:09 by tisantos          #+#    #+#             */
+/*   Updated: 2021/01/30 16:47:08 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../includes/ft_printf.h"
 
-void	ifhexadecimallowerhh(t_plist *plist, t_slist *slist, va_list *args)
+void	ifhexadecimalupperhh(t_plist *plist, t_slist *slist, va_list *args)
 {
 	char					*send;
 	unsigned char			hexadecimal_value;
@@ -26,17 +26,17 @@ void	ifhexadecimallowerhh(t_plist *plist, t_slist *slist, va_list *args)
 		slist->width = 0;
 		slist->zero = slist->star_precision;
 	}
-	send = convert_return_hexadecimallower(hexadecimal_value, send, slist);
+	send = convert_return_hexadecimalupper(hexadecimal_value, send, slist);
 	if (slist->precision == 0 && hexadecimal_value == 0 &&
 									slist->has_star_precision == 0)
 		send[0] = '\0';
 	if (slist->hash == 1 && send != NULL && hexadecimal_value != 0)
-		send = convert_hexadecimallower_hash(send);
-	hexadecimallower_write(plist, send, slist);
+		send = convert_hexadecimalupper_hash(send);
+	hexadecimalupper_write(plist, send, slist);
 	plist->format_count++;
 }
 
-void	ifhexadecimallowerh(t_plist *plist, t_slist *slist, va_list *args)
+void	ifhexadecimalupperh(t_plist *plist, t_slist *slist, va_list *args)
 {
 	char						*send;
 	short unsigned int			hexadecimal_value;
@@ -50,17 +50,17 @@ void	ifhexadecimallowerh(t_plist *plist, t_slist *slist, va_list *args)
 		slist->width = 0;
 		slist->zero = slist->star_precision;
 	}
-	send = convert_return_hexadecimallower(hexadecimal_value, send, slist);
+	send = convert_return_hexadecimalupper(hexadecimal_value, send, slist);
 	if (slist->precision == 0 && hexadecimal_value == 0 &&
 									slist->has_star_precision == 0)
 		send[0] = '\0';
 	if (slist->hash == 1 && send != NULL && hexadecimal_value != 0)
-		send = convert_hexadecimallower_hash(send);
-	hexadecimallower_write(plist, send, slist);
+		send = convert_hexadecimalupper_hash(send);
+	hexadecimalupper_write(plist, send, slist);
 	plist->format_count++;
 }
 
-void	ifhexadecimallowerll(t_plist *plist, t_slist *slist, va_list *args)
+void	ifhexadecimalupperll(t_plist *plist, t_slist *slist, va_list *args)
 {
 	char							*send;
 	unsigned long long int			hexadecimal_value;
@@ -75,17 +75,17 @@ void	ifhexadecimallowerll(t_plist *plist, t_slist *slist, va_list *args)
 		slist->width = 0;
 		slist->zero = slist->star_precision;
 	}
-	send = convert_return_hexadecimallower(hexadecimal_value, send, slist);
+	send = convert_return_hexadecimalupper(hexadecimal_value, send, slist);
 	if (slist->precision == 0 && hexadecimal_value == 0 &&
 									slist->has_star_precision == 0)
 		send[0] = '\0';
 	if (slist->hash == 1 && send != NULL && hexadecimal_value != 0)
-		send = convert_hexadecimallower_hash(send);
-	hexadecimallower_write(plist, send, slist);
+		send = convert_hexadecimalupper_hash(send);
+	hexadecimalupper_write(plist, send, slist);
 	plist->format_count++;
 }
 
-void	ifhexadecimallowerl(t_plist *plist, t_slist *slist, va_list *args)
+void	ifhexadecimalupperl(t_plist *plist, t_slist *slist, va_list *args)
 {
 	char						*send;
 	unsigned long int			hexadecimal_value;
@@ -99,12 +99,12 @@ void	ifhexadecimallowerl(t_plist *plist, t_slist *slist, va_list *args)
 		slist->width = 0;
 		slist->zero = slist->star_precision;
 	}
-	send = convert_return_hexadecimallower(hexadecimal_value, send, slist);
+	send = convert_return_hexadecimalupper(hexadecimal_value, send, slist);
 	if (slist->precision == 0 && hexadecimal_value == 0 &&
 									slist->has_star_precision == 0)
 		send[0] = '\0';
 	if (slist->hash == 1 && send != NULL && hexadecimal_value != 0)
-		send = convert_hexadecimallower_hash(send);
-	hexadecimallower_write(plist, send, slist);
+		send = convert_hexadecimalupper_hash(send);
+	hexadecimalupper_write(plist, send, slist);
 	plist->format_count++;
 }

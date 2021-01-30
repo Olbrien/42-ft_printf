@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 05:45:33 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/30 08:00:38 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/30 16:11:14 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,15 @@ char			*reverse_hexadecimallower(char *string, t_slist *slist)
 }
 
 char			*convert_return_hexadecimallower(
-				unsigned long long int hexadecimal_value, char *send, t_slist *slist)
+				unsigned long long int hexadecimal_value, char *send,
+				t_slist *slist)
 {
 	unsigned long long int	value;
 	unsigned long long int	remainder;
 	int						hexa;
 
 	value = hexadecimal_value;
-	if (value >= 0 && value < 10)
+	if (value < 10)
 		return (return_if_one_hexalowerdigit(slist, send, value));
 	remainder = value % 16;
 	while (value >= 10)

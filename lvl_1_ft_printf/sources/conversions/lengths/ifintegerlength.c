@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 18:13:45 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/30 06:26:12 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/30 16:17:04 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ifintegerhh(t_plist *plist, t_slist *slist, va_list *args)
 	char	value;
 	int		send_length;
 
-	value = va_arg(*args, int);
+	value = (char)va_arg(*args, int);
 	send = integer_plus(slist, value);
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
 	{
@@ -47,7 +47,7 @@ void	ifintegerh(t_plist *plist, t_slist *slist, va_list *args)
 	short int	value;
 	int			send_length;
 
-	value = va_arg(*args, int);
+	value = (short int)va_arg(*args, int);
 	send = integer_plus(slist, value);
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
 	{

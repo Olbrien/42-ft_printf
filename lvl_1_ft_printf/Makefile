@@ -40,6 +40,7 @@ SOURCES = 	ft_printf.c\
 			sources/conversions/lengths/ifintegerlength2.c\
 			sources/conversions/lengths/ifunsignedlength.c\
 			sources/conversions/lengths/ifhexadecimallowerlength.c\
+			sources/conversions/lengths/ifhexadecimalupperlength.c\
 			\
 			sources/specifier.c\
 			sources/specifiers/hasflags.c\

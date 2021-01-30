@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 03:51:25 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/30 08:03:26 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/30 18:03:52 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ void	initialize_plist(t_plist *plist, char *format);
 
 
 void	conversion(t_plist *plist, va_list *args, t_slist *slist);
-void	conversion_path_x(t_plist *plist, va_list *args, t_slist *slist);
+void	conversion_path_x_lower(t_plist *plist, va_list *args, t_slist *slist);
+void	conversion_path_x_upper(t_plist *plist, va_list *args, t_slist *slist);
 
 void	ifpercent(t_plist *plist, t_slist *slist);
 
@@ -159,12 +160,18 @@ void	ifhexadecimallowerll(t_plist *plist, t_slist *slist, va_list *args);
 void	ifhexadecimallowerl(t_plist *plist, t_slist *slist, va_list *args);
 
 void	ifhexadecimalupper(t_plist *plist, t_slist *slist, va_list *args);
+char	*convert_return_hexadecimalupper(unsigned long long int hexadecimal_value, char *send, t_slist *slist);
+char	*convert_hexadecimalupper_hash(char *string);
 char	*reverse_hexadecimalupper(char *string, t_slist *slist);
 void	hexadecimalupper_write(t_plist *plist, char *string, t_slist *slist);
 char	*hexadecimalupper_precision_with_zeros(t_slist *slist, char *string, char *send);
 char	*return_if_one_hexaupperdigit(t_slist *slist, char *send, long long int value);
 char	*hexaupper_write_zeros2(t_slist *slist, char *send, char *string);
 
+void	ifhexadecimalupperhh(t_plist *plist, t_slist *slist, va_list *args);
+void	ifhexadecimalupperh(t_plist *plist, t_slist *slist, va_list *args);
+void	ifhexadecimalupperll(t_plist *plist, t_slist *slist, va_list *args);
+void	ifhexadecimalupperl(t_plist *plist, t_slist *slist, va_list *args);
 
 void	specifier(t_plist *plist, va_list *args, t_slist *slist);
 

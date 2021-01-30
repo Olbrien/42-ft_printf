@@ -1,6 +1,4 @@
-#include "./includes/ft_printf.h"
-
-/*int	main()
+int	main()
 {
 	int do_printf;
 	int do_ft_printf;
@@ -138,12 +136,6 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
 
 /////////////////////////////////
 //			C CHAR TESTS
@@ -241,7 +233,7 @@
 	printf("%d\n", do_ft_printf);
 
 ////////////////////////////////////
-//		C CHAR TESTS (COM NULLS)
+//		C CHAR TESTS (COM 0S)
 ///////////////////////////////////
 
 	printf("\n");
@@ -275,12 +267,7 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
 
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
 
 ////////////////////////////////////
 //			S STRING TESTS
@@ -464,77 +451,78 @@
 
 
 //////////////////////////////////////////////
-//			S STRING TESTS (COM NULL)
+//			S STRING TESTS (COM 0)
 //////////////////////////////////////////////
 
+
 	printf("\n");
-	do_printf = printf("hello, %s.", NULL);
+	do_printf = printf("hello, %s.", 0);
 	printf("\n");
-	do_ft_printf = ft_printf("hello, %s.", NULL);
+	do_ft_printf = ft_printf("hello, %s.", 0);
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
 	printf("\n");
-	do_printf = printf("%32s", NULL);
+	do_printf = printf("%32s", 0);
 	printf("\n");
-	do_ft_printf = ft_printf("%32s", NULL);
-	printf("\n");
-	printf("%d\n", do_printf);
-	printf("%d\n", do_ft_printf);
-
-	printf("\n");
-	do_printf = printf("%-16s", NULL);
-	printf("\n");
-	do_ft_printf = ft_printf("%-16s", NULL);
+	do_ft_printf = ft_printf("%32s", 0);
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
 	printf("\n");
-	do_printf = printf("%-1s", NULL);
+	do_printf = printf("%-16s", 0);
 	printf("\n");
-	do_ft_printf = ft_printf("%-1s", NULL);
-	printf("\n");
-	printf("%d\n", do_printf);
-	printf("%d\n", do_ft_printf);
-
-	printf("\n");
-	do_printf = printf("%.0s", NULL);
-	printf("\n");
-	do_ft_printf = ft_printf("%.0s", NULL);
+	do_ft_printf = ft_printf("%-16s", 0);
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
 	printf("\n");
-	do_printf = printf("%.6s", NULL);
+	do_printf = printf("%-1s", 0);
 	printf("\n");
-	do_ft_printf = ft_printf("%.6s", NULL);
-	printf("\n");
-	printf("%d\n", do_printf);
-	printf("%d\n", do_ft_printf);
-
-	printf("\n");
-	do_printf = printf("%.s", NULL);
-	printf("\n");
-	do_ft_printf = ft_printf("%.s", NULL);
+	do_ft_printf = ft_printf("%-1s", 0);
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
 	printf("\n");
-	do_printf = printf("%.s", NULL);
+	do_printf = printf("%.0s", 0);
 	printf("\n");
-	do_ft_printf = ft_printf("%.s", NULL);
+	do_ft_printf = ft_printf("%.0s", 0);
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
 	printf("\n");
-	do_printf = printf("%3.6s", NULL);
+	do_printf = printf("%.6s", 0);
 	printf("\n");
-	do_ft_printf = ft_printf("%3.6s", NULL);
+	do_ft_printf = ft_printf("%.6s", 0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.s", 0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.s", 0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.s", 0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.s", 0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%3.6s", 0);
+	printf("\n");
+	do_ft_printf = ft_printf("%3.6s", 0);
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
@@ -633,13 +621,6 @@
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
-
 //////////////////////////////////////////////
 //				P POINTERS TESTS
 //////////////////////////////////////////////
@@ -683,21 +664,21 @@
 	printf("%d\n", do_ft_printf);
 
 //////////////////////////////////////////////
-//				P POINTERS TESTS (COM NULL)
+//				P POINTERS TESTS (COM 0)
 //////////////////////////////////////////////
 
 	printf("\n");
-	do_printf = printf("%p", NULL);
+	do_printf = printf("%p", 0);
 	printf("\n");
-	do_ft_printf = ft_printf("%p", NULL);
+	do_ft_printf = ft_printf("%p", 0);
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
 	printf("\n");
-	do_printf = printf("%.3p", NULL);
+	do_printf = printf("%.3p", 0);
 	printf("\n");
-	do_ft_printf = ft_printf("%.3p", NULL);
+	do_ft_printf = ft_printf("%.3p", 0);
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
@@ -771,12 +752,6 @@
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
 
 /////////////////////////////////////////////////
 //				D INTEGER TESTS
@@ -1221,13 +1196,6 @@
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
-
 ///////////////////////////////////////////////////
 //     		 I INTEGER TESTS
 //////////////////////////////////////////////////
@@ -1669,13 +1637,6 @@
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
-
 ///////////////////////////////////////////////////
 //     		 U UNSIGNED INTEGERS TESTS
 //////////////////////////////////////////////////
@@ -2036,12 +1997,6 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
 
 //////////////////////////////////////////
 //     		 x HEXADECIMAL LOWERS
@@ -2442,13 +2397,6 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
 
 //////////////////////////////////////////
 //     		 X HEXADECIMAL UPPER
@@ -2851,12 +2799,7 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
 
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
 
 //////////////////////////////////////////////////////////
 // 			       + Flags On Digits
@@ -3278,13 +3221,6 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
 
 //////////////////////////////////////////////////////////
 // 			       + Flags On Integer
@@ -3708,12 +3644,7 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
 
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
 
 //////////////////////////////////////////////////////////
 // 			       ' ' Flags On Integer
@@ -4289,12 +4220,6 @@
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
 
 //////////////////////////////////////////////////////////
 // 			       ' ' Flags On Integer
@@ -4869,12 +4794,6 @@
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
 
 //////////////////////////////////////////////////////////////
 // 			       '#' Hash on Hexadecimal Lower
@@ -5240,12 +5159,6 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
 
 //////////////////////////////////////////////////////////////
 // 			       '#' Hash on Hexadecimal Upper
@@ -5611,12 +5524,7 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
 
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
 
 //////////////////////////////////////////////////////////////
 // 			      		'# +' FLAGS TESTS
@@ -6030,14 +5938,8 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
 
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
-
-//////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////
 // 			      		'# +' FLAGS TESTS
 /////////////////////////////////////////////////////////////
 
@@ -6449,15 +6351,8 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
 
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
-
-
-	static char 		ch_pos_1 = 100, ch_neg_1 = -87;
+		static char 		ch_pos_1 = 100, ch_neg_1 = -87;
 	static short		sh_pos_1 = 3047, sh_neg_1 = -8875;
 	static int			i_pos_1 = 878023;
 	static long			l_pos_1 = 22337203685477, l_neg_1 = -22337203685477;
@@ -6852,24 +6747,6 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
-
-
-	static char 		ch_pos_1 = 100, ch_neg_1 = -87;
-	static short		sh_pos_1 = 3047, sh_neg_1 = -8875;
-	static int			i_pos_1 = 878023;
-	static long			l_pos_1 = 22337203685477, l_neg_1 = -22337203685477;
-	static long long	ll_pos_1 = 22337203685477, ll_neg_1 = -22337203685477;
-	static long			lmax	= 9223372036854775807;
-	static long			lmin	= -9223372036854775807;
-	static long long	llmax = 9223372036854775807;
-	static long long	llmin = -9223372036854775807ll;
-
 
 //////////////////////////////////////////////////////////////
 // 			      		  'hh' FLAGS TESTS
@@ -7255,22 +7132,14 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
 
-/*int	main()
-{
-
-	int do_printf;
-	int do_ft_printf;
-
-
-	static unsigned char 		uch_pos_1 = 100;
-	static unsigned short		ush_pos_1 = 3047;
-	static unsigned int		ui_pos_1 = 878023;
-	static unsigned long		ul_pos_1 = 22337203685477;
-	static unsigned long long	ull_pos_1 = 22337203685477;
-	static unsigned long long  ullmax = 9223372036854775807;
-	static unsigned long  		ulmax = 9223372036854775807;
+static unsigned char 		uch_pos_1 = 100;
+static unsigned short		ush_pos_1 = 3047;
+static unsigned int		ui_pos_1 = 878023;
+static unsigned long		ul_pos_1 = 22337203685477;
+static unsigned long long	ull_pos_1 = 22337203685477;
+static unsigned long long  ullmax = 9223372036854775807;
+static unsigned long  		ulmax = 9223372036854775807;
 
 //////////////////////////////////////////////////////////////
 // 			      		  'hh' FLAGS TESTS
@@ -7479,20 +7348,6 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
-
-	static unsigned char 		uch_pos_1 = 100;
-	static unsigned short		ush_pos_1 = 3047;
-	static unsigned int		ui_pos_1 = 878023;
-	static unsigned long		ul_pos_1 = 22337203685477;
-	static unsigned long long	ull_pos_1 = 22337203685477;
-	static unsigned long long  ullmax = 9223372036854775807;
-	static unsigned long  		ulmax = 9223372036854775807;
 
 //////////////////////////////////////////////////////////////
 // 			      		  'hh' FLAGS TESTS
@@ -7746,24 +7601,10 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
-
-/*int	main()
-{
-	int do_printf;
-	int do_ft_printf;
-
-	static unsigned char 		uch_pos_1 = 100;
-	static unsigned short		ush_pos_1 = 3047;
-	static unsigned int		ui_pos_1 = 878023;
-	static unsigned long		ul_pos_1 = 22337203685477;
-	static unsigned long long	ull_pos_1 = 22337203685477;
-	static unsigned long long  ullmax = 9223372036854775807;
-	static unsigned long  		ulmax = 9223372036854775807;
 
 //////////////////////////////////////////////////////////////
 // 			      		  'hh' FLAGS TESTS
-//	   				     X UNSIGN DIGIT TEST
+//	   				      X HEXADECIMAL TEST
 /////////////////////////////////////////////////////////////
 
 	printf("\n");
@@ -7825,7 +7666,7 @@
 
 //////////////////////////////////////////////////////////////
 // 			      		   'h' FLAGS TESTS
-//	   				     X UNSIGN DIGIT TEST
+//	   				      X HEXADECIMAL TEST
 /////////////////////////////////////////////////////////////
 
 	printf("\n");
@@ -7870,7 +7711,7 @@
 
 //////////////////////////////////////////////////////////////
 // 			      		   'll' FLAGS TESTS
-//	   				     X UNSIGN DIGIT TEST
+//	   				     X HEXADECIMAL TEST
 /////////////////////////////////////////////////////////////
 
 	printf("\n");
@@ -7947,7 +7788,7 @@
 
 //////////////////////////////////////////////////////////////
 // 			      		   'l' FLAGS TESTS
-//	   				     X UNSIGN DIGIT TEST
+//	   				     X HEXADECIMAL TEST
 /////////////////////////////////////////////////////////////
 
 	printf("\n");
@@ -8013,44 +7854,4 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-// %[flags][width][.precision][length][specifier]
-
-
-
-
-
-
-
-
-// isto é para me lembrar, e depois para por lá em cima.
-# define cconversions "nfge"
-
-// TODO
-// Ias começar a fazer o l ll h hh do x ('d', 'i', 'u', 'x' done);
-// Voltar a passar a norminette!
-// Depois de fazeres os l ll h hh, não te esqueças de vereficar os args e meter aquilo bem,
-// e confirmar. Porque muitos não tens a cena tipo (short int) Exemplo:
-// short int hexadecimal_value;
-// hexadecimal_value = (short int)va_args(*args, int);
-// testar todas as funções outravez depois de fazeres os l ll h hh. (Mexteste no
-// ifhexadecimallower.c mudaste para unsigned long long int a função convert)
-
-
-// Se quiseres, adiciona o erro quando as flags e isso duplicam e meter tipo "%5.3s" como output.
-// Se quiseres, organiza os ifpercent, ifchar bla bla, porque há uns que não usam precision,
-// ou minus width etc.
-
-// Eu não fiz o l h do string e char. Não sei que diferença faz ter ou não. Perguntar.
+}

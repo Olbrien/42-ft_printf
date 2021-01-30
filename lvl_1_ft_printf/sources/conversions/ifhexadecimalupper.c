@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 16:09:56 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/27 06:22:54 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/30 18:37:49 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-static char		*convert_hexadecimalupper_hash(char *string)
+char			*convert_hexadecimalupper_hash(char *string)
 {
 	char *temp;
 
@@ -76,15 +76,16 @@ char			*reverse_hexadecimalupper(char *string, t_slist *slist)
 	return (temp);
 }
 
-static char		*convert_return_hexadecimalupper(
-				long long int hexadecimal_value, char *send, t_slist *slist)
+char			*convert_return_hexadecimalupper(
+				unsigned long long int hexadecimal_value,
+				char *send, t_slist *slist)
 {
-	long long int	value;
-	long long int	remainder;
-	int				hexa;
+	unsigned long long int	value;
+	unsigned long long int	remainder;
+	int						hexa;
 
 	value = hexadecimal_value;
-	if (value >= 0 && value < 10)
+	if (value < 10)
 		return (return_if_one_hexaupperdigit(slist, send, value));
 	remainder = value % 16;
 	while (value >= 10)

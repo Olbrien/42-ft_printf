@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 06:10:54 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/30 07:22:58 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/30 16:16:33 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ifunsignedhh(t_plist *plist, t_slist *slist, va_list *args)
 	unsigned char	value;
 	int				send_length;
 
-	value = (unsigned int)va_arg(*args, unsigned int);
+	value = (unsigned char)va_arg(*args, unsigned int);
 	temp = ft_itoa_unsigned(value);
 	send = ft_strdup(temp);
 	free(temp);

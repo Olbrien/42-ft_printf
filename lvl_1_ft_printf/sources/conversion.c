@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:07:37 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/30 07:20:12 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/30 18:03:29 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void				conversion(t_plist *plist, va_list *args, t_slist *slist)
 	else if (format[i] == 'u')
 		conversion_path_u(plist, args, slist);
 	else if (format[i] == 'x')
-		conversion_path_x(plist, args, slist);
+		conversion_path_x_lower(plist, args, slist);
 	else if (format[i] == 'X')
-		ifhexadecimalupper(plist, slist, args);
+		conversion_path_x_upper(plist, args, slist);
 }
