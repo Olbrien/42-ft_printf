@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 04:27:17 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/29 06:22:41 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/30 06:00:07 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,4 +127,3 @@ void	ifdigitl(t_plist *plist, t_slist *slist, va_list *args)
 	digit_write(plist, send, slist);
 	plist->format_count++;
 }
-

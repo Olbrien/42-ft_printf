@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 03:51:25 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/29 18:22:51 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/30 08:03:26 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void	parse(t_plist *plist, va_list *args, t_slist *slist);
 
 char	*ft_strjoinchr(char *s1, char s2);
 char	*ft_itoa_unsigned(long n);
+char	*ft_itoa_unsigned_long(unsigned long int n);
+char	*ft_itoa_unsigned_longlong(unsigned long long int n);
 char	*ft_itoa_long(long n);
 char	*ft_itoa_longlong(long long n);
 
@@ -80,6 +82,7 @@ void	initialize_plist(t_plist *plist, char *format);
 
 
 void	conversion(t_plist *plist, va_list *args, t_slist *slist);
+void	conversion_path_x(t_plist *plist, va_list *args, t_slist *slist);
 
 void	ifpercent(t_plist *plist, t_slist *slist);
 
@@ -110,8 +113,6 @@ void	ifdigitl(t_plist *plist, t_slist *slist, va_list *args);
 char	*digit_plus_long(t_slist *slist, long value);
 char	*digit_plus_longlong(t_slist *slist, long long value);
 
-
-
 void	ifinteger(t_plist *plist, t_slist *slist, va_list *args);
 char	*integer_plus(t_slist *slist, int value);
 void	integer_write(t_plist *plist, char *string, t_slist *slist);
@@ -130,20 +131,32 @@ void	ifintegerl(t_plist *plist, t_slist *slist, va_list *args);
 char	*integer_plus_long(t_slist *slist, long value);
 char	*integer_plus_longlong(t_slist *slist, long long value);
 
-
-
 void	ifunsigned(t_plist *plist, t_slist *slist, va_list *args);
+void	unsigned_star(t_slist *slist, long value);
+char	*unsigned_precision(char *string, t_slist *slist);
 void	unsigned_write(t_plist *plist, char *string, t_slist *slist);
 char	*unsigned_precision_with_zeros(t_slist *slist, char *string, char *send);
 char	*unsigned_write_zeros2(t_slist *slist, char *s, char *string);
 void	unsigned_write2(t_plist *plist, char *string);
 
+void	ifunsignedhh(t_plist *plist, t_slist *slist, va_list *args);
+void	ifunsignedh(t_plist *plist, t_slist *slist, va_list *args);
+void	ifunsignedll(t_plist *plist, t_slist *slist, va_list *args);
+void	ifunsignedl(t_plist *plist, t_slist *slist, va_list *args);
+
 void	ifhexadecimallower(t_plist *plist, t_slist *slist, va_list *args);
+char	*convert_return_hexadecimallower(unsigned long long int hexadecimal_value, char *send, t_slist *slist);
+char	*convert_hexadecimallower_hash(char *string);
 char	*reverse_hexadecimallower(char *string, t_slist *slist);
 void	hexadecimallower_write(t_plist *plist, char *string, t_slist *slist);
 char	*hexadecimallower_precision_with_zeros(t_slist *slist, char *string, char *send);
 char	*return_if_one_hexalowerdigit(t_slist *slist, char *send, long long int value);
 char	*hexalower_write_zeros2(t_slist *slist, char *send, char *string);
+
+void	ifhexadecimallowerhh(t_plist *plist, t_slist *slist, va_list *args);
+void	ifhexadecimallowerh(t_plist *plist, t_slist *slist, va_list *args);
+void	ifhexadecimallowerll(t_plist *plist, t_slist *slist, va_list *args);
+void	ifhexadecimallowerl(t_plist *plist, t_slist *slist, va_list *args);
 
 void	ifhexadecimalupper(t_plist *plist, t_slist *slist, va_list *args);
 char	*reverse_hexadecimalupper(char *string, t_slist *slist);

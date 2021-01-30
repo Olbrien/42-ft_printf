@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 04:35:53 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/27 04:54:05 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/30 06:18:16 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-static char		*unsigned_precision(char *string, t_slist *slist)
+char			*unsigned_precision(char *string, t_slist *slist)
 {
 	int		length_to_zeros;
 	int		total_length;
@@ -41,7 +41,7 @@ static char		*unsigned_precision(char *string, t_slist *slist)
 	return (temp);
 }
 
-static void		unsigned_star(t_slist *slist, long value)
+void			unsigned_star(t_slist *slist, long value)
 {
 	slist->width = 0;
 	if (value < 0)

@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 17:15:08 by marvin            #+#    #+#             */
-/*   Updated: 2021/01/29 06:05:49 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/30 06:01:34 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ static int		ft_itoa_len(long long n)
 	return (len);
 }
 
-static void		ft_itoa_write(char *finish, long long len, long long n, long long temp)
+static void		ft_itoa_write(char *finish, long long len,
+								long long n, long long temp)
 {
 	while (n > 9)
 	{
@@ -61,9 +62,9 @@ static void		ft_itoa_write(char *finish, long long len, long long n, long long t
 
 char			*ft_itoa_longlong(long long n)
 {
-	long long 				minus;
-	long long 				temp;
-	long long 				len;
+	long long				minus;
+	long long				temp;
+	long long				len;
 	char					*finish;
 
 	ft_itoa_minus(&n, &minus, &temp);

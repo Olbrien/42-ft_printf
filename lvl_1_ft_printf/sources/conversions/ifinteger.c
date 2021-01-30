@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 04:01:49 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/29 18:17:28 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/30 06:00:22 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char			*integer_precision(char *string, t_slist *slist)
 	return (temp);
 }
 
-char		*integer_precision_error(char *string, t_slist *slist,
+char			*integer_precision_error(char *string, t_slist *slist,
 											int value)
 {
 	if (slist->precision_error == 1 && slist->plus == 0)

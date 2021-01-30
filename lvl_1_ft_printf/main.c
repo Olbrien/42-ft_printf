@@ -7257,6 +7257,497 @@
 	printf("%d\n", do_ft_printf);
 }*/
 
+/*int	main()
+{
+
+	int do_printf;
+	int do_ft_printf;
+
+
+	static unsigned char 		uch_pos_1 = 100;
+	static unsigned short		ush_pos_1 = 3047;
+	static unsigned int		ui_pos_1 = 878023;
+	static unsigned long		ul_pos_1 = 22337203685477;
+	static unsigned long long	ull_pos_1 = 22337203685477;
+	static unsigned long long  ullmax = 9223372036854775807;
+	static unsigned long  		ulmax = 9223372036854775807;
+
+//////////////////////////////////////////////////////////////
+// 			      		  'hh' FLAGS TESTS
+//	   				     U UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%hhu", (unsigned char)45);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhu", (unsigned char)45);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhu", uch_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhu", uch_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhu", (unsigned char)255);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhu", (unsigned char)255);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhu", (unsigned char)255);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhu", (unsigned char)255);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhu", -255);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhu", -255);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhu", -251235);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhu", -251235);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+//////////////////////////////////////////////////////////////
+// 			      		  'h' FLAGS TESTS
+//	   				     U UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%hu", (unsigned short)385);
+	printf("\n");
+	do_ft_printf = ft_printf("%hu", (unsigned short)385);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hu", -251235);
+	printf("\n");
+	do_ft_printf = ft_printf("%hu", -251235);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hu", ush_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%hu", ush_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hu", (unsigned short)65535);
+	printf("\n");
+	do_ft_printf = ft_printf("%hu", (unsigned short)65535);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hu",-1);
+	printf("\n");
+	do_ft_printf = ft_printf("%hu",-1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+//////////////////////////////////////////////////////////////
+// 			      		  'll' FLAGS TESTS
+//	   				     U UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%llu", (unsigned long long)43);
+	printf("\n");
+	do_ft_printf = ft_printf("%llu", (unsigned long long)43);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llu", ull_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%llu", ull_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llu", 522337203685470ull);
+	printf("\n");
+	do_ft_printf = ft_printf("%llu", 522337203685470ull);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llu", ullmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%llu", ullmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llu", ullmax + 1);
+	printf("\n");
+	do_ft_printf = ft_printf("%llu", ullmax + 1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llu", ullmax + ullmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%llu", ullmax + ullmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%37llu", 522337203685470ull);
+	printf("\n");
+	do_ft_printf = ft_printf("%37llu", 522337203685470ull);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+//////////////////////////////////////////////////////////////
+// 			      		  'l' FLAGS TESTS
+//	   				     U UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+
+	printf("\n");
+	do_printf = printf("%lu", (unsigned long)32);
+	printf("\n");
+	do_ft_printf = ft_printf("%lu", (unsigned long)32);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lu", ul_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%lu", ul_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lu", 22337203685477ul);
+	printf("\n");
+	do_ft_printf = ft_printf("%lu", 22337203685477ul);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lu", ulmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%lu", ulmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%037lu", 22337203685477ul);
+	printf("\n");
+	do_ft_printf = ft_printf("%037lu", 22337203685477ul);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+}*/
+
+/*int	main()
+{
+	int do_printf;
+	int do_ft_printf;
+
+	static unsigned char 		uch_pos_1 = 100;
+	static unsigned short		ush_pos_1 = 3047;
+	static unsigned int		ui_pos_1 = 878023;
+	static unsigned long		ul_pos_1 = 22337203685477;
+	static unsigned long long	ull_pos_1 = 22337203685477;
+	static unsigned long long  ullmax = 9223372036854775807;
+	static unsigned long  		ulmax = 9223372036854775807;
+
+//////////////////////////////////////////////////////////////
+// 			      		  'hh' FLAGS TESTS
+//	   				     x UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%hhx", (unsigned char)45);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", (unsigned char)45);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhx", uch_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", uch_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhx", (unsigned char)255);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", (unsigned char)255);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhx", 8275);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", 8275);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhx", -8275);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", -8275);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhx", -2131238275);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", -2131238275);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhx", (unsigned short)213123242348275);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", (unsigned short)213123242348275);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+//////////////////////////////////////////////////////////////
+// 			      		   'h' FLAGS TESTS
+//	   				     x UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%hx", (unsigned short)213123242348275);
+	printf("\n");
+	do_ft_printf = ft_printf("%hx", (unsigned short)213123242348275);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hx", (unsigned short)385);
+	printf("\n");
+	do_ft_printf = ft_printf("%hx", (unsigned short)385);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hx", ush_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%hx", ush_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hx", (unsigned short)65535);
+	printf("\n");
+	do_ft_printf = ft_printf("%hx", (unsigned short)65535);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hx", -65535);
+	printf("\n");
+	do_ft_printf = ft_printf("%hx", -65535);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+//////////////////////////////////////////////////////////////
+// 			      		   'll' FLAGS TESTS
+//	   				     x UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%llx", (long long)43);
+	printf("\n");
+	do_ft_printf = ft_printf("%llx", (long long)43);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llx", ull_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%llx", ull_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llx", (long long)125125);
+	printf("\n");
+	do_ft_printf = ft_printf("%llx", (long long)125125);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llx", 522337203685470ull);
+	printf("\n");
+	do_ft_printf = ft_printf("%llx", 522337203685470ull);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llx", -522337203685470ull);
+	printf("\n");
+	do_ft_printf = ft_printf("%llx", -522337203685470ull);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llx", ullmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%llx", ullmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%37llx", 522337203685470ull);
+	printf("\n");
+	do_ft_printf = ft_printf("%37llx", 522337203685470ull);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%37llx", ullmax + ullmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%37llx", ullmax + ullmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%37llx", ullmax - ullmax - ullmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%37llx", ullmax - ullmax - ullmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+//////////////////////////////////////////////////////////////
+// 			      		   'l' FLAGS TESTS
+//	   				     x UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%lx", (unsigned long)32);
+	printf("\n");
+	do_ft_printf = ft_printf("%lx", (unsigned long)32);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lx", ul_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%lx", ul_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lx", 22337203685477ul);
+	printf("\n");
+	do_ft_printf = ft_printf("%lx", 22337203685477ul);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lx", ulmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%lx", ulmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%037lx", 22337203685477ul);
+	printf("\n");
+	do_ft_printf = ft_printf("%037lx", 22337203685477ul);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%037lx", 22337203685477ul + 40540540540540540ul);
+	printf("\n");
+	do_ft_printf = ft_printf("%037lx", 22337203685477ul + 40540540540540540ul);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%037lx", 22337203685477ul - 40540540540540540ul);
+	printf("\n");
+	do_ft_printf = ft_printf("%037lx", 22337203685477ul - 40540540540540540ul);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lx", -5125125125125215);
+	printf("\n");
+	do_ft_printf = ft_printf("%lx", -5125125125125215);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+}*/
+
 
 
 
@@ -14398,6 +14889,482 @@
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
+static unsigned char 		uch_pos_1 = 100;
+static unsigned short		ush_pos_1 = 3047;
+static unsigned int		ui_pos_1 = 878023;
+static unsigned long		ul_pos_1 = 22337203685477;
+static unsigned long long	ull_pos_1 = 22337203685477;
+static unsigned long long  ullmax = 9223372036854775807;
+static unsigned long  		ulmax = 9223372036854775807;
+
+//////////////////////////////////////////////////////////////
+// 			      		  'hh' FLAGS TESTS
+//	   				     U UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%hhu", (unsigned char)45);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhu", (unsigned char)45);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhu", uch_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhu", uch_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhu", (unsigned char)255);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhu", (unsigned char)255);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhu", (unsigned char)255);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhu", (unsigned char)255);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhu", -255);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhu", -255);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhu", -251235);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhu", -251235);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+//////////////////////////////////////////////////////////////
+// 			      		  'h' FLAGS TESTS
+//	   				     U UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%hu", (unsigned short)385);
+	printf("\n");
+	do_ft_printf = ft_printf("%hu", (unsigned short)385);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hu", -251235);
+	printf("\n");
+	do_ft_printf = ft_printf("%hu", -251235);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hu", ush_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%hu", ush_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hu", (unsigned short)65535);
+	printf("\n");
+	do_ft_printf = ft_printf("%hu", (unsigned short)65535);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hu",-1);
+	printf("\n");
+	do_ft_printf = ft_printf("%hu",-1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+//////////////////////////////////////////////////////////////
+// 			      		  'll' FLAGS TESTS
+//	   				     U UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%llu", (unsigned long long)43);
+	printf("\n");
+	do_ft_printf = ft_printf("%llu", (unsigned long long)43);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llu", ull_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%llu", ull_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llu", 522337203685470ull);
+	printf("\n");
+	do_ft_printf = ft_printf("%llu", 522337203685470ull);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llu", ullmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%llu", ullmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llu", ullmax + 1);
+	printf("\n");
+	do_ft_printf = ft_printf("%llu", ullmax + 1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llu", ullmax + ullmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%llu", ullmax + ullmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%37llu", 522337203685470ull);
+	printf("\n");
+	do_ft_printf = ft_printf("%37llu", 522337203685470ull);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+//////////////////////////////////////////////////////////////
+// 			      		  'l' FLAGS TESTS
+//	   				     U UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+
+	printf("\n");
+	do_printf = printf("%lu", (unsigned long)32);
+	printf("\n");
+	do_ft_printf = ft_printf("%lu", (unsigned long)32);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lu", ul_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%lu", ul_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lu", 22337203685477ul);
+	printf("\n");
+	do_ft_printf = ft_printf("%lu", 22337203685477ul);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lu", ulmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%lu", ulmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%037lu", 22337203685477ul);
+	printf("\n");
+	do_ft_printf = ft_printf("%037lu", 22337203685477ul);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+		static unsigned char 		uch_pos_1 = 100;
+	static unsigned short		ush_pos_1 = 3047;
+	static unsigned int		ui_pos_1 = 878023;
+	static unsigned long		ul_pos_1 = 22337203685477;
+	static unsigned long long	ull_pos_1 = 22337203685477;
+	static unsigned long long  ullmax = 9223372036854775807;
+	static unsigned long  		ulmax = 9223372036854775807;
+
+//////////////////////////////////////////////////////////////
+// 			      		  'hh' FLAGS TESTS
+//	   				     x UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%hhx", (unsigned char)45);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", (unsigned char)45);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhx", uch_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", uch_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhx", (unsigned char)255);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", (unsigned char)255);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhx", 8275);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", 8275);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhx", -8275);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", -8275);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhx", -2131238275);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", -2131238275);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhx", (unsigned short)213123242348275);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhx", (unsigned short)213123242348275);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+//////////////////////////////////////////////////////////////
+// 			      		   'h' FLAGS TESTS
+//	   				     x UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%hx", (unsigned short)213123242348275);
+	printf("\n");
+	do_ft_printf = ft_printf("%hx", (unsigned short)213123242348275);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hx", (unsigned short)385);
+	printf("\n");
+	do_ft_printf = ft_printf("%hx", (unsigned short)385);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hx", ush_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%hx", ush_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hx", (unsigned short)65535);
+	printf("\n");
+	do_ft_printf = ft_printf("%hx", (unsigned short)65535);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hx", -65535);
+	printf("\n");
+	do_ft_printf = ft_printf("%hx", -65535);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+//////////////////////////////////////////////////////////////
+// 			      		   'll' FLAGS TESTS
+//	   				     x UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%llx", (long long)43);
+	printf("\n");
+	do_ft_printf = ft_printf("%llx", (long long)43);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llx", ull_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%llx", ull_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llx", (long long)125125);
+	printf("\n");
+	do_ft_printf = ft_printf("%llx", (long long)125125);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llx", 522337203685470ull);
+	printf("\n");
+	do_ft_printf = ft_printf("%llx", 522337203685470ull);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llx", -522337203685470ull);
+	printf("\n");
+	do_ft_printf = ft_printf("%llx", -522337203685470ull);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llx", ullmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%llx", ullmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%37llx", 522337203685470ull);
+	printf("\n");
+	do_ft_printf = ft_printf("%37llx", 522337203685470ull);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%37llx", ullmax + ullmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%37llx", ullmax + ullmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%37llx", ullmax - ullmax - ullmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%37llx", ullmax - ullmax - ullmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+//////////////////////////////////////////////////////////////
+// 			      		   'l' FLAGS TESTS
+//	   				     x UNSIGN DIGIT TEST
+/////////////////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%lx", (unsigned long)32);
+	printf("\n");
+	do_ft_printf = ft_printf("%lx", (unsigned long)32);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lx", ul_pos_1);
+	printf("\n");
+	do_ft_printf = ft_printf("%lx", ul_pos_1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lx", 22337203685477ul);
+	printf("\n");
+	do_ft_printf = ft_printf("%lx", 22337203685477ul);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lx", ulmax);
+	printf("\n");
+	do_ft_printf = ft_printf("%lx", ulmax);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%037lx", 22337203685477ul);
+	printf("\n");
+	do_ft_printf = ft_printf("%037lx", 22337203685477ul);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%037lx", 22337203685477ul + 40540540540540540ul);
+	printf("\n");
+	do_ft_printf = ft_printf("%037lx", 22337203685477ul + 40540540540540540ul);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%037lx", 22337203685477ul - 40540540540540540ul);
+	printf("\n");
+	do_ft_printf = ft_printf("%037lx", 22337203685477ul - 40540540540540540ul);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lx", -5125125125125215);
+	printf("\n");
+	do_ft_printf = ft_printf("%lx", -5125125125125215);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
 }*/
 
 
@@ -14414,8 +15381,14 @@
 # define cconversions "nfge"
 
 // TODO
-// Ias começar a fazer o l ll h hh do i (o do d e do i já estão).
+// Ias começar a fazer o l ll h hh do x ('d', 'i', 'u', 'x' done);
 // Voltar a passar a norminette!
+// Depois de fazeres os l ll h hh, não te esqueças de vereficar os args e meter aquilo bem,
+// e confirmar. Porque muitos não tens a cena tipo (short int) Exemplo:
+// short int hexadecimal_value;
+// hexadecimal_value = (short int)va_args(*args, int);
+// testar todas as funções outravez depois de fazeres os l ll h hh. (Mexteste no
+// ifhexadecimallower.c mudaste para unsigned long long int a função convert)
 
 
 // Se quiseres, adiciona o erro quando as flags e isso duplicam e meter tipo "%5.3s" como output.

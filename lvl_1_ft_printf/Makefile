@@ -5,10 +5,13 @@ SOURCES = 	ft_printf.c\
 			sources/initializers.c\
 			sources/ft_strjoinchr.c\
 			sources/ft_itoa_unsigned.c\
+			sources/ft_itoa_unsigned_long.c\
+			sources/ft_itoa_unsigned_longlong.c\
 			sources/ft_itoa_long.c\
 			sources/ft_itoa_longlong.c\
 			\
 			sources/conversion.c\
+			sources/conversion2.c\
 			sources/conversions/ifpercent.c\
 			sources/conversions/ifcharacter.c\
 			sources/conversions/ifstring.c\
@@ -33,8 +36,10 @@ SOURCES = 	ft_printf.c\
 			\
 			sources/conversions/lengths/ifdigitlength.c\
 			sources/conversions/lengths/ifdigitlength2.c\
-			sources/conversions/lengths/ifdigitinteger.c\
-			sources/conversions/lengths/ifdigitinteger2.c\
+			sources/conversions/lengths/ifintegerlength.c\
+			sources/conversions/lengths/ifintegerlength2.c\
+			sources/conversions/lengths/ifunsignedlength.c\
+			sources/conversions/lengths/ifhexadecimallowerlength.c\
 			\
 			sources/specifier.c\
 			sources/specifiers/hasflags.c\

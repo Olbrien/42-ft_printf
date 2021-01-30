@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:19:49 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/29 05:06:34 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/30 06:00:59 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char		*digit_precision_error(char *string, t_slist *slist,
 	return (string);
 }
 
-char	*digit_plus(t_slist *slist, int value)
+char		*digit_plus(t_slist *slist, int value)
 {
 	char	*temp;
 	char	*send;
@@ -79,7 +79,7 @@ char	*digit_plus(t_slist *slist, int value)
 	return (send);
 }
 
-void			ifdigit(t_plist *plist, t_slist *slist, va_list *args)
+void		ifdigit(t_plist *plist, t_slist *slist, va_list *args)
 {
 	char	*send;
 	int		value;
