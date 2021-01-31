@@ -96,3 +96,8 @@ No tester do printf tens que fazer Make no ./test mesmo para dar reset, se não 
 ficam iguais.
 
 ./disable-test notintsubject_o  // Esta conversion não é para fazer.
+./enable-test bonus_length
+./enable-test bonus_af
+./enable-test bonus_sp
+./enable-test bonus_as
+./enable-test nocrash

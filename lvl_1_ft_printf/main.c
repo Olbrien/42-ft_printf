@@ -8028,6 +8028,263 @@
 
 // %[flags][width][.precision][length][specifier]
 
+/*int	main()
+{
+	int do_printf;
+	int do_ft_printf;
+
+//////////////////////////////////////////////////////////////
+//	   				      n FORMAT TEST
+/////////////////////////////////////////////////////////////
+
+	int n;
+	int m;
+	int a;
+	int b;
+
+	printf("\n");
+	do_printf = printf("pftt%nest", &n);
+	printf("\n-->%d", n);
+	printf("\n");
+	do_ft_printf = ft_printf("pftt%nest", &a);
+	printf("\n-->%d", a);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("pfttest%n", &n);
+	printf("\n-->%d", n);
+	printf("\n");
+	do_ft_printf = ft_printf("pfttest%n", &a);
+	printf("\n-->%d", a);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%npfttest", &n);
+	printf("\n-->%d", n);
+	printf("\n");
+	do_ft_printf = ft_printf("%npfttest", &a);
+	printf("\n-->%d", a);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("  %n pf%nttest", &n, &m);
+	printf("\n-->%d", n);
+	printf("\n-->%d", m);
+	printf("\n");
+	do_ft_printf = ft_printf("  %n pf%nttest", &a, &b);
+	printf("\n-->%d", a);
+	printf("\n-->%d", b);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("  %n p%sf%nttest", &n, "teste", &m);
+	printf("\n-->%d", n);
+	printf("\n-->%d", m);
+	printf("\n");
+	do_ft_printf = ft_printf("  %n p%sf%nttest", &a, "teste", &b);
+	printf("\n-->%d", a);
+	printf("\n-->%d", b);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("  %n p%sf%ntte%-2.15dst", &n, "teste", &m, 5123);
+	printf("\n-->%d", n);
+	printf("\n-->%d", m);
+	printf("\n");
+	do_ft_printf = ft_printf("  %n p%sf%ntte%-2.15dst", &a, "teste", &b, 5123);
+	printf("\n-->%d", a);
+	printf("\n-->%d", b);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%x  %n p%sf%ntte%-2.15dst",123123, &n, "teste", &m, 5123);
+	printf("\n-->%d", n);
+	printf("\n-->%d", m);
+	printf("\n");
+	do_ft_printf = ft_printf("%x  %n p%sf%ntte%-2.15dst",123123, &a, "teste", &b, 5123);
+	printf("\n-->%d", a);
+	printf("\n-->%d", b);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+//////////////////////////////////////////////////////////////
+// 			      		  'hh' FLAGS TESTS
+//	   				       n FORMAT TEST
+/////////////////////////////////////////////////////////////
+
+	signed char hhn;
+	signed char hhm;
+	signed char hha;
+	signed char hhb;
+
+	printf("\n");
+	do_printf = printf("pftt%hhnest", &hhn);
+	printf("\n-->%d", hhn);
+	printf("\n");
+	do_ft_printf = ft_printf("pftt%hhnest", &hha);
+	printf("\n-->%d", hha);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("pftwqeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet%hhnest", &hhn);
+	printf("\n-->%d", hhn);
+	printf("\n");
+	do_ft_printf = ft_printf("pftwqeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet%hhnest", &hha);
+	printf("\n-->%d", hha);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hhnpftt%hhnest", &hhn, &hhm);
+	printf("\n-->%d", hhn);
+	printf("\n-->%d", hhm);
+	printf("\n");
+	do_ft_printf = ft_printf("%hhnpftt%hhnest", &hha, &hhb);
+	printf("\n-->%d", hha);
+	printf("\n-->%d", hhb);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+//////////////////////////////////////////////////////////////
+// 			      		  'h' FLAGS TESTS
+//	   				       n FORMAT TEST
+/////////////////////////////////////////////////////////////
+
+	short int hn;
+	short int hm;
+	short int ha;
+	short int hb;
+
+
+
+	printf("\n");
+	do_printf = printf("pftt%hnest", &hn);
+	printf("\n-->%d", hn);
+	printf("\n");
+	do_ft_printf = ft_printf("pftt%hnest", &ha);
+	printf("\n-->%d", ha);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("pftt%hnest", &hn);
+	printf("\n-->%d", hn);
+	printf("\n");
+	do_ft_printf = ft_printf("pftt%hnest", &ha);
+	printf("\n-->%d", ha);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("pftwqeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet%hnest", &hn);
+	printf("\n-->%d", hn);
+	printf("\n");
+	do_ft_printf = ft_printf("pftwqeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet%hnest", &ha);
+	printf("\n-->%d", ha);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%hnpftt%hnest", &hn, &hm);
+	printf("\n-->%d", hn);
+	printf("\n-->%d", hm);
+	printf("\n");
+	do_ft_printf = ft_printf("%hnpftt%hnest", &ha, &hb);
+	printf("\n-->%d", ha);
+	printf("\n-->%d", hb);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+//////////////////////////////////////////////////////////////
+// 			      		  'll' FLAGS TESTS
+//	   				       n FORMAT TEST
+/////////////////////////////////////////////////////////////
+
+
+	long long int lln;
+	long long int llm;
+	long long int lla;
+	long long int llb;
+
+	printf("\n");
+	do_printf = printf("pftt%llnest", &lln);
+	printf("\n-->%lld", lln);
+	printf("\n");
+	do_ft_printf = ft_printf("pftt%llnest", &lla);
+	printf("\n-->%lld", lla);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%llnpftt%llnest", &lln, &llm);
+	printf("\n-->%lld", lln);
+	printf("\n-->%lld", llm);
+	printf("\n");
+	do_ft_printf = ft_printf("%llnpftt%llnest", &lla, &llb);
+	printf("\n-->%lld", lla);
+	printf("\n-->%lld", llb);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+//////////////////////////////////////////////////////////////
+// 			      		  'l' FLAGS TESTS
+//	   				       n FORMAT TEST
+/////////////////////////////////////////////////////////////
+
+	long int ln;
+	long int lm;
+	long int la;
+	long int lb;
+
+	printf("\n");
+	do_printf = printf("pftt%lnest", &ln);
+	printf("\n-->%ld", ln);
+	printf("\n");
+	do_ft_printf = ft_printf("pftt%lnest", &la);
+	printf("\n-->%ld", la);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lnpftt%lnest", &ln, &lm);
+	printf("\n-->%ld", ln);
+	printf("\n-->%ld", lm);
+	printf("\n");
+	do_ft_printf = ft_printf("%lnpftt%lnest", &la, &lb);
+	printf("\n-->%ld", la);
+	printf("\n-->%ld", lb);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+}*/
 
 
 
@@ -8041,18 +8298,11 @@
 # define cconversions "nfge"
 
 // TODO
-// Ias começar a fazer o l ll h hh do x ('d', 'i', 'u', 'x' done);
-// Voltar a passar a norminette!
-// Depois de fazeres os l ll h hh, não te esqueças de vereficar os args e meter aquilo bem,
-// e confirmar. Porque muitos não tens a cena tipo (short int) Exemplo:
-// short int hexadecimal_value;
-// hexadecimal_value = (short int)va_args(*args, int);
-// testar todas as funções outravez depois de fazeres os l ll h hh. (Mexteste no
-// ifhexadecimallower.c mudaste para unsigned long long int a função convert)
-
+// Conversion bonus 'n' done. Falta o 'g', 'e' e 'f'.
 
 // Se quiseres, adiciona o erro quando as flags e isso duplicam e meter tipo "%5.3s" como output.
 // Se quiseres, organiza os ifpercent, ifchar bla bla, porque há uns que não usam precision,
 // ou minus width etc.
+
 
 // Eu não fiz o l h do string e char. Não sei que diferença faz ter ou não. Perguntar.

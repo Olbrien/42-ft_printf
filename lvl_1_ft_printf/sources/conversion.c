@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:07:37 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/31 04:45:20 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/31 18:59:53 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,19 @@ static void			conversion_path_d(t_plist *plist,
 	}
 }
 
+static void			conversion2(t_plist *plist, va_list *args, t_slist *slist)
+{
+	int		i;
+	char	*format;
+
+	i = plist->format_count;
+	format = plist->format;
+	if (format[i] == 'X')
+		conversion_path_x_upper(plist, args, slist);
+	else if (format[i] == 'n')
+		conversion_path_n(plist, args, slist);
+}
+
 void				conversion(t_plist *plist, va_list *args, t_slist *slist)
 {
 	int		i;
@@ -104,6 +117,6 @@ void				conversion(t_plist *plist, va_list *args, t_slist *slist)
 		conversion_path_u(plist, args, slist);
 	else if (format[i] == 'x')
 		conversion_path_x_lower(plist, args, slist);
-	else if (format[i] == 'X')
-		conversion_path_x_upper(plist, args, slist);
+	else if (format[i] == 'X' || format[i] == 'n')
+		conversion2(plist, args, slist);
 }

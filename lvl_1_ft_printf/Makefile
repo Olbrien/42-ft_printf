@@ -33,6 +33,7 @@ SOURCES = 	ft_printf.c\
 			sources/conversions/ifhexadecimalupper.c\
 			sources/conversions/ifhexadecimalupper2.c\
 			sources/conversions/ifhexadecimalupper3.c\
+			sources/conversions/ifn.c\
 			\
 			sources/conversions/lengths/ifdigitlength.c\
 			sources/conversions/lengths/ifdigitlength2.c\
@@ -41,6 +42,7 @@ SOURCES = 	ft_printf.c\
 			sources/conversions/lengths/ifunsignedlength.c\
 			sources/conversions/lengths/ifhexadecimallowerlength.c\
 			sources/conversions/lengths/ifhexadecimalupperlength.c\
+			sources/conversions/lengths/ifnlength.c\
 			\
 			sources/specifier.c\
 			sources/specifiers/hasflags.c\
