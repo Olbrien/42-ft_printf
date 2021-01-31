@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 13:43:24 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/26 23:01:49 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/31 05:53:45 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,14 @@ int				ft_printf(const char *format, ...)
 
 	if (format == NULL)
 		return (0);
-	initialize_slist(&slist);
-	initialize_plist(&plist, (char *)format);
+	initialize_lists(&plist, (char *)format, &slist);
 	va_start(args, format);
 	while (plist.format_count < plist.format_length)
 	{
 		if (format[plist.format_count] == '%')
 		{
 			plist.format_count++;
+			initialize_slist(&slist);
 			parse(&plist, &args, &slist);
 		}
 		else if (format[plist.format_count] != '%')

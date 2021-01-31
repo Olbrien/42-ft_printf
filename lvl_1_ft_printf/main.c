@@ -8035,6 +8035,8 @@
 
 
 
+
+
 // isto é para me lembrar, e depois para por lá em cima.
 # define cconversions "nfge"
 

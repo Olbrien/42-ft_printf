@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:00:25 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/25 19:32:28 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/31 06:03:24 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ void	initialize_slist(t_slist *slist)
 	slist->free = 0;
 }
 
-void	initialize_plist(t_plist *plist, char *format)
+void	initialize_lists(t_plist *plist, char *format, t_slist *slist)
 {
 	plist->format = (char *)format;
 	plist->format_count = 0;
 	plist->format_length = ft_strlen(format);
 	plist->final_format = NULL;
 	plist->final_format_lenght = 0;
+	initialize_slist(slist);
 }

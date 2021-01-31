@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 03:51:25 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/30 18:03:52 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/01/31 05:53:37 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ char	*ft_itoa_unsigned_longlong(unsigned long long int n);
 char	*ft_itoa_long(long n);
 char	*ft_itoa_longlong(long long n);
 
+void	initialize_lists(t_plist *plist, char *format, t_slist *slist);
 void	initialize_slist(t_slist *slist);
-void	initialize_plist(t_plist *plist, char *format);
 
 
 void	conversion(t_plist *plist, va_list *args, t_slist *slist);
