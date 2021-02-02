@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 03:51:25 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/31 18:25:33 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/02 01:18:48 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <stdint.h>
 # include <float.h>
 
-# define CONVERSIONS	"cspdiuxX%n"
+# define CONVERSIONS	"cspdiuxX%nf"
 # define SPECIFIERS		"-+0.*lh# 123456789"
 # define FLAGS			"-+0 #"
 # define WIDTH			"123456789"
@@ -76,6 +76,7 @@ char	*ft_itoa_unsigned_long(unsigned long int n);
 char	*ft_itoa_unsigned_longlong(unsigned long long int n);
 char	*ft_itoa_long(long n);
 char	*ft_itoa_longlong(long long n);
+char	*ft_itoa_double(double n);
 
 void	initialize_lists(t_plist *plist, char *format, t_slist *slist);
 void	initialize_slist(t_slist *slist);
@@ -85,6 +86,7 @@ void	conversion(t_plist *plist, va_list *args, t_slist *slist);
 void	conversion_path_x_lower(t_plist *plist, va_list *args, t_slist *slist);
 void	conversion_path_x_upper(t_plist *plist, va_list *args, t_slist *slist);
 void	conversion_path_n(t_plist *plist, va_list *args, t_slist *slist);
+void	conversion_path_f(t_plist *plist, va_list *args, t_slist *slist);
 
 void	ifpercent(t_plist *plist, t_slist *slist);
 
@@ -180,6 +182,17 @@ void	ifnhh(t_plist *plist, va_list *args);
 void	ifnh(t_plist *plist, va_list *args);
 void	ifnll(t_plist *plist, va_list *args);
 void	ifnl(t_plist *plist, va_list *args);
+
+void	iffloat(t_plist *plist, t_slist *slist, va_list *args);
+char	*float_plus(t_slist *slist, double value);
+void	float_write(t_plist *plist, char *string, t_slist *slist);
+char	*float_precision(char *string, t_slist *slist);
+char	*float_precision_error(char *string, t_slist *slist, int value);
+int		float_write_width_greater(t_plist *plist, t_slist *slist, int i, int length);
+char	*float_write_zeros2(t_slist *slist, char *s, char *string);
+char	*float_precision_with_zeros(t_slist *slist, char *string, char *send);
+void	float_space(t_plist *plist, t_slist *slist, char *string, int length);
+void	free_string_float(char *string, t_slist *slist);
 
 void	specifier(t_plist *plist, va_list *args, t_slist *slist);
 
