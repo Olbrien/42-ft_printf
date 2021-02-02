@@ -6,11 +6,34 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 07:17:53 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/31 18:25:38 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/01 03:50:27 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+void			conversion_path_f(t_plist *plist,
+									va_list *args, t_slist *slist)
+{
+	char	*format;
+	int		i;
+
+	i = plist->format_count;
+	format = plist->format;
+	if (format[i] == 'f')
+	{
+		if (slist->l == 1)
+			printf("l");//iffloatl(plist, args);
+		else if (slist->l == 2)
+			printf("ll");//iffloatll(plist, args);
+		else if (slist->h == 1)
+			printf("h");//iffloath(plist, args);
+		else if (slist->h == 2)
+			printf("hh");//iffloathh(plist, args);
+		else
+			iffloat(plist, slist, args);
+	}
+}
 
 void			conversion_path_n(t_plist *plist,
 									va_list *args, t_slist *slist)
