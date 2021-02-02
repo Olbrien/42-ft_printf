@@ -9,6 +9,7 @@ SOURCES = 	ft_printf.c\
 			sources/ft_itoa_unsigned_longlong.c\
 			sources/ft_itoa_long.c\
 			sources/ft_itoa_longlong.c\
+			sources/ft_itoa_double.c\
 			\
 			sources/conversion.c\
 			sources/conversion2.c\
@@ -34,6 +35,9 @@ SOURCES = 	ft_printf.c\
 			sources/conversions/ifhexadecimalupper2.c\
 			sources/conversions/ifhexadecimalupper3.c\
 			sources/conversions/ifn.c\
+			sources/conversions/iffloat.c\
+			sources/conversions/iffloat2.c\
+			sources/conversions/iffloat3.c\
 			\
 			sources/conversions/lengths/ifdigitlength.c\
 			sources/conversions/lengths/ifdigitlength2.c\
