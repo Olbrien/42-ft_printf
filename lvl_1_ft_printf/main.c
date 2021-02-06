@@ -8301,9 +8301,9 @@ int	main()
 
 
 	printf("\n");
-	do_printf = printf("this %f float", 1.5);
+	do_printf = printf("this %f float", 1.9999999);
 	printf("\n");
-	do_ft_printf = ft_printf("this %f float", 1.5);
+	do_ft_printf = ft_printf("this %f float", 1.9999999);
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
@@ -8312,6 +8312,14 @@ int	main()
 	do_printf = printf("%f", 7.5);
 	printf("\n");
 	do_ft_printf = ft_printf("%f", 7.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%f", 8.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%f", 8.5);
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
@@ -8594,6 +8602,884 @@ int	main()
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
+	printf("\n");
+	do_printf = printf("%f", -0.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%f", -0.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%f", 0.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%f", 0.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//	   		      precision 0 tests
+/////////////////////////////////////////////////
+printf("\nPRECISION 0");
+printf("\nPRECISION 0");
+printf("\nPRECISION 0");
+printf("\nPRECISION 0\n");
+
+	printf("\n");
+	do_printf = printf("%.0f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+	printf("\n");
+	do_printf = printf("%.0f%.0f", 0.0, 2.2);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f%.0f", 0.0, 2.2);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("this %.0f float", 1.6);
+	printf("\n");
+	do_ft_printf = ft_printf("this %.0f float", 1.6);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 7.4);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 7.4);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 7.6);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 7.6);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", -7.6);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", -7.6);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", -7.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", -7.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", -7.4);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", -7.4);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 7.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 7.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 0.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 0.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", -0.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", -0.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 0.6);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 0.6);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", -0.6);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", -0.6);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 0.50000001);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 0.50000001);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", -0.50000001);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", -0.50000001);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 1.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 1.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 2.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 2.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 3.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 3.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 100.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 100.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", -101.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", -101.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", -958.125);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", -958.125);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 23.00041);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 23.00041);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", -7.00036);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", -7.00036);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 573.924);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 573.924);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 573.994);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 573.994);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.0f", 574.994);
+	printf("\n");
+	do_ft_printf = ft_printf("%.0f", 574.994);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//	   		      precision 1 tests
+/////////////////////////////////////////////////
+
+	printf("\nPRECISION 1");
+	printf("\nPRECISION 1");
+	printf("\nPRECISION 1");
+	printf("\nPRECISION 1\n");
+
+	printf("\n");
+	do_printf = printf("%.1f", 574.994);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", 574.994);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("this %.1f float", 1.5);
+	printf("\n");
+	do_ft_printf = ft_printf("this %.1f float", 1.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", 7.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", 7.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", -7.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", -7.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", -6.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", -6.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", 6.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", 6.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", -1.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", -1.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", 1.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", 1.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", -3.85);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", -3.85);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", 573.924);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", 573.924);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", -958.125);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", -958.125);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", 23.00041);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", 23.00041);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", 23.051);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", 23.051);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", 23.050);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", 23.050);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", 24.151);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", 24.151);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", 24.150);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", 24.150);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1f", -0.00032);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1f", -0.00032);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//	   		      precision 3 tests
+/////////////////////////////////////////////////
+
+	printf("\nPRECISION 3");
+	printf("\nPRECISION 3");
+	printf("\nPRECISION 3");
+	printf("\nPRECISION 3\n");
+
+	printf("\n");
+	do_printf = printf("%.3f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.3f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.3f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.3f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("this %.3f float", 1.5);
+	printf("\n");
+	do_ft_printf = ft_printf("this %.3f float", 1.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.3f", 7.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%.3f", 7.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.3f", 1.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.3f", 1.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.3f", 23.00041);
+	printf("\n");
+	do_ft_printf = ft_printf("%.3f", 23.00041);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.3f", 23.00041);
+	printf("\n");
+	do_ft_printf = ft_printf("%.3f", 23.00041);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.3f", 0.000039);
+	printf("\n");
+	do_ft_printf = ft_printf("%.3f", 0.000039);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.3f", -7.00036);
+	printf("\n");
+	do_ft_printf = ft_printf("%.3f", -7.00036);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//	   		      precision 7 tests
+/////////////////////////////////////////////////
+
+	printf("\nPRECISION 7");
+	printf("\nPRECISION 7");
+	printf("\nPRECISION 7");
+	printf("\nPRECISION 7\n");
+
+	printf("\n");
+	do_printf = printf("%.7f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("this %.7f float", 1.5);
+	printf("\n");
+	do_ft_printf = ft_printf("this %.7f float", 1.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", -958.125);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", -958.125);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", -7.00036);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", -7.00036);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", 0.0000001);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", 0.0000001);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", 999.9999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", 999.9999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", -99.9999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", -99.9999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", 9873.000001);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", 9873.000001);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", -0.999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", -0.999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", -0.999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", -0.999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//	   		  precision 7 rounding tests
+/////////////////////////////////////////////////
+
+	printf("\nPRECISION 7 rounding");
+	printf("\nPRECISION 7 rounding");
+	printf("\nPRECISION 7 rounding");
+	printf("\nPRECISION 7 rounding\n");
+
+	printf("\n");
+	do_printf = printf("%.7f", 23.375094499);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", 23.375094499);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", -985.765426499);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", -985.765426499);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", 43.4399999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", 43.4399999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", 43.43999949);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", 43.43999949);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", 1.99999949);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", 1.99999949);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", 3.9999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", 3.9999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7f", 4.99999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7f", 4.99999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//	   		  precision 8 rounding tests
+/////////////////////////////////////////////////
+
+	printf("\nPRECISION 8");
+	printf("\nPRECISION 8");
+	printf("\nPRECISION 8");
+	printf("\nPRECISION 8\n");
+
+	printf("\n");
+	do_printf = printf("%.8f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%.8f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("this %.8f float", 1.5);
+	printf("\n");
+	do_ft_printf = ft_printf("this %.8f float", 1.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.8f", 573.924);
+	printf("\n");
+	do_ft_printf = ft_printf("%.8f", 573.924);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.8f", 23.00041);
+	printf("\n");
+	do_ft_printf = ft_printf("%.8f", 23.00041);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.8f", 0.00000039);
+	printf("\n");
+	do_ft_printf = ft_printf("%.8f", 0.00000039);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.8f", 9873.000001);
+	printf("\n");
+	do_ft_printf = ft_printf("%.8f", 9873.000001);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.8f", 999.9999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.8f", 999.9999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.8f", 999.99999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.8f", 999.99999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.8f", 999.999999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.8f", 999.999999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//	   		  precision 10 rounding tests
+/////////////////////////////////////////////////
+
+	printf("\nPRECISION 10");
+	printf("\nPRECISION 10");
+	printf("\nPRECISION 10");
+	printf("\nPRECISION 10\n");
+
+	printf("\n");
+	do_printf = printf("%.10f", 999.9999999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.10f", 999.9999999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.10f", 0.0000000001);
+	printf("\n");
+	do_ft_printf = ft_printf("%.10f", 0.0000000001);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.10f", 999999999999.9999999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.10f", 999999999999.9999999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.10f", -999999999999.9999999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.10f", -999999999999.9999999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.10f", -999999999999.99999999999999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%.10f", -999999999999.99999999999999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//	   		  precision 11 rounding tests
+/////////////////////////////////////////////////
+
+	printf("\nPRECISION 11");
+	printf("\nPRECISION 11");
+	printf("\nPRECISION 11");
+	printf("\nPRECISION 11\n");
+
+	printf("\n");
+	do_printf = printf("%.11f", 1.025978541236587568);
+	printf("\n");
+	do_ft_printf = ft_printf("%.11f", 1.025978541236587568);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.11f", 99.999999999990000000);
+	printf("\n");
+	do_ft_printf = ft_printf("%.11f", 99.999999999990000000);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//	   		  precision 12 rounding tests
+/////////////////////////////////////////////////
+
+	printf("\nPRECISION 12");
+	printf("\nPRECISION 12");
+	printf("\nPRECISION 12");
+	printf("\nPRECISION 12\n");
+
+	printf("\n");
+	do_printf = printf("%.12f", 99.999999999990000000);
+	printf("\n");
+	do_ft_printf = ft_printf("%.12f", 99.999999999990000000);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.12f", 1.025978548534310421);
+	printf("\n");
+	do_ft_printf = ft_printf("%.12f", 1.025978548534310421);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.12f", 0.000000000001000000);
+	printf("\n");
+	do_ft_printf = ft_printf("%.12f", 0.000000000001000000);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//	   		  precision 15 rounding tests
+/////////////////////////////////////////////////
+
+	printf("\nPRECISION 15");
+	printf("\nPRECISION 15");
+	printf("\nPRECISION 15");
+	printf("\nPRECISION 15\n");
+
+	printf("\n");
+	do_printf = printf("%.15f", 1.025978548534310421);
+	printf("\n");
+	do_ft_printf = ft_printf("%.15f", 1.025978548534310421);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.15f", 0.999999999999999000);
+	printf("\n");
+	do_ft_printf = ft_printf("%.15f", 0.999999999999999000);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
 
 }
 
@@ -8607,7 +9493,7 @@ int	main()
 
 // TODO
 // Conversion bonus 'n' done. Falta o 'g', 'e' e 'f'.
-// ias começar a arredondar o //Floats Prec 0
+// ias começar a arredondar o //Floats with altform,~
 
 // Se quiseres, adiciona o erro quando as flags e isso duplicam e meter tipo "%5.3s" como output.
 // Se quiseres, organiza os ifpercent, ifchar bla bla, porque há uns que não usam precision,
@@ -8616,5 +9502,3 @@ int	main()
 
 // Eu não fiz o l h do string e char. Não sei que diferença faz ter ou não. Perguntar.
 
-// Perguntar ao Dimitri se o f dele faz 200000000000000000000.2000000000000000000000000 com
-// números exagerados.
