@@ -9,7 +9,6 @@ SOURCES = 	ft_printf.c\
 			sources/ft_itoa_unsigned_longlong.c\
 			sources/ft_itoa_long.c\
 			sources/ft_itoa_longlong.c\
-			sources/ft_itoa_double.c\
 			\
 			sources/conversion.c\
 			sources/conversion2.c\

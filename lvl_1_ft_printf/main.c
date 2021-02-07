@@ -8284,12 +8284,50 @@
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("pft%5ntest", &ln);
+	printf("\n-->%ld", ln);
+	printf("\n");
+	do_ft_printf = ft_printf("pft%5ntest", &la);
+	printf("\n-->%ld", la);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("pft%5.5ntest", &n);
+	printf("\n-->%ld", ln);
+	printf("\n");
+	do_ft_printf = ft_printf("pft%5.5ntest", &n);
+	printf("\n-->%ld", la);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("pft%*.ntest%d", 5, &n, 123);
+	printf("\n-->%ld", ln);
+	printf("\n");
+	do_ft_printf = ft_printf("pft%*.ntest%d", 5, &n, 123);
+	printf("\n-->%ld", la);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("pft%*.*ntest%d", 5, 5, &n, 123);
+	printf("\n-->%ld", ln);
+	printf("\n");
+	do_ft_printf = ft_printf("pft%*.*ntest%d", 5, 5, &n, 123);
+	printf("\n-->%ld", la);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
 }*/
 
-
-
-
-int	main()
+/*int	main()
 {
 	int do_printf;
 	int do_ft_printf;
@@ -9481,7 +9519,722 @@ printf("\nPRECISION 0\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
 
-}
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//	   		  		 # Flag Test
+/////////////////////////////////////////////////
+
+
+	printf("\n");
+	do_printf = printf("%#.0f", 0.8);
+	printf("\n");
+	do_ft_printf = ft_printf("%#.0f", 0.8);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#.0f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%#.0f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#.1f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%#.1f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#.0f", 7.4);
+	printf("\n");
+	do_ft_printf = ft_printf("%#.0f", 7.4);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#.1f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%#.1f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#.0f", -7.4);
+	printf("\n");
+	do_ft_printf = ft_printf("%#.0f", -7.4);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#.1f", -7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%#.1f", -7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#.0f", 1.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%#.0f", 1.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#.0f", 1.6);
+	printf("\n");
+	do_ft_printf = ft_printf("%#.0f", 1.6);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#.0f", 0.6);
+	printf("\n");
+	do_ft_printf = ft_printf("%#.0f", 0.6);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#.0f", 0.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%#.0f", 0.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#.0f", 2131230.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%#.0f", 2131230.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//	   		  		 + Flag Test
+/////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%+.0f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%+.0f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%+.0f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%+.0f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%+.0f", -2.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%+.0f", -2.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%+.3f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%+.3f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%+.3f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%+.3f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%+.0f", 7.4);
+	printf("\n");
+	do_ft_printf = ft_printf("%+.0f", 7.4);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%+.3f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%+.3f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%+.0fand%+.0f", -7.4, 23.4);
+	printf("\n");
+	do_ft_printf = ft_printf("%+.0fand%+.0f", -7.4, 23.4);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%+.0f and %+.0f", -7.4, 23.4);
+	printf("\n");
+	do_ft_printf = ft_printf("%+.0f and %+.0f", -7.4, 23.4);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+// 		  		   Width Flag Test
+/////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%5.0f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%5.0f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%5.0f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%5.0f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%5.3f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%5.3f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%5.3f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%5.3f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%5.0f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%5.0f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%5.1f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%5.1f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%5.3f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%5.3f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%5.6f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%5.6f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%5.6f", -7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%5.6f", -7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%9.6f", -7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%9.6f", -7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%10.6f", -7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%10.6f", -7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+// 		  		   Zero Flag Test
+/////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%05.0f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%05.0f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%05.0f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%05.0f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%05.0f", -0.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%05.0f", -0.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%05.3f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%05.3f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%05.6f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%05.6f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%05.3f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%05.3f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%012.3f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%012.3f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%012.1f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%012.1f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%012.0f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%012.0f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%02.0f", 10101.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%02.0f", 10101.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%025.0f", 10101.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%025.0f", 10101.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%015.8f", 10101.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%015.8f", 10101.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%015.8f", 10101.6199999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%015.8f", 10101.6199999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%015f", 10101.6199999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%015f", 10101.6199999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%03f", 2.1);
+	printf("\n");
+	do_ft_printf = ft_printf("%03f", 2.1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+// 		  		   - Flag Test
+/////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%-5.0f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%-5.0f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-5.0f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%-5.0f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-5.0f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%-5.0f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-5.6f", -7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%-5.6f", -7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-5.6f", -7.123123);
+	printf("\n");
+	do_ft_printf = ft_printf("%-5.6f", -7.123123);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-11.6f", -7.123123);
+	printf("\n");
+	do_ft_printf = ft_printf("%-11.6f", -7.123123);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-10.6f", -7.123123);
+	printf("\n");
+	do_ft_printf = ft_printf("%-10.6f", -7.123123);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-9.6f", -7.123123);
+	printf("\n");
+	do_ft_printf = ft_printf("%-9.6f", -7.123123);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-8.6f", -7.123123);
+	printf("\n");
+	do_ft_printf = ft_printf("%-8.6f", -7.123123);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+// 		  		  - and 0 Flag Test
+/////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%-05.0f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%-05.0f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+
+	printf("\n");
+	do_printf = printf("%-05.0f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%-05.0f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-05.3f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%-05.3f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-05.1f", -7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%-05.1f", -7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-05.6f", -7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%-05.6f", -7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-05.6f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%-05.6f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-05.6f", 1237.1231233);
+	printf("\n");
+	do_ft_printf = ft_printf("%-05.6f", 1237.1231233);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//  field width and zero padding and left justify Flag Test
+/////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%0-5.0f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%0-5.0f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%0-5.0f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%0-5.0f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%0-5.3f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%0-5.3f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%0-5.3f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%0-5.3f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%0-5.6f", -7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%0-5.6f", -7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//  field width and zero padding and left justify Flag Test and #
+/////////////////////////////////////////////////
+
+
+	printf("\n");
+	do_printf = printf("%#-5.0f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%#-5.0f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#-5.0f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%#-5.0f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%#-5.3f", -7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%#-5.3f", -7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+
+/////////////////////////////////////////////////
+//  			    f FLOAT TESTS
+//  		  Testes que me deram errado
+/////////////////////////////////////////////////
+
+
+	printf("\n");
+	do_printf = printf("%+-05.0f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%+-05.0f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-+5.0f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%-+5.0f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-+5.3f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%-+5.3f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-+5.0f", -7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%-+5.0f", -7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-+5.3f", -7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%-+5.3f", -7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-+5.6f", -7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%-+5.6f", -7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%- 5.0f", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%- 5.0f", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%- 5.0f", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%- 5.0f", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%- 5.0f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%- 5.0f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%- 5.1f", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%- 5.1f", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.*f", -3, 3.1415926535);
+	printf("\n");
+	do_ft_printf = ft_printf("%.*f", -3, 3.1415926535);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+}*/
+
 
 
 
@@ -9489,11 +10242,13 @@ printf("\nPRECISION 0\n");
 
 
 // isto é para me lembrar, e depois para por lá em cima.
-# define cconversions "nfge"
+# define cconversions "ge"
 
 // TODO
 // Conversion bonus 'n' done. Falta o 'g', 'e' e 'f'.
-// ias começar a arredondar o //Floats with altform,~
+// ias fazer a norminette e começar a fazer o l ll h hh dos floats.
+
+// não te esquecas de alterar oo hasprecision.c consoante a necessidade do 'g' e 'e'.
 
 // Se quiseres, adiciona o erro quando as flags e isso duplicam e meter tipo "%5.3s" como output.
 // Se quiseres, organiza os ifpercent, ifchar bla bla, porque há uns que não usam precision,
