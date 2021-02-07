@@ -10,3 +10,7 @@ Já fizeste o Float para casos normais e arredondados. Vais para o precision ago
 Update: 06-02-2021
 
 Já fizeste o Float para os precisions. Vais agora para os # (altform).
+
+Update: 07-02-2021
+
+Floats já estão bons. Não há ll, l, h, hh de floats. Vais fazer agora a norminette e começar o 'e'.
