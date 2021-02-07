@@ -95,9 +95,18 @@ E pedir-lhe para ajudar como fazer mallocs mais eficazes para usar menos Free's.
 No tester do printf tens que fazer Make no ./test mesmo para dar reset, se não os resultados
 ficam iguais.
 
-./disable-test notintsubject_o  // Esta conversion não é para fazer.
+./reset-to-default-enabled-tests
+./disable-test notintsubject_o
 ./enable-test bonus_length
 ./enable-test bonus_af
 ./enable-test bonus_sp
 ./enable-test bonus_as
+./enable-test "bonus*_f_"
+./enable-test "bonus*_n_"
 ./enable-test nocrash
+./disable-test "bonus_notrequired"
+./test
+
+Nas options-config.ini alterar o t pequeno para T grande e meter o timeout tipo 5s
+./make re
+
