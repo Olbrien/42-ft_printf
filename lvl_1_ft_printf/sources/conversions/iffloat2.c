@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 03:43:04 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/01 03:58:14 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/07 04:28:31 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static char		*float_write_zeros(t_slist *slist, char *string)
 			add_zeros--;
 		}
 		s[i] = '\0';
-		s = float_write_zeros2(slist, s, string);
+		s = float_write_zeros2(s, string);
 		if (slist->free == 0)
 			free(string);
 		slist->free = 1;

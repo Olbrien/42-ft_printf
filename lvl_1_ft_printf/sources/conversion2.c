@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 07:17:53 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/01 03:50:27 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/07 06:16:24 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,15 @@ void			conversion_path_n(t_plist *plist,
 	if (format[i] == 'n')
 	{
 		if (slist->l == 1)
-			ifnl(plist, args);
+			ifnl(plist, slist, args);
 		else if (slist->l == 2)
-			ifnll(plist, args);
+			ifnll(plist, slist, args);
 		else if (slist->h == 1)
-			ifnh(plist, args);
+			ifnh(plist, slist, args);
 		else if (slist->h == 2)
-			ifnhh(plist, args);
+			ifnhh(plist, slist, args);
 		else
-			ifn(plist, args);
+			ifn(plist, slist, args);
 	}
 }
 
