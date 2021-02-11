@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 17:15:08 by marvin            #+#    #+#             */
-/*   Updated: 2021/01/25 22:46:02 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 05:43:20 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		ft_itoa_minus(int *n, int *minus, int *temp)
+static void	ft_itoa_minus(int *n, int *minus, int *temp)
 {
 	if (*n == -2147483648)
 	{
@@ -34,9 +34,9 @@ static void		ft_itoa_minus(int *n, int *minus, int *temp)
 	}
 }
 
-static int		ft_itoa_len(int n)
+static int	ft_itoa_len(int n)
 {
-	int			len;
+	int	len;
 
 	len = 0;
 	while (n > 9)
@@ -48,7 +48,7 @@ static int		ft_itoa_len(int n)
 	return (len);
 }
 
-static void		ft_itoa_write(char *finish, int len, int n, int temp)
+static void	ft_itoa_write(char *finish, int len, int n, int temp)
 {
 	while (n > 9)
 	{
@@ -59,7 +59,7 @@ static void		ft_itoa_write(char *finish, int len, int n, int temp)
 	finish[len] = n + '0';
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int			minus;
 	int			temp;
@@ -70,14 +70,16 @@ char			*ft_itoa(int n)
 	len = ft_itoa_len(n);
 	if (minus == -1)
 	{
-		if (!(finish = malloc((len + 2) * sizeof(char))))
+		finish = malloc((len + 2) * sizeof(char));
+		if (finish == NULL)
 			return (NULL);
 		len++;
 		finish[0] = '-';
 	}
 	else
 	{
-		if (!(finish = malloc((len + 1) * sizeof(char))))
+		finish = malloc((len + 1) * sizeof(char));
+		if (finish == NULL)
 			return (NULL);
 	}
 	finish[len--] = '\0';

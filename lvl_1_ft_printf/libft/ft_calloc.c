@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/06 03:49:29 by marvin            #+#    #+#             */
-/*   Updated: 2020/12/20 16:53:36 by marvin           ###   ########.fr       */
+/*   Updated: 2021/02/10 05:42:05 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	*ft_calloc(size_t nitems, size_t size)
 	unsigned int	total;
 
 	total = nitems * size;
-	if (!(arra = malloc(nitems * size)))
+	arra = malloc(nitems * size);
+	if (arra == NULL)
 		return (NULL);
 	i = 0;
 	while (total > 0)

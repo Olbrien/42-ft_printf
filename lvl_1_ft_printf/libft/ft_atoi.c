@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 15:56:24 by marvin            #+#    #+#             */
-/*   Updated: 2020/12/19 17:34:27 by ncameiri         ###   ########.fr       */
+/*   Updated: 2021/02/10 05:49:07 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	long long	ret;
 	int			sign;
 
 	ret = 0;
 	sign = 1;
-	while (*str == '\t' || *str == '\n' || *str == '\v' || \
-			*str == '\f' || *str == '\r' || *str == ' ')
+	while (*str == '\t' || *str == '\n' || *str == '\v'
+		|| *str == '\f' || *str == '\r' || *str == ' ')
 		++str;
 	if (*str == '-')
 	{

@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/06 17:58:12 by marvin            #+#    #+#             */
-/*   Updated: 2021/01/26 05:27:28 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 05:46:47 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strdup(char *s)
 	i = 0;
 	while (s[len] != '\0')
 		len++;
-	if (!(dest = malloc(sizeof(*dest) * len + 1)))
+	dest = malloc(sizeof(*dest) * len + 1);
+	if (dest == NULL)
 		return (NULL);
 	while (i < len)
 	{

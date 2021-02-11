@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 15:59:52 by marvin            #+#    #+#             */
-/*   Updated: 2020/12/17 17:13:51 by ncameiri         ###   ########.fr       */
+/*   Updated: 2021/02/09 04:21:30 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		**freearray(char **array)
+static char	**freearray(char **array)
 {
 	int	i;
 
@@ -26,10 +26,10 @@ static char		**freearray(char **array)
 	return (NULL);
 }
 
-static int		startcopyingfromhere(char const *s, char c, int start)
+static int	startcopyingfromhere(char const *s, char c, int start)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -44,14 +44,15 @@ static int		startcopyingfromhere(char const *s, char c, int start)
 	return (i);
 }
 
-static char		*ignorechar(char const *s, char c, int ignore)
+static char	*ignorechar(char const *s, char c, int ignore)
 {
 	int		startlocation;
 	int		i;
 	char	*here;
 	int		v;
 
-	if (!(here = malloc(ft_strlen(s) * sizeof(char))))
+	here = malloc(ft_strlen(s) * sizeof(char));
+	if (here == NULL)
 		return (NULL);
 	v = 0;
 	startlocation = startcopyingfromhere(s, c, ignore);
@@ -71,10 +72,10 @@ static char		*ignorechar(char const *s, char c, int ignore)
 	return (here);
 }
 
-static int		arraysize(char const *s, char c)
+static int	arraysize(char const *s, char c)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -87,7 +88,7 @@ static int		arraysize(char const *s, char c)
 	return (count);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**array;
 	char	*temp;
@@ -99,7 +100,8 @@ char			**ft_split(char const *s, char c)
 	b = 0;
 	if (!s)
 		return (NULL);
-	if (!(array = (char **)malloc((arraysize(s, c) + 2) * sizeof(char *))))
+	array = (char **)malloc((arraysize(s, c) + 2) * sizeof(char *));
+	if (array == NULL)
 		return (NULL);
 	while (i < arraysize(s, c) + 1)
 	{
@@ -107,7 +109,7 @@ char			**ft_split(char const *s, char c)
 		if (temp == NULL)
 			return (freearray(array));
 		if (temp[0] == '\0')
-			continue;
+			continue ;
 		array[b++] = temp;
 	}
 	array[b] = NULL;

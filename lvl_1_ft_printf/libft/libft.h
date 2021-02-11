@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 18:33:47 by marvin            #+#    #+#             */
-/*   Updated: 2021/01/25 19:36:32 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 05:48:10 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}					t_list;
+}				t_list;
 
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
@@ -29,7 +29,7 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strchr(const char *str, int c);
 char				*ft_strrchr(const char *str, int c);
 char				*ft_strnstr(const char *big, const char *little,
-					size_t len);
+						size_t len);
 int					ft_strncmp(const char *str1, const char *str2, size_t n);
 int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
@@ -67,5 +67,5 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-					void (*del)(void *));
+						void (*del)(void *));
 #endif

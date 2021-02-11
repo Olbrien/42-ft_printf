@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 17:21:31 by marvin            #+#    #+#             */
-/*   Updated: 2020/12/19 17:51:20 by ncameiri         ###   ########.fr       */
+/*   Updated: 2021/02/09 05:09:41 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static char	*ncpy(char *dest, const char *src, unsigned int n)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (src[i] != '\0' && i < n)
@@ -33,7 +33,7 @@ static char	*ncpy(char *dest, const char *src, unsigned int n)
 	return (dest);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	beg;
 	size_t	end;
@@ -48,7 +48,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	if (end)
 		while (s1[end + beg - 1] != 0 && ft_strchr(set, s1[end + beg - 1]) != 0)
 			end--;
-	if (!(new = malloc(sizeof(char) * end + 1)))
+	new = malloc(sizeof(char) * end + 1);
+	if (new == NULL)
 		return (NULL);
 	ncpy(new, (s1 + beg), end);
 	new[end] = '\0';
