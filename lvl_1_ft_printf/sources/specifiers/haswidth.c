@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:27:13 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/25 03:02:03 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 06:07:38 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-static void		haswidth3(t_plist *plist, t_slist *slist, va_list *args, int i)
+static void	haswidth3(t_plist *plist, t_slist *slist, va_list *args, int i)
 {
 	char	*format;
 	int		args_value;
@@ -20,8 +20,8 @@ static void		haswidth3(t_plist *plist, t_slist *slist, va_list *args, int i)
 	format = plist->format;
 	slist->has_star_precision = 1;
 	args_value = va_arg(*args, int);
-	if ((format[i - 1] != '\0' && format[i - 1] == '-') ||
-		(format[i - 1] != '\0' && args_value < 0))
+	if ((format[i - 1] != '\0' && format[i - 1] == '-')
+		|| (format[i - 1] != '\0' && args_value < 0))
 	{
 		if (args_value < 0)
 			args_value *= -1;
@@ -32,12 +32,13 @@ static void		haswidth3(t_plist *plist, t_slist *slist, va_list *args, int i)
 	plist->format_count++;
 }
 
-static void		haswidth2(t_plist *plist, t_slist *slist, int i)
+static void	haswidth2(t_plist *plist, t_slist *slist, int i)
 {
 	char	*format;
 	char	*temp;
 
-	if (!(temp = malloc(sizeof(char) + 2)))
+	temp = malloc(sizeof(char) + 2);
+	if (temp == NULL)
 		return ;
 	temp[0] = 0;
 	temp[1] = '\0';
@@ -52,7 +53,7 @@ static void		haswidth2(t_plist *plist, t_slist *slist, int i)
 	plist->format_count = i;
 }
 
-void			haswidth(t_plist *plist, t_slist *slist, va_list *args)
+void	haswidth(t_plist *plist, t_slist *slist, va_list *args)
 {
 	int		i;
 	char	*format;

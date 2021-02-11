@@ -6,16 +6,16 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:16:07 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/29 06:54:14 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 08:38:21 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-static int		string_write_minus_greater(t_plist *plist, t_slist *slist,
+static int	string_write_minus_greater(t_plist *plist, t_slist *slist,
 											int i, int length)
 {
-	int count;
+	int	count;
 
 	count = i + length;
 	if (length >= slist->minus)
@@ -36,10 +36,10 @@ static int		string_write_minus_greater(t_plist *plist, t_slist *slist,
 	return (i);
 }
 
-static int		string_write_width_greater(t_plist *plist, t_slist *slist,
+static int	string_write_width_greater(t_plist *plist, t_slist *slist,
 											int i, int length)
 {
-	int count;
+	int	count;
 
 	count = i + length;
 	if (length >= slist->width)
@@ -60,7 +60,7 @@ static int		string_write_width_greater(t_plist *plist, t_slist *slist,
 	return (i);
 }
 
-static char		*string_precision(t_slist *slist, char *string)
+static char	*string_precision(t_slist *slist, char *string)
 {
 	int		i;
 	char	*send;
@@ -72,7 +72,8 @@ static char		*string_precision(t_slist *slist, char *string)
 		return (string_precision2(slist, string));
 	if (remove_length > 0)
 	{
-		if (!(send = malloc(sizeof(char) * (remove_length + 1))))
+		send = malloc(sizeof(char) * (remove_length + 1));
+		if (send == NULL)
 			return (NULL);
 		while (remove_length > 0)
 		{
@@ -88,10 +89,10 @@ static char		*string_precision(t_slist *slist, char *string)
 	return (string);
 }
 
-static char		*string_process(t_plist *plist, t_slist *slist, char *string)
+static char	*string_process(t_plist *plist, t_slist *slist, char *string)
 {
-	int i;
-	int length;
+	int	i;
+	int	length;
 
 	i = 0;
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
@@ -110,9 +111,9 @@ static char		*string_process(t_plist *plist, t_slist *slist, char *string)
 	return (string);
 }
 
-void			ifstring(t_plist *plist, t_slist *slist, va_list *args)
+void	ifstring(t_plist *plist, t_slist *slist, va_list *args)
 {
-	char *string;
+	char	*string;
 
 	string = va_arg(*args, char*);
 	string = string_process(plist, slist, string);

@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 07:22:14 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/30 16:06:46 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 06:24:36 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	ifhexadecimallowerhh(t_plist *plist, t_slist *slist, va_list *args)
 	unsigned char			hexadecimal_value;
 
 	hexadecimal_value = (unsigned char)va_arg(*args, int);
-	if (!(send = malloc(sizeof(char) * 2)))
+	send = malloc(sizeof(char) * 2);
+	if (send == NULL)
 		return ;
 	send[0] = '\0';
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
@@ -27,8 +28,8 @@ void	ifhexadecimallowerhh(t_plist *plist, t_slist *slist, va_list *args)
 		slist->zero = slist->star_precision;
 	}
 	send = convert_return_hexadecimallower(hexadecimal_value, send, slist);
-	if (slist->precision == 0 && hexadecimal_value == 0 &&
-									slist->has_star_precision == 0)
+	if (slist->precision == 0 && hexadecimal_value == 0
+		&& slist->has_star_precision == 0)
 		send[0] = '\0';
 	if (slist->hash == 1 && send != NULL && hexadecimal_value != 0)
 		send = convert_hexadecimallower_hash(send);
@@ -42,7 +43,8 @@ void	ifhexadecimallowerh(t_plist *plist, t_slist *slist, va_list *args)
 	short unsigned int			hexadecimal_value;
 
 	hexadecimal_value = (short unsigned int)va_arg(*args, unsigned int);
-	if (!(send = malloc(sizeof(char) * 2)))
+	send = malloc(sizeof(char) * 2);
+	if (send == NULL)
 		return ;
 	send[0] = '\0';
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
@@ -51,8 +53,8 @@ void	ifhexadecimallowerh(t_plist *plist, t_slist *slist, va_list *args)
 		slist->zero = slist->star_precision;
 	}
 	send = convert_return_hexadecimallower(hexadecimal_value, send, slist);
-	if (slist->precision == 0 && hexadecimal_value == 0 &&
-									slist->has_star_precision == 0)
+	if (slist->precision == 0 && hexadecimal_value == 0
+		&& slist->has_star_precision == 0)
 		send[0] = '\0';
 	if (slist->hash == 1 && send != NULL && hexadecimal_value != 0)
 		send = convert_hexadecimallower_hash(send);
@@ -66,8 +68,9 @@ void	ifhexadecimallowerll(t_plist *plist, t_slist *slist, va_list *args)
 	unsigned long long int			hexadecimal_value;
 
 	hexadecimal_value = (unsigned long long int)va_arg(*args,
-							unsigned long long int);
-	if (!(send = malloc(sizeof(char) * 2)))
+			unsigned long long int);
+	send = malloc(sizeof(char) * 2);
+	if (send == NULL)
 		return ;
 	send[0] = '\0';
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
@@ -76,8 +79,8 @@ void	ifhexadecimallowerll(t_plist *plist, t_slist *slist, va_list *args)
 		slist->zero = slist->star_precision;
 	}
 	send = convert_return_hexadecimallower(hexadecimal_value, send, slist);
-	if (slist->precision == 0 && hexadecimal_value == 0 &&
-									slist->has_star_precision == 0)
+	if (slist->precision == 0 && hexadecimal_value == 0
+		&& slist->has_star_precision == 0)
 		send[0] = '\0';
 	if (slist->hash == 1 && send != NULL && hexadecimal_value != 0)
 		send = convert_hexadecimallower_hash(send);
@@ -91,7 +94,8 @@ void	ifhexadecimallowerl(t_plist *plist, t_slist *slist, va_list *args)
 	unsigned long int			hexadecimal_value;
 
 	hexadecimal_value = (unsigned long int)va_arg(*args, unsigned long int);
-	if (!(send = malloc(sizeof(char) * 2)))
+	send = malloc(sizeof(char) * 2);
+	if (send == NULL)
 		return ;
 	send[0] = '\0';
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
@@ -100,8 +104,8 @@ void	ifhexadecimallowerl(t_plist *plist, t_slist *slist, va_list *args)
 		slist->zero = slist->star_precision;
 	}
 	send = convert_return_hexadecimallower(hexadecimal_value, send, slist);
-	if (slist->precision == 0 && hexadecimal_value == 0 &&
-									slist->has_star_precision == 0)
+	if (slist->precision == 0 && hexadecimal_value == 0
+		&& slist->has_star_precision == 0)
 		send[0] = '\0';
 	if (slist->hash == 1 && send != NULL && hexadecimal_value != 0)
 		send = convert_hexadecimallower_hash(send);

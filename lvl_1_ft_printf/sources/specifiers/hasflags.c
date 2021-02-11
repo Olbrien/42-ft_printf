@@ -6,11 +6,37 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:29:23 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/07 06:44:09 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 06:05:04 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
+
+static int	hasflags3(t_plist *plist, t_slist *slist,
+						int count)
+{
+	int		i;
+	char	*format;
+	char	*numbers;
+
+	i = count;
+	format = plist->format;
+	numbers = "123456789";
+	if (format[i] == ' ' && format[i - 1] != '-')
+		slist->space = 1;
+	else if (format[i] == ' ' && format[i - 1] == '-'
+		&& ft_strchr(numbers, format[i + 1]))
+	{
+		slist->space = 1;
+		hasminus(plist, slist);
+		i = plist->format_count;
+	}
+	else if (format[i] == '#')
+		slist->hash = 1;
+	i++;
+	plist->format_count++;
+	return (i);
+}
 
 static int	hasflags2(t_plist *plist, t_slist *slist,
 							va_list *args, int count)
@@ -24,36 +50,24 @@ static int	hasflags2(t_plist *plist, t_slist *slist,
 	numbers = "123456789";
 	if (format[i] == '+' && format[i - 1] != '-')
 		slist->plus = 1;
-	else if (format[i] == '+' && format[i - 1] == '-' &&
-			ft_strchr(numbers, format[i + 1]))
+	else if (format[i] == '+' && format[i - 1] == '-'
+		&& ft_strchr(numbers, format[i + 1]))
 	{
 		slist->plus = 1;
 		hasminus(plist, slist);
 		i = plist->format_count;
 	}
-	else if ((format[i] == '0' && ft_strchr(numbers, format[i + 1])) ||
-			(format[i] == '0' && ft_strchr(STAR, format[i + 1])))
+	else if ((format[i] == '0' && ft_strchr(numbers, format[i + 1]))
+		|| (format[i] == '0' && ft_strchr(STAR, format[i + 1])))
 	{
 		haszeros(plist, slist, args);
 		i = plist->format_count;
 	}
-	else if (format[i] == ' ' && format[i - 1] != '-')
-		slist->space = 1;
-	else if (format[i] == ' ' && format[i - 1] == '-' &&
-				ft_strchr(numbers, format[i + 1]))
-	{
-		slist->space = 1;
-		hasminus(plist, slist);
-		i = plist->format_count;
-	}
-	else if (format[i] == '#')
-		slist->hash = 1;
-	i++;
-	plist->format_count++;
+	i = hasflags3(plist, slist, i);
 	return (i);
 }
 
-void		hasflags(t_plist *plist, t_slist *slist, va_list *args)
+void	hasflags(t_plist *plist, t_slist *slist, va_list *args)
 {
 	int		i;
 	char	*format;
@@ -69,8 +83,8 @@ void		hasflags(t_plist *plist, t_slist *slist, va_list *args)
 			hasminus(plist, slist);
 			i = plist->format_count;
 		}
-		else if (format[i] == '-' && !ft_strchr(numbers, format[i + 1]) &&
-					slist->width != 0)
+		else if (format[i] == '-' && !ft_strchr(numbers, format[i + 1])
+			&& slist->width != 0)
 		{
 			slist->minus = slist->width;
 			slist->width = 0;

@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:26:00 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/07 06:34:02 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/11 05:41:19 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-static void		hasprecision3(t_plist *plist, t_slist *slist, int i)
+static void	hasprecision3(t_plist *plist, t_slist *slist, int i)
 {
 	char	*format;
 	char	*numbers;
@@ -20,7 +20,8 @@ static void		hasprecision3(t_plist *plist, t_slist *slist, int i)
 
 	numbers = "0123456789";
 	format = plist->format;
-	if (!(temp = malloc(sizeof(char) + 2)))
+	temp = malloc(sizeof(char) + 2);
+	if (temp == NULL)
 		return ;
 	temp[0] = 0;
 	temp[1] = '\0';
@@ -36,14 +37,14 @@ static void		hasprecision3(t_plist *plist, t_slist *slist, int i)
 	plist->format_count = i;
 }
 
-static void		hasprecision2(t_plist *plist, t_slist *slist, va_list *args)
+static void	hasprecision2(t_plist *plist, t_slist *slist, va_list *args)
 {
 	slist->star_precision = va_arg(*args, unsigned int);
 	slist->has_star_precision = 1;
 	plist->format_count++;
 }
 
-void			hasprecision(t_plist *plist, t_slist *slist, va_list *args)
+void	hasprecision(t_plist *plist, t_slist *slist, va_list *args)
 {
 	int		i;
 	char	*format;
@@ -57,9 +58,10 @@ void			hasprecision(t_plist *plist, t_slist *slist, va_list *args)
 		slist->precision = 0;
 		if (format[i] != '\0' && format[i] == '*')
 		{
-			if (ft_strchr(NUMBERS, format[i - 2] == 0) && format[i + 1] == 'f')
+			if ((ft_strchr(NUMBERS, format[i - 2] == 0) && format[i + 1] == 'f')
+				|| (ft_strchr(NUMBERS, format[i - 2] == 0) && format[i + 1] == 'g'))
 				slist->precision_error = 1;
-			printf("Aqui vais ter que adicionar o 'g' e o 'e' a este if");
+			//printf("Aqui vais ter que adicionar o 'g' e o 'e' a este if");
 			hasprecision2(plist, slist, args);
 		}
 		else

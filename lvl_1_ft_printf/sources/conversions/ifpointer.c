@@ -6,16 +6,15 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:17:07 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/27 04:24:11 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 08:36:30 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-static char		*precision_hexadecimal(char *string, t_slist *slist)
+static char	*precision_hexadecimal(char *string, t_slist *slist)
 {
 	int		length_to_zeros;
-	int		total_length;
 	char	*temp;
 	int		i;
 	int		start;
@@ -23,8 +22,8 @@ static char		*precision_hexadecimal(char *string, t_slist *slist)
 	i = 0;
 	start = 2;
 	length_to_zeros = slist->precision - (ft_strlen(string) - 2);
-	total_length = ft_strlen(string) + length_to_zeros + 1;
-	if (!(temp = malloc(sizeof(char) * total_length)))
+	temp = malloc(sizeof(char) * (ft_strlen(string) + length_to_zeros + 1));
+	if (temp == NULL)
 		return (NULL);
 	temp[i++] = '0';
 	temp[i++] = 'x';
@@ -41,7 +40,7 @@ static char		*precision_hexadecimal(char *string, t_slist *slist)
 	return (temp);
 }
 
-static char		*reverse_hexadecimal(char *string, t_slist *slist)
+static char	*reverse_hexadecimal(char *string, t_slist *slist)
 {
 	char	*temp;
 	int		i;
@@ -49,7 +48,8 @@ static char		*reverse_hexadecimal(char *string, t_slist *slist)
 
 	end = ft_strlen(string) - 1;
 	i = 0;
-	if (!(temp = malloc(sizeof(char) * (ft_strlen(string) + 1))))
+	temp = malloc(sizeof(char) * (ft_strlen(string) + 1));
+	if (temp == NULL)
 		return (NULL);
 	temp[i++] = '0';
 	temp[i++] = 'x';
@@ -66,7 +66,7 @@ static char		*reverse_hexadecimal(char *string, t_slist *slist)
 	return (temp);
 }
 
-static char		*return_if_one_digit(char *send, long long int value)
+static char	*return_if_one_digit(char *send, long long int value)
 {
 	char			*temp;
 
@@ -76,7 +76,7 @@ static char		*return_if_one_digit(char *send, long long int value)
 	return (send);
 }
 
-static char		*convert_return_hexadecimal(long long int pointer_value,
+static char	*convert_return_hexadecimal(long long int pointer_value,
 											char *send, t_slist *slist)
 {
 	long long int	value;
@@ -106,7 +106,7 @@ static char		*convert_return_hexadecimal(long long int pointer_value,
 	return (send);
 }
 
-void			ifpointer(t_plist *plist, t_slist *slist, va_list *args)
+void	ifpointer(t_plist *plist, t_slist *slist, va_list *args)
 {
 	char			*send;
 	long long int	pointer_value;

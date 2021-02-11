@@ -6,17 +6,18 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 16:09:56 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/30 18:37:49 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 08:20:53 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-char			*convert_hexadecimalupper_hash(char *string)
+char	*convert_hexadecimalupper_hash(char *string)
 {
-	char *temp;
+	char	*temp;
 
-	if (!(temp = malloc(sizeof(char) * ft_strlen(string) + 2)))
+	temp = malloc(sizeof(char) * ft_strlen(string) + 2);
+	if (temp == NULL)
 		return (NULL);
 	temp[0] = '0';
 	temp[1] = 'X';
@@ -26,7 +27,7 @@ char			*convert_hexadecimalupper_hash(char *string)
 	return (temp);
 }
 
-static char		*precision_hexadecimalupper(char *string, t_slist *slist)
+static char	*precision_hexadecimalupper(char *string, t_slist *slist)
 {
 	int		length_to_zeros;
 	int		total_length;
@@ -38,7 +39,8 @@ static char		*precision_hexadecimalupper(char *string, t_slist *slist)
 	start = 0;
 	length_to_zeros = slist->precision - (ft_strlen(string));
 	total_length = ft_strlen(string) + length_to_zeros + 1;
-	if (!(temp = malloc(sizeof(char) * total_length + 1)))
+	temp = malloc(sizeof(char) * total_length + 1);
+	if (temp == NULL)
 		return (NULL);
 	while (length_to_zeros > 0)
 	{
@@ -52,7 +54,7 @@ static char		*precision_hexadecimalupper(char *string, t_slist *slist)
 	return (temp);
 }
 
-char			*reverse_hexadecimalupper(char *string, t_slist *slist)
+char	*reverse_hexadecimalupper(char *string, t_slist *slist)
 {
 	int		i;
 	int		end;
@@ -60,7 +62,8 @@ char			*reverse_hexadecimalupper(char *string, t_slist *slist)
 
 	end = ft_strlen(string) - 1;
 	i = 0;
-	if (!(temp = malloc(sizeof(char) * (ft_strlen(string) + 1))))
+	temp = malloc(sizeof(char) * (ft_strlen(string) + 1));
+	if (temp == NULL)
 		return (NULL);
 	while (end > 0)
 	{
@@ -76,7 +79,7 @@ char			*reverse_hexadecimalupper(char *string, t_slist *slist)
 	return (temp);
 }
 
-char			*convert_return_hexadecimalupper(
+char	*convert_return_hexadecimalupper(
 				unsigned long long int hexadecimal_value,
 				char *send, t_slist *slist)
 {
@@ -106,14 +109,15 @@ char			*convert_return_hexadecimalupper(
 	return (send);
 }
 
-void			ifhexadecimalupper(t_plist *plist,
+void	ifhexadecimalupper(t_plist *plist,
 									t_slist *slist, va_list *args)
 {
 	char			*send;
 	long long int	hexadecimal_value;
 
 	hexadecimal_value = va_arg(*args, long long int);
-	if (!(send = malloc(sizeof(char) * 2)))
+	send = malloc(sizeof(char) * 2);
+	if (send == NULL)
 		return ;
 	send[0] = '\0';
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
@@ -125,8 +129,8 @@ void			ifhexadecimalupper(t_plist *plist,
 			slist->zero = slist->star_precision;
 	}
 	send = convert_return_hexadecimalupper(hexadecimal_value, send, slist);
-	if (slist->precision == 0 && hexadecimal_value == 0 &&
-								slist->has_star_precision == 0)
+	if (slist->precision == 0 && hexadecimal_value == 0
+		&& slist->has_star_precision == 0)
 		send[0] = '\0';
 	if (slist->hash == 1 && send != NULL && hexadecimal_value != 0)
 		send = convert_hexadecimalupper_hash(send);

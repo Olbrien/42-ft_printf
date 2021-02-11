@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 16:10:08 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/27 04:23:17 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 08:22:15 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-char			*hexadecimalupper_precision_with_zeros(t_slist *slist,
+char	*hexadecimalupper_precision_with_zeros(t_slist *slist,
 												char *string, char *send)
 {
 	int		i;
@@ -23,7 +23,8 @@ char			*hexadecimalupper_precision_with_zeros(t_slist *slist,
 	i = 0;
 	if (slist->zero > 0 && to_cut_len > 0 && slist->precision > 0)
 	{
-		if (!(temp = malloc(sizeof(char) * ft_strlen(string) + to_cut_len + 2)))
+		temp = malloc(sizeof(char) * ft_strlen(string) + to_cut_len + 2);
+		if (temp == NULL)
 			return (NULL);
 		while (to_cut_len > 0)
 		{
@@ -38,7 +39,7 @@ char			*hexadecimalupper_precision_with_zeros(t_slist *slist,
 	return (send);
 }
 
-static char		*hexadecimalupper_write_zeros(t_slist *slist, char *string)
+static char	*hexadecimalupper_write_zeros(t_slist *slist, char *string)
 {
 	int		i;
 	char	*send;
@@ -48,8 +49,8 @@ static char		*hexadecimalupper_write_zeros(t_slist *slist, char *string)
 	i = 0;
 	if (add_zeros > 0)
 	{
-		if (!(send = malloc(sizeof(char) *
-					(ft_strlen(string) + add_zeros + 2))))
+		send = malloc(sizeof(char) * (ft_strlen(string) + add_zeros + 2));
+		if (send == NULL)
 			return (NULL);
 		if (string[i] == '-')
 			send[i++] = '-';
@@ -66,10 +67,10 @@ static char		*hexadecimalupper_write_zeros(t_slist *slist, char *string)
 	return (string);
 }
 
-static int		hexadecimalupper_write_minus_greater(
+static int	hexadecimalupper_write_minus_greater(
 			t_plist *plist, t_slist *slist, int i, int length)
 {
-	int count;
+	int	count;
 
 	count = i + length;
 	if (length >= slist->minus)
@@ -90,10 +91,10 @@ static int		hexadecimalupper_write_minus_greater(
 	return (i);
 }
 
-static int		hexadecimalupper_write_width_greater(
+static int	hexadecimalupper_write_width_greater(
 				t_plist *plist, t_slist *slist, int i, int length)
 {
-	int count;
+	int	count;
 
 	count = i + length;
 	if (length >= slist->width)
@@ -114,11 +115,11 @@ static int		hexadecimalupper_write_width_greater(
 	return (i);
 }
 
-void			hexadecimalupper_write(t_plist *plist,
+void	hexadecimalupper_write(t_plist *plist,
 								char *string, t_slist *slist)
 {
-	int i;
-	int length;
+	int	i;
+	int	length;
 
 	i = 0;
 	if (!plist || !string)

@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:32:06 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/07 04:13:17 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 06:08:22 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static int	haszeros2(t_plist *plist, t_slist *slist, int i)
 
 	format = plist->format;
 	numbers = "0123456789";
-	if (!(temp = malloc(sizeof(char) + 2)))
+	temp = malloc(sizeof(char) + 2);
+	if (temp == NULL)
 		return (0);
 	temp[0] = 0;
 	temp[1] = '\0';
@@ -46,7 +47,7 @@ static int	haszeros2(t_plist *plist, t_slist *slist, int i)
 	return (i);
 }
 
-void		haszeros(t_plist *plist, t_slist *slist, va_list *args)
+void	haszeros(t_plist *plist, t_slist *slist, va_list *args)
 {
 	int		i;
 	char	*format;

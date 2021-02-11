@@ -6,11 +6,17 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 16:02:26 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/27 04:19:51 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/11 05:29:51 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
+
+char	add_zeros_unecessary_function_i(int add_zeros)
+{
+	add_zeros = 48;
+	return (add_zeros);
+}
 
 void	free_string_integer(char *string, t_slist *slist)
 {

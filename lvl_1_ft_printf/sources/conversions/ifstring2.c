@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/27 04:43:28 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/31 04:25:03 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 08:38:39 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-char			*string_precision2(t_slist *slist, char *string)
+char	*string_precision2(t_slist *slist, char *string)
 {
 	if (slist->precision == 0)
 	{
@@ -32,7 +32,7 @@ char			*string_precision2(t_slist *slist, char *string)
 	return (NULL);
 }
 
-char			*string_process2(t_slist *slist, char *string)
+char	*string_process2(t_slist *slist, char *string)
 {
 	if (slist->precision >= 6)
 	{

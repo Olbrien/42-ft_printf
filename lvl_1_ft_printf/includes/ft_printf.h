@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 03:51:25 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/02 01:18:48 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/11 05:30:14 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <stdint.h>
 # include <float.h>
 
-# define CONVERSIONS	"cspdiuxX%nf"
+# define CONVERSIONS	"cspdiuxX%nfg"
 # define SPECIFIERS		"-+0.*lh# 123456789"
 # define FLAGS			"-+0 #"
 # define WIDTH			"123456789"
@@ -76,7 +76,6 @@ char	*ft_itoa_unsigned_long(unsigned long int n);
 char	*ft_itoa_unsigned_longlong(unsigned long long int n);
 char	*ft_itoa_long(long n);
 char	*ft_itoa_longlong(long long n);
-char	*ft_itoa_double(double n);
 
 void	initialize_lists(t_plist *plist, char *format, t_slist *slist);
 void	initialize_slist(t_slist *slist);
@@ -86,7 +85,6 @@ void	conversion(t_plist *plist, va_list *args, t_slist *slist);
 void	conversion_path_x_lower(t_plist *plist, va_list *args, t_slist *slist);
 void	conversion_path_x_upper(t_plist *plist, va_list *args, t_slist *slist);
 void	conversion_path_n(t_plist *plist, va_list *args, t_slist *slist);
-void	conversion_path_f(t_plist *plist, va_list *args, t_slist *slist);
 
 void	ifpercent(t_plist *plist, t_slist *slist);
 
@@ -109,6 +107,7 @@ char	*digit_write_zeros2(t_slist *slist, char *s, char *string);
 char	*digit_precision_with_zeros(t_slist *slist, char *string, char *send);
 void	digit_space(t_plist *plist, t_slist *slist, char *string, int length);
 void	free_string_digit(char *string, t_slist *slist);
+char	add_zeros_unecessary_function_d(int add_zeros);
 
 void	ifdigithh(t_plist *plist, t_slist *slist, va_list *args);
 void	ifdigith(t_plist *plist, t_slist *slist, va_list *args);
@@ -127,6 +126,7 @@ char	*integer_write_zeros2(t_slist *slist, char *s, char *string);
 char	*integer_precision_with_zeros(t_slist *slist, char *string, char *send);
 void	integer_space(t_plist *plist, t_slist *slist, char *string, int length);
 void	free_string_integer(char *string, t_slist *slist);
+char	add_zeros_unecessary_function_i(int add_zeros);
 
 void	ifintegerhh(t_plist *plist, t_slist *slist, va_list *args);
 void	ifintegerh(t_plist *plist, t_slist *slist, va_list *args);
@@ -176,23 +176,44 @@ void	ifhexadecimalupperh(t_plist *plist, t_slist *slist, va_list *args);
 void	ifhexadecimalupperll(t_plist *plist, t_slist *slist, va_list *args);
 void	ifhexadecimalupperl(t_plist *plist, t_slist *slist, va_list *args);
 
-void	ifn(t_plist *plist, va_list *args);
+void	ifn(t_plist *plist, t_slist *slist, va_list *args);
 
-void	ifnhh(t_plist *plist, va_list *args);
-void	ifnh(t_plist *plist, va_list *args);
-void	ifnll(t_plist *plist, va_list *args);
-void	ifnl(t_plist *plist, va_list *args);
+void	ifnhh(t_plist *plist, t_slist *slist, va_list *args);
+void	ifnh(t_plist *plist, t_slist *slist, va_list *args);
+void	ifnll(t_plist *plist, t_slist *slist, va_list *args);
+void	ifnl(t_plist *plist, t_slist *slist, va_list *args);
 
 void	iffloat(t_plist *plist, t_slist *slist, va_list *args);
-char	*float_plus(t_slist *slist, double value);
+long long	get_decimal_number_unsigned(double n, t_slist *slist, unsigned long long integer);
+double		check_precision_condition(double n, t_slist *slist);
+int			check_bankers_round(double n, t_slist *slist);
+long long		of_power(int ten, int after_point);
+char	*finalize_process(char *integer_string, char *decimal_string, t_slist *slist, double n);
+char	*finalize_integer(char *integer_string, double n, t_slist *slist);
+char	*finalize_decimal_no_precision(char *decimal_string);
+char	*finalize_decimal_with_precision(char *decimal_string, t_slist *slist);
 void	float_write(t_plist *plist, char *string, t_slist *slist);
-char	*float_precision(char *string, t_slist *slist);
-char	*float_precision_error(char *string, t_slist *slist, int value);
 int		float_write_width_greater(t_plist *plist, t_slist *slist, int i, int length);
-char	*float_write_zeros2(t_slist *slist, char *s, char *string);
-char	*float_precision_with_zeros(t_slist *slist, char *string, char *send);
+char	*float_write_zeros2(char *s, char *string);
 void	float_space(t_plist *plist, t_slist *slist, char *string, int length);
 void	free_string_float(char *string, t_slist *slist);
+
+void	ifgeneral(t_plist *plist, t_slist *slist, va_list *args);
+long long	get_decimal_g_number_unsigned(double n, t_slist *slist,	unsigned long long integer);
+double	check_precision_g_condition(double n, t_slist *slist);
+int		check_bankers_g_round(double n, t_slist *slist);
+long long	of_power_g(int ten, int after_point);
+char	*finalize_g_process(char *integer_string, char *decimal_string, t_slist *slist, double n);
+char	*finalize_integer_g(char *integer_string, double n, t_slist *slist);
+char	*finalize_decimal_g_no_precision(char *decimal_string);
+char	*finalize_decimal_g_with_precision(char *decimal_string, t_slist *slist);
+void	general_write(t_plist *plist, char *string, t_slist *slist);
+int		general_write_width_greater(t_plist *plist, t_slist *slist,	int i, int length);
+char	*general_write_zeros2(char *s, char *string);
+void	general_space(t_plist *plist, t_slist *slist, char *string, int length);
+void	free_string_general(char *string, t_slist *slist);
+
+
 
 void	specifier(t_plist *plist, va_list *args, t_slist *slist);
 

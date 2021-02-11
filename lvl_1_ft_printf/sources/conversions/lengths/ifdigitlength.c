@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 04:27:17 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/31 04:55:15 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 06:21:06 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	ifdigithh(t_plist *plist, t_slist *slist, va_list *args)
 		send_length = ft_strlen(send) - 1;
 	else
 		send_length = ft_strlen(send);
-	if (slist->precision >= 0 && slist->precision > send_length &&
-								slist->precision_error == 0)
+	if (slist->precision >= 0 && slist->precision > send_length
+		&& slist->precision_error == 0)
 		send = digit_precision(send, slist);
 	else if (slist->precision_error == 1)
 		digit_precision_error(send, slist, value);
@@ -61,8 +61,8 @@ void	ifdigith(t_plist *plist, t_slist *slist, va_list *args)
 		send_length = ft_strlen(send) - 1;
 	else
 		send_length = ft_strlen(send);
-	if (slist->precision >= 0 && slist->precision > send_length &&
-								slist->precision_error == 0)
+	if (slist->precision >= 0 && slist->precision > send_length
+		&& slist->precision_error == 0)
 		send = digit_precision(send, slist);
 	else if (slist->precision_error == 1)
 		digit_precision_error(send, slist, value);
@@ -90,8 +90,8 @@ void	ifdigitll(t_plist *plist, t_slist *slist, va_list *args)
 		send_length = ft_strlen(send) - 1;
 	else
 		send_length = ft_strlen(send);
-	if (slist->precision >= 0 && slist->precision > send_length &&
-								slist->precision_error == 0)
+	if (slist->precision >= 0 && slist->precision > send_length
+		&& slist->precision_error == 0)
 		send = digit_precision(send, slist);
 	else if (slist->precision_error == 1)
 		digit_precision_error(send, slist, value);
@@ -119,8 +119,8 @@ void	ifdigitl(t_plist *plist, t_slist *slist, va_list *args)
 		send_length = ft_strlen(send) - 1;
 	else
 		send_length = ft_strlen(send);
-	if (slist->precision >= 0 && slist->precision > send_length &&
-								slist->precision_error == 0)
+	if (slist->precision >= 0 && slist->precision > send_length
+		&& slist->precision_error == 0)
 		send = digit_precision(send, slist);
 	else if (slist->precision_error == 1)
 		digit_precision_error(send, slist, value);

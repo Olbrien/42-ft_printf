@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 13:43:24 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/31 05:53:45 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 05:39:56 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/ft_printf.h"
 
-static int		write_char_minus_greater(t_plist *plist, t_slist *slist, int i)
+static int	write_char_minus_greater(t_plist *plist, t_slist *slist, int i)
 {
 	while (i < slist->minus - 1)
 	{
@@ -24,7 +24,7 @@ static int		write_char_minus_greater(t_plist *plist, t_slist *slist, int i)
 	return (i);
 }
 
-static int		write_char_width_greater(t_plist *plist, t_slist *slist, int i)
+static int	write_char_width_greater(t_plist *plist, t_slist *slist, int i)
 {
 	while (i < slist->width - 1)
 	{
@@ -36,9 +36,9 @@ static int		write_char_width_greater(t_plist *plist, t_slist *slist, int i)
 	return (i);
 }
 
-static void		write_char(t_plist *plist, char character, t_slist *slist)
+static void	write_char(t_plist *plist, char character, t_slist *slist)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!plist)
@@ -50,7 +50,8 @@ static void		write_char(t_plist *plist, char character, t_slist *slist)
 		i = write_char_minus_greater(plist, slist, i);
 	if (plist->final_format == NULL)
 	{
-		if (!(plist->final_format = malloc(sizeof(char) * 2)))
+		plist->final_format = malloc(sizeof(char) * 2);
+		if (plist->final_format == NULL)
 			return ;
 		plist->final_format[0] = character;
 		plist->final_format[1] = '\0';
@@ -60,7 +61,7 @@ static void		write_char(t_plist *plist, char character, t_slist *slist)
 	plist->final_format_lenght++;
 }
 
-void			parse(t_plist *plist, va_list *args, t_slist *slist)
+void	parse(t_plist *plist, va_list *args, t_slist *slist)
 {
 	int		i;
 	char	*format;
@@ -75,7 +76,7 @@ void			parse(t_plist *plist, va_list *args, t_slist *slist)
 		specifier(plist, args, slist);
 }
 
-int				ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	t_plist		plist;
 	t_slist		slist;

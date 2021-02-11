@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iffloat3.c                                         :+:      :+:    :+:   */
+/*   ifgeneral3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/07 21:55:02 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/10 06:53:48 by tisantos         ###   ########.fr       */
+/*   Created: 2021/02/08 03:05:48 by tisantos          #+#    #+#             */
+/*   Updated: 2021/02/11 06:04:40 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../../includes/ft_printf.h"
 
-char	*finalize_decimal_with_precision(char *decimal_string,
+char		*finalize_decimal_g_with_precision(char *decimal_string,
 											t_slist *slist)
 {
 	char	*final;
@@ -23,8 +24,7 @@ char	*finalize_decimal_with_precision(char *decimal_string,
 	i = 0;
 	f = 0;
 	len_decimal = ft_strlen(decimal_string);
-	final = malloc(sizeof(char) * (len_decimal + slist->precision + 1));
-	if (final == NULL)
+	if (!(final = malloc(sizeof(char) * (len_decimal + slist->precision + 1))))
 		return (NULL);
 	if (len_decimal > slist->precision)
 		i = len_decimal - slist->precision;
@@ -41,7 +41,7 @@ char	*finalize_decimal_with_precision(char *decimal_string,
 	return (final);
 }
 
-char	*finalize_decimal_no_precision(char *decimal_string)
+char		*finalize_decimal_g_no_precision(char *decimal_string)
 {
 	char	*final;
 	int		i;
@@ -50,26 +50,28 @@ char	*finalize_decimal_no_precision(char *decimal_string)
 
 	i = 0;
 	f = 0;
+	if (decimal_string == NULL)
+		return (decimal_string);
 	len_decimal = ft_strlen(decimal_string);
-	final = malloc(sizeof(char) * (len_decimal + 7));
-	if (final == NULL)
+	if (!(final = malloc(sizeof(char) * (len_decimal + 6))))
 		return (NULL);
-	if (len_decimal > 6)
-		i = len_decimal - 6;
+/*	if (len_decimal > 5)
+		i = len_decimal - 5;
 	while (len_decimal < 6)
 	{
 		final[f++] = '0';
 		len_decimal++;
 		i = 0;
 	}
-	while (decimal_string[i] != '\0' && i <= 6)
+*/
+	while (decimal_string[i] != '\0' && i <= 5)
 		final[f++] = decimal_string[i++];
 	final[f] = '\0';
 	free(decimal_string);
 	return (final);
 }
 
-char	*finalize_integer(char *integer_string, double n, t_slist *slist)
+char		*finalize_integer_g(char *integer_string, double n, t_slist *slist)
 {
 	char	*final;
 	int		i;
@@ -79,8 +81,7 @@ char	*finalize_integer(char *integer_string, double n, t_slist *slist)
 	i = 0;
 	f = 0;
 	len_integer = ft_strlen(integer_string);
-	final = malloc(sizeof(char) * (len_integer + 3));
-	if (final == NULL)
+	if (!(final = malloc(sizeof(char) * (len_integer + 3))))
 		return (NULL);
 	if (1 / n <= 0 && (int)n == 0 && integer_string[0] != '-')
 		final[f++] = '-';

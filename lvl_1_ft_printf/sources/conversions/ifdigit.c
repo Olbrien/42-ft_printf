@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:19:49 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/30 06:00:59 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 06:36:57 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-char		*digit_precision(char *string, t_slist *slist)
+char	*digit_precision(char *string, t_slist *slist)
 {
 	int		len_zeros;
 	int		i;
@@ -22,12 +22,12 @@ char		*digit_precision(char *string, t_slist *slist)
 	i = 0;
 	start = 0;
 	len_zeros = slist->precision - (ft_strlen(string));
-	if (!(temp = malloc(sizeof(char) * (ft_strlen(string) + len_zeros + 3))))
+	temp = malloc(sizeof(char) * (ft_strlen(string) + len_zeros + 3));
+	if (temp == NULL)
 		return (NULL);
 	if (string[start] == '-' || string[start] == '+')
 	{
-		temp[i++] = string[start];
-		start++;
+		temp[i++] = string[start++];
 		len_zeros++;
 	}
 	while (len_zeros-- > 0)
@@ -41,7 +41,7 @@ char		*digit_precision(char *string, t_slist *slist)
 	return (temp);
 }
 
-char		*digit_precision_error(char *string, t_slist *slist,
+char	*digit_precision_error(char *string, t_slist *slist,
 										int value)
 {
 	if (slist->precision_error == 1 && slist->plus == 0)
@@ -57,7 +57,7 @@ char		*digit_precision_error(char *string, t_slist *slist,
 	return (string);
 }
 
-char		*digit_plus(t_slist *slist, int value)
+char	*digit_plus(t_slist *slist, int value)
 {
 	char	*temp;
 	char	*send;
@@ -79,7 +79,7 @@ char		*digit_plus(t_slist *slist, int value)
 	return (send);
 }
 
-void		ifdigit(t_plist *plist, t_slist *slist, va_list *args)
+void	ifdigit(t_plist *plist, t_slist *slist, va_list *args)
 {
 	char	*send;
 	int		value;
@@ -99,8 +99,8 @@ void		ifdigit(t_plist *plist, t_slist *slist, va_list *args)
 		send_length = ft_strlen(send) - 1;
 	else
 		send_length = ft_strlen(send);
-	if (slist->precision >= 0 && slist->precision > send_length &&
-								slist->precision_error == 0)
+	if (slist->precision >= 0 && slist->precision > send_length
+		&& slist->precision_error == 0)
 		send = digit_precision(send, slist);
 	else if (slist->precision_error == 1)
 		digit_precision_error(send, slist, value);

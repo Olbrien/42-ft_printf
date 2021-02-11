@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 17:15:08 by marvin            #+#    #+#             */
-/*   Updated: 2021/01/30 06:58:54 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 05:54:39 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int		ft_itoa_len(unsigned long long n)
+static int	ft_itoa_len(unsigned long long n)
 {
 	long long int			len;
 
@@ -26,7 +26,7 @@ static int		ft_itoa_len(unsigned long long n)
 	return (len);
 }
 
-static void		ft_itoa_write(char *finish, unsigned long long len,
+static void	ft_itoa_write(char *finish, unsigned long long len,
 								unsigned long long n)
 {
 	while (n > 9)
@@ -37,13 +37,14 @@ static void		ft_itoa_write(char *finish, unsigned long long len,
 	finish[len] = n + '0';
 }
 
-char			*ft_itoa_unsigned_longlong(unsigned long long int n)
+char	*ft_itoa_unsigned_longlong(unsigned long long int n)
 {
 	unsigned long long int				len;
 	char								*finish;
 
 	len = ft_itoa_len(n);
-	if (!(finish = malloc((len + 1) * sizeof(char))))
+	finish = malloc((len + 1) * sizeof(char));
+	if (finish == NULL)
 		return (NULL);
 	finish[len--] = '\0';
 	ft_itoa_write(finish, len, n);

@@ -6,16 +6,16 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/17 05:38:33 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/24 13:51:30 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 08:37:12 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-static int		pointer_write_minus_greater(t_plist *plist, t_slist *slist,
+static int	pointer_write_minus_greater(t_plist *plist, t_slist *slist,
 									int i, int length)
 {
-	int count;
+	int	count;
 
 	count = i + length;
 	if (length >= slist->minus)
@@ -36,10 +36,10 @@ static int		pointer_write_minus_greater(t_plist *plist, t_slist *slist,
 	return (i);
 }
 
-static int		pointer_write_width_greater(t_plist *plist, t_slist *slist,
+static int	pointer_write_width_greater(t_plist *plist, t_slist *slist,
 									int i, int length)
 {
-	int count;
+	int	count;
 
 	count = i + length;
 	if (length >= slist->width)
@@ -60,10 +60,10 @@ static int		pointer_write_width_greater(t_plist *plist, t_slist *slist,
 	return (i);
 }
 
-void			pointer_write(t_plist *plist, char *string, t_slist *slist)
+void	pointer_write(t_plist *plist, char *string, t_slist *slist)
 {
-	int i;
-	int length;
+	int	i;
+	int	length;
 
 	i = 0;
 	if (!plist || !string)

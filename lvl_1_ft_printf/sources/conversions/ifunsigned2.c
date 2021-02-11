@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 04:39:12 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/27 05:08:20 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 08:42:55 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-char			*unsigned_precision_with_zeros(t_slist *slist,
+char	*unsigned_precision_with_zeros(t_slist *slist,
 												char *string, char *send)
 {
 	int		i;
@@ -23,7 +23,8 @@ char			*unsigned_precision_with_zeros(t_slist *slist,
 	i = 0;
 	if (slist->zero > 0 && to_cut_len > 0 && slist->precision > 0)
 	{
-		if (!(temp = malloc(sizeof(char) * ft_strlen(string) + to_cut_len + 2)))
+		temp = malloc(sizeof(char) * ft_strlen(string) + to_cut_len + 2);
+		if (temp == NULL)
 			return (NULL);
 		while (to_cut_len > 0)
 		{
@@ -38,7 +39,7 @@ char			*unsigned_precision_with_zeros(t_slist *slist,
 	return (send);
 }
 
-static char		*unsigned_write_zeros(t_slist *slist, char *string)
+static char	*unsigned_write_zeros(t_slist *slist, char *string)
 {
 	int		i;
 	int		add_zeros;
@@ -48,8 +49,8 @@ static char		*unsigned_write_zeros(t_slist *slist, char *string)
 	i = 0;
 	if (add_zeros > 0)
 	{
-		if (!(send = malloc(sizeof(char) *
-				(ft_strlen(string) + add_zeros + 2))))
+		send = malloc(sizeof(char) * (ft_strlen(string) + add_zeros + 2));
+		if (send == NULL)
 			return (NULL);
 		if (string[i] == '-')
 			send[i++] = '-';
@@ -66,10 +67,10 @@ static char		*unsigned_write_zeros(t_slist *slist, char *string)
 	return (string);
 }
 
-static int		unsigned_write_minus_greater(t_plist *plist, t_slist *slist,
+static int	unsigned_write_minus_greater(t_plist *plist, t_slist *slist,
 										int i, int length)
 {
-	int count;
+	int	count;
 
 	count = i + length;
 	if (length >= slist->minus)
@@ -90,10 +91,10 @@ static int		unsigned_write_minus_greater(t_plist *plist, t_slist *slist,
 	return (i);
 }
 
-static int		unsigned_write_width_greater(t_plist *plist, t_slist *slist,
+static int	unsigned_write_width_greater(t_plist *plist, t_slist *slist,
 									int i, int length)
 {
-	int count;
+	int	count;
 
 	count = i + length;
 	if (length >= slist->width)
@@ -114,10 +115,10 @@ static int		unsigned_write_width_greater(t_plist *plist, t_slist *slist,
 	return (i);
 }
 
-void			unsigned_write(t_plist *plist, char *string, t_slist *slist)
+void	unsigned_write(t_plist *plist, char *string, t_slist *slist)
 {
-	int i;
-	int length;
+	int	i;
+	int	length;
 
 	i = 0;
 	if (!plist || !string)

@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iffloat2.c                                         :+:      :+:    :+:   */
+/*   ifgeneral2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/07 21:52:16 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/10 06:52:50 by tisantos         ###   ########.fr       */
+/*   Created: 2021/02/08 03:03:34 by tisantos          #+#    #+#             */
+/*   Updated: 2021/02/11 06:03:53 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-char	*finalize_process(char *integer_string,
+char			*finalize_g_process(char *integer_string,
 							char *decimal_string, t_slist *slist, double n)
 {
 	char	*final;
 
-	integer_string = finalize_integer(integer_string, n, slist);
+	if (decimal_string[0] == '\0')
+	{
+		if (1 / n <= 0 && (int)n == 0 && integer_string[0] != '-')
+		{
+			free(integer_string);
+			free(decimal_string);
+			integer_string = ft_strdup("-0");
+			return(integer_string);
+		}
+		final = integer_string;
+		free (decimal_string);
+		return(final);
+	}
+	integer_string = finalize_integer_g(integer_string, n, slist);
 	if (slist->precision < 0)
-		decimal_string = finalize_decimal_no_precision(decimal_string);
+		decimal_string = finalize_decimal_g_no_precision(decimal_string);
 	else
-		decimal_string = finalize_decimal_with_precision(decimal_string, slist);
+		decimal_string = finalize_decimal_g_with_precision(decimal_string, slist);
 	if (slist->hash == 1 && slist->precision == 0)
 		final = integer_string;
 	else
@@ -30,9 +43,9 @@ char	*finalize_process(char *integer_string,
 	return (final);
 }
 
-long long	of_power(int ten, int after_point)
+long long		of_power_g(int ten, int after_point)
 {
-	long long	temp;
+	long long temp;
 
 	temp = ten;
 	if (after_point == 0)
@@ -45,7 +58,7 @@ long long	of_power(int ten, int after_point)
 	return (temp);
 }
 
-int	check_bankers_round(double n, t_slist *slist)
+int				check_bankers_g_round(double n, t_slist *slist)
 {
 	double		temp;
 	long long	integer;
@@ -54,9 +67,9 @@ int	check_bankers_round(double n, t_slist *slist)
 	integer = (long long)n;
 	temp = temp - integer;
 	if (slist->precision == 0)
-		temp = temp * of_power(10, slist->precision + 1);
+		temp = temp * of_power_g(10, slist->precision + 1);
 	else
-		temp = temp * of_power(10, slist->precision);
+		temp = temp * of_power_g(10, slist->precision);
 	if (temp < 0)
 		temp *= -1;
 	if (integer % 2 == 0 && temp == 5)
@@ -66,23 +79,23 @@ int	check_bankers_round(double n, t_slist *slist)
 	return (1);
 }
 
-double	check_precision_condition(double n, t_slist *slist)
+double			check_precision_g_condition(double n, t_slist *slist)
 {
-	long double	temp;
+	long double temp;
 
 	temp = n;
-	if (check_bankers_round(n, slist) == 0)
+	if (check_bankers_g_round(n, slist) == 0)
 		return (n);
-	temp = temp * of_power(10, slist->precision);
+	temp = temp * of_power_g(10, slist->precision);
 	if (n >= 0)
 		temp += 0.5;
 	else
 		temp -= 0.5;
-	temp = temp / of_power(10, slist->precision);
+	temp = temp / of_power_g(10, slist->precision);
 	return (temp);
 }
 
-long long	get_decimal_number_unsigned(double n, t_slist *slist,
+long long		get_decimal_g_number_unsigned(double n, t_slist *slist,
 											unsigned long long integer)
 {
 	double	temp;
@@ -91,7 +104,7 @@ long long	get_decimal_number_unsigned(double n, t_slist *slist,
 	temp = temp - integer;
 	if (slist->precision < 0)
 	{
-		temp = temp * of_power(10, 6);
+		temp = temp * of_power_g(10, 5);
 		if (n >= 0)
 			temp += 0.5;
 		else
@@ -99,8 +112,8 @@ long long	get_decimal_number_unsigned(double n, t_slist *slist,
 	}
 	else
 	{
-		temp = check_precision_condition(temp, slist);
-		temp = temp * of_power(10, slist->precision);
+		temp = check_precision_g_condition(temp, slist);
+		temp = temp * of_power_g(10, slist->precision);
 	}
 	if ((long long)temp < 0)
 		return ((long long)temp * -1);

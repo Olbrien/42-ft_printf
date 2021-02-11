@@ -37,6 +37,13 @@ SOURCES = 	ft_printf.c\
 			sources/conversions/iffloat.c\
 			sources/conversions/iffloat2.c\
 			sources/conversions/iffloat3.c\
+			sources/conversions/iffloat4.c\
+			sources/conversions/iffloat5.c\
+			sources/conversions/ifgeneral.c\
+			sources/conversions/ifgeneral2.c\
+			sources/conversions/ifgeneral3.c\
+			sources/conversions/ifgeneral4.c\
+			sources/conversions/ifgeneral5.c\
 			\
 			sources/conversions/lengths/ifdigitlength.c\
 			sources/conversions/lengths/ifdigitlength2.c\

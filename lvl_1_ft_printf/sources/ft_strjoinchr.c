@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:05:12 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/26 23:03:21 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 06:03:23 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ char	*ft_strjoinchr(char *s1, char s2)
 		return (NULL);
 	}
 	len = ft_strlen(s1);
-	if (!(temp = malloc((len + 2) * sizeof(char))))
+	temp = malloc((len + 2) * sizeof(char));
+	if (temp == NULL)
 		return (NULL);
 	while (s1[i] != '\0')
 	{

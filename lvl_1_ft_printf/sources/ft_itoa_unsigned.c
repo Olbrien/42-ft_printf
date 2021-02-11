@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 05:41:20 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/26 06:29:46 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 06:02:49 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int		length_unsigned(long n)
+static int	length_unsigned(long n)
 {
 	long	number;
 	int		i;
@@ -34,7 +34,7 @@ static int		length_unsigned(long n)
 	return (i + 1);
 }
 
-static char		*ifmorezero_unsigned(long n)
+static char	*ifmorezero_unsigned(long n)
 {
 	char	*str;
 	int		i;
@@ -43,7 +43,8 @@ static char		*ifmorezero_unsigned(long n)
 
 	i = 0;
 	number = n;
-	if (!(str = malloc(length_unsigned(number) * sizeof(str))))
+	str = malloc(length_unsigned(number) * sizeof(str));
+	if (str == NULL)
 		return (NULL);
 	str[length_unsigned(number) - 1] = '\0';
 	i = length_unsigned(number) - 2;
@@ -57,7 +58,7 @@ static char		*ifmorezero_unsigned(long n)
 	return (str);
 }
 
-static char		*iflesszero_unsigned(long n)
+static char	*iflesszero_unsigned(long n)
 {
 	char	*str;
 	int		i;
@@ -67,7 +68,8 @@ static char		*iflesszero_unsigned(long n)
 	i = 0;
 	number = n;
 	number *= -1;
-	if (!(str = malloc(length_unsigned(number) * sizeof(str))))
+	str = malloc(length_unsigned(number) * sizeof(str));
+	if (str == NULL)
 		return (NULL);
 	str[0] = '-';
 	str[length_unsigned(number)] = '\0';
@@ -82,21 +84,22 @@ static char		*iflesszero_unsigned(long n)
 	return (str);
 }
 
-static char		*ifzero_unsigned(long n)
+static char	*ifzero_unsigned(long n)
 {
-	char *str;
+	char	*str;
 
-	if (!(str = malloc(length_unsigned(n) * sizeof(str))))
+	str = malloc(length_unsigned(n) * sizeof(str));
+	if (str == NULL)
 		return (NULL);
 	str[0] = 0 + '0';
 	str[1] = '\0';
 	return (str);
 }
 
-char			*ft_itoa_unsigned(long n)
+char	*ft_itoa_unsigned(long n)
 {
-	char *str;
-	long number;
+	char	*str;
+	long	number;
 
 	number = n;
 	if (number == 0 || number == -0)

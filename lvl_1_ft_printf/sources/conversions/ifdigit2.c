@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/17 06:07:07 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/27 04:12:39 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/11 05:29:28 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-char			*digit_precision_with_zeros(t_slist *slist, char *string,
+char	*digit_precision_with_zeros(t_slist *slist, char *string,
 											char *send)
 {
 	int		i;
@@ -23,7 +23,8 @@ char			*digit_precision_with_zeros(t_slist *slist, char *string,
 	i = 0;
 	if (slist->zero > 0 && to_cut_len > 0 && slist->precision > 0)
 	{
-		if (!(temp = malloc(sizeof(char) * ft_strlen(string) + to_cut_len + 2)))
+		temp = malloc(sizeof(char) * ft_strlen(string) + to_cut_len + 2);
+		if (temp == NULL)
 			return (NULL);
 		while (to_cut_len > 0)
 		{
@@ -40,7 +41,7 @@ char			*digit_precision_with_zeros(t_slist *slist, char *string,
 	return (send);
 }
 
-static char		*digit_write_zeros(t_slist *slist, char *string)
+static char	*digit_write_zeros(t_slist *slist, char *string)
 {
 	char	*s;
 	int		add_zeros;
@@ -50,15 +51,13 @@ static char		*digit_write_zeros(t_slist *slist, char *string)
 	add_zeros = slist->zero - ft_strlen(string);
 	if (add_zeros > 0)
 	{
-		if (!(s = malloc(sizeof(char) * (ft_strlen(string) + add_zeros + 2))))
+		s = malloc(sizeof(char) * (ft_strlen(string) + add_zeros + 2));
+		if (s == NULL)
 			return (NULL);
 		if (string[i] == '-' || string[i] == '+')
 			s[i++] = string[0];
 		while (add_zeros > 0)
-		{
-			s[i++] = '0';
-			add_zeros--;
-		}
+			s[i++] = add_zeros_unecessary_function_d(add_zeros--);
 		s[i] = '\0';
 		s = digit_write_zeros2(slist, s, string);
 		if (slist->free == 0)
@@ -69,10 +68,10 @@ static char		*digit_write_zeros(t_slist *slist, char *string)
 	return (string);
 }
 
-static int		digit_write_minus_greater(t_plist *plist, t_slist *slist,
+static int	digit_write_minus_greater(t_plist *plist, t_slist *slist,
 											int i, int length)
 {
-	int count;
+	int	count;
 
 	count = i + length;
 	if (length >= slist->minus)
@@ -93,10 +92,10 @@ static int		digit_write_minus_greater(t_plist *plist, t_slist *slist,
 	return (i);
 }
 
-int				digit_write_width_greater(t_plist *plist, t_slist *slist,
+int	digit_write_width_greater(t_plist *plist, t_slist *slist,
 											int i, int length)
 {
-	int count;
+	int	count;
 
 	count = i + length;
 	if (length >= slist->width)
@@ -117,10 +116,10 @@ int				digit_write_width_greater(t_plist *plist, t_slist *slist,
 	return (i);
 }
 
-void			digit_write(t_plist *plist, char *string, t_slist *slist)
+void	digit_write(t_plist *plist, char *string, t_slist *slist)
 {
-	int i;
-	int length;
+	int	i;
+	int	length;
 
 	i = 0;
 	if (!plist || !string)

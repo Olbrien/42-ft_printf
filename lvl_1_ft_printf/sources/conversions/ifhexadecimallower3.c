@@ -6,15 +6,15 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 17:36:21 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/31 05:44:05 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 08:18:58 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/ft_printf.h"
 
-static int		find_char(char *send)
+static int	find_char(char *send)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (send[i] != 'x' && send[i] != '\0')
@@ -22,7 +22,7 @@ static int		find_char(char *send)
 	return (i);
 }
 
-char			*hexalower_write_zeros2(t_slist *slist, char *send,
+char	*hexalower_write_zeros2(t_slist *slist, char *send,
 										char *string)
 {
 	if (string[0] == '-')
@@ -38,7 +38,7 @@ char			*hexalower_write_zeros2(t_slist *slist, char *send,
 	return (send);
 }
 
-char			*return_if_one_hexalowerdigit(t_slist *slist, char *send,
+char	*return_if_one_hexalowerdigit(t_slist *slist, char *send,
 										long long int value)
 {
 	char	*temp;

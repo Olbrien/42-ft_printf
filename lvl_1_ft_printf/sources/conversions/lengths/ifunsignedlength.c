@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 06:10:54 by tisantos          #+#    #+#             */
-/*   Updated: 2021/01/30 16:16:33 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/10 06:32:58 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	ifunsignedhh(t_plist *plist, t_slist *slist, va_list *args)
 		send_length = ft_strlen(send) - 1;
 	else
 		send_length = ft_strlen(send);
-	if (slist->precision >= 0 && slist->precision > send_length &&
-								slist->precision_error == 0)
+	if (slist->precision >= 0 && slist->precision > send_length
+		&& slist->precision_error == 0)
 		send = unsigned_precision(send, slist);
 	else if (slist->precision_error == 1)
 		send[0] = '\0';
@@ -55,8 +55,8 @@ void	ifunsignedh(t_plist *plist, t_slist *slist, va_list *args)
 		send_length = ft_strlen(send) - 1;
 	else
 		send_length = ft_strlen(send);
-	if (slist->precision >= 0 && slist->precision > send_length &&
-								slist->precision_error == 0)
+	if (slist->precision >= 0 && slist->precision > send_length
+		&& slist->precision_error == 0)
 		send = unsigned_precision(send, slist);
 	else if (slist->precision_error == 1)
 		send[0] = '\0';
@@ -81,8 +81,8 @@ void	ifunsignedll(t_plist *plist, t_slist *slist, va_list *args)
 		send_length = ft_strlen(send) - 1;
 	else
 		send_length = ft_strlen(send);
-	if (slist->precision >= 0 && slist->precision > send_length &&
-								slist->precision_error == 0)
+	if (slist->precision >= 0 && slist->precision > send_length
+		&& slist->precision_error == 0)
 		send = unsigned_precision(send, slist);
 	else if (slist->precision_error == 1)
 		send[0] = '\0';
@@ -107,8 +107,8 @@ void	ifunsignedl(t_plist *plist, t_slist *slist, va_list *args)
 		send_length = ft_strlen(send) - 1;
 	else
 		send_length = ft_strlen(send);
-	if (slist->precision >= 0 && slist->precision > send_length &&
-								slist->precision_error == 0)
+	if (slist->precision >= 0 && slist->precision > send_length
+		&& slist->precision_error == 0)
 		send = unsigned_precision(send, slist);
 	else if (slist->precision_error == 1)
 		send[0] = '\0';
