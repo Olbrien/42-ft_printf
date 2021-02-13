@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 13:43:24 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/10 05:39:56 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/13 19:18:44 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,5 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	free(plist.final_format);
-	return (plist.final_format_lenght);
+	return (format_length_return(&plist, &slist));
 }

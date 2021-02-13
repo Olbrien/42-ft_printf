@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:16:07 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/10 08:38:21 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/13 16:44:52 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ static char	*string_precision(t_slist *slist, char *string)
 	return (string);
 }
 
-static char	*string_process(t_plist *plist, t_slist *slist, char *string)
+char	*string_process(t_plist *plist, t_slist *slist, char *string)
 {
 	int	i;
 	int	length;

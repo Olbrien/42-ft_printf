@@ -6,11 +6,45 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/30 07:17:53 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/10 05:51:37 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/13 18:13:44 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+void	conversion_path_c(t_plist *plist,
+									va_list *args, t_slist *slist)
+{
+	char	*format;
+	int		i;
+
+	i = plist->format_count;
+	format = plist->format;
+	if (format[i] == 'c')
+	{
+		if (slist->l == 1)
+			ifcharacterl(plist, slist, args);
+		else
+			ifcharacter(plist, slist, args);
+	}
+}
+
+void	conversion_path_s(t_plist *plist,
+									va_list *args, t_slist *slist)
+{
+	char	*format;
+	int		i;
+
+	i = plist->format_count;
+	format = plist->format;
+	if (format[i] == 's')
+	{
+		if (slist->l == 1)
+			ifstringl(plist, slist, args);
+		else
+			ifstring(plist, slist, args);
+	}
+}
 
 void	conversion_path_n(t_plist *plist,
 									va_list *args, t_slist *slist)

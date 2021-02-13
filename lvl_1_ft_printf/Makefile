@@ -1,6 +1,7 @@
 NAME = libftprintf.a
 
 SOURCES = 	ft_printf.c\
+			ft_printf2.c\
 			\
 			sources/initializers.c\
 			sources/ft_strjoinchr.c\
@@ -39,11 +40,6 @@ SOURCES = 	ft_printf.c\
 			sources/conversions/iffloat3.c\
 			sources/conversions/iffloat4.c\
 			sources/conversions/iffloat5.c\
-			sources/conversions/ifgeneral.c\
-			sources/conversions/ifgeneral2.c\
-			sources/conversions/ifgeneral3.c\
-			sources/conversions/ifgeneral4.c\
-			sources/conversions/ifgeneral5.c\
 			\
 			sources/conversions/lengths/ifdigitlength.c\
 			sources/conversions/lengths/ifdigitlength2.c\
@@ -53,6 +49,8 @@ SOURCES = 	ft_printf.c\
 			sources/conversions/lengths/ifhexadecimallowerlength.c\
 			sources/conversions/lengths/ifhexadecimalupperlength.c\
 			sources/conversions/lengths/ifnlength.c\
+			sources/conversions/lengths/ifstringlength.c\
+			sources/conversions/lengths/ifcharacterlength.c\
 			\
 			sources/specifier.c\
 			sources/specifiers/hasflags.c\

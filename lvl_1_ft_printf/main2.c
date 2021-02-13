@@ -10051,4 +10051,128 @@ printf("\nPRECISION 0\n");
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
+
+/////////////////////////////////////////////////
+//  			   s STRING TESTS
+//				    l Test
+/////////////////////////////////////////////////
+
+	wchar_t wc[3] = L"@@";
+
+	printf("\n");
+	do_printf = printf("%ls", wc);
+	printf("\n");
+	do_ft_printf = ft_printf("%ls", wc);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	wchar_t wca[6] = L"aNcD";
+
+	printf("\n");
+	do_printf = printf("%ls", wca);
+	printf("\n");
+	do_ft_printf = ft_printf("%ls", wca);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	wchar_t wcad[2] = L"x";
+
+	printf("\n");
+	do_printf = printf("%5ls", wcad);
+	printf("\n");
+	do_ft_printf = ft_printf("%5ls", wcad);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%5ls", NULL);
+	printf("\n");
+	do_ft_printf = ft_printf("%5ls", NULL);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%123ls", NULL);
+	printf("\n");
+	do_ft_printf = ft_printf("%123ls", NULL);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	wchar_t wcadd[2] = L"";
+
+	printf("\n");
+	do_printf = printf("%ls", wcadd);
+	printf("\n");
+	do_ft_printf = ft_printf("%ls", wcadd);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	wchar_t wcaddd[2] = L"";
+
+	printf("\n");
+	do_printf = printf("%-5ls", wcaddd);
+	printf("\n");
+	do_ft_printf = ft_printf("%-5ls", wcaddd);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	/////////////////////////////////////////////////
+//  			   c CHAR TESTS
+//				    l Test
+/////////////////////////////////////////////////
+
+	printf("\n");
+	do_printf = printf("%lc", 'a');
+	printf("\n");
+	do_ft_printf = ft_printf("%lc", 'a');
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lc", 123);
+	printf("\n");
+	do_ft_printf = ft_printf("%lc", 123);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lc", 1);
+	printf("\n");
+	do_ft_printf = ft_printf("%lc", 1);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lc", 555);
+	printf("\n");
+	do_ft_printf = ft_printf("%lc", 555);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lc %lc", 555, 11);
+	printf("\n");
+	do_ft_printf = ft_printf("%lc %lc", 555, 11);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%lc %lc", 22, -11);
+	printf("\n");
+	do_ft_printf = ft_printf("%lc %lc", 22, -11);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
 }

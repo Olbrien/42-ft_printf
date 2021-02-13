@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:13:32 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/10 06:34:03 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/13 18:15:55 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	char_write_width_greater(t_plist *plist, t_slist *slist, int i)
 	return (i);
 }
 
-static void	char_process(t_plist *plist, char character, t_slist *slist)
+void	char_process(t_plist *plist, char character, t_slist *slist)
 {
 	int	i;
 

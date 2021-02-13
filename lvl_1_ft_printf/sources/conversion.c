@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:07:37 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/10 05:51:14 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/13 18:13:15 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,6 @@ static void	conversion2(t_plist *plist, va_list *args, t_slist *slist)
 		conversion_path_n(plist, args, slist);
 	else if (format[i] == 'f')
 		iffloat(plist, slist, args);
-	else if (format[i] == 'g')
-		ifgeneral(plist, slist, args);
 }
 
 void	conversion(t_plist *plist, va_list *args, t_slist *slist)
@@ -108,9 +106,9 @@ void	conversion(t_plist *plist, va_list *args, t_slist *slist)
 	if (format[i] == '%')
 		ifpercent(plist, slist);
 	else if (format[i] == 'c')
-		ifcharacter(plist, slist, args);
+		conversion_path_c(plist, args, slist);
 	else if (format[i] == 's')
-		ifstring(plist, slist, args);
+		conversion_path_s(plist, args, slist);
 	else if (format[i] == 'p')
 		ifpointer(plist, slist, args);
 	else if (format[i] == 'd')
@@ -121,7 +119,6 @@ void	conversion(t_plist *plist, va_list *args, t_slist *slist)
 		conversion_path_u(plist, args, slist);
 	else if (format[i] == 'x')
 		conversion_path_x_lower(plist, args, slist);
-	else if (format[i] == 'X' || format[i] == 'n' || format[i] == 'f'
-		|| format[i] == 'g')
+	else if (format[i] == 'X' || format[i] == 'n' || format[i] == 'f')
 		conversion2(plist, args, slist);
 }
