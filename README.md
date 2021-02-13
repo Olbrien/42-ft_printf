@@ -14,3 +14,7 @@ Já fizeste o Float para os precisions. Vais agora para os # (altform).
 Update: 07-02-2021
 
 Floats já estão bons. Não há ll, l, h, hh de floats. Vais fazer agora a norminette e começar o 'e'.
+
+Update: 13-02-2021
+
+Norminette feita. "l" de 'c' e 's' estão feitos. Não conseguiste fazer o 'g'. Fraco.
