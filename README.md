@@ -30,6 +30,3 @@ Norminette feita. "l" de 'c' e 's' estão feitos. Não conseguiste fazer o 'g'. 
 ./enable-test nocrash\
 ./disable-test "bonus_notrequired"\
 ./test
-
-Nas options-config.ini alterar o t pequeno para T grande e meter o timeout tipo 5s
-./make re
