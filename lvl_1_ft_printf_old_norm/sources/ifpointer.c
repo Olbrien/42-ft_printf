@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:17:07 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 16:05:49 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/14 17:49:45 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ void		ifpointer(t_plist *plist, t_slist *slist, va_list *args)
 	char			*send;
 	long long int	pointer_value;
 
+	send = NULL;
 	pointer_value = va_arg(*args, long long int);
 	if (pointer_value == '\0')
 	{
