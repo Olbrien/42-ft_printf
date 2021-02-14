@@ -2,7 +2,7 @@
 
 ###### <i>Recent Update on 13/02/2021.</i>
 Added Norminette v3.\
-Added Old Norminette v3.\
+Added old Norminette.\
 Added README.md structure.
 
 ###### <i>Old Update on 11/02/2021.</i>
