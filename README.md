@@ -18,7 +18,7 @@ Floats já estão bons. Não há ll, l, h, hh de floats. Vais fazer agora a norm
 Update: 13-02-2021
 
 Norminette feita. "l" de 'c' e 's' estão feitos. Não conseguiste fazer o 'g'. Fraco.
-
+<pre>
 ./reset-to-default-enabled-tests\
 ./disable-test notintsubject_o\
 ./enable-test bonus_length\
@@ -30,3 +30,4 @@ Norminette feita. "l" de 'c' e 's' estão feitos. Não conseguiste fazer o 'g'. 
 ./enable-test nocrash\
 ./disable-test "bonus_notrequired"\
 ./test
+</pre>
