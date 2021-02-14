@@ -47,8 +47,7 @@ Done with Norminette v3.
 
 **** Tests ****
 
-[42cursus_gnl_tests](https://github.com/mrjvs/42cursus_gnl_tests)\
-[42TESTERS-GNL](https://github.com/Mazoise/42TESTERS-GNL)
+[pft](https://github.com/gavinfielder/pft)
 
 **** Results ****
 
