@@ -52,5 +52,4 @@ Done with Norminette v3.
 
 **** Results ****
 
-![GitHub Logo](/extras/images/42TESTERS-GNL.png)\
-![GitHub Logo](/extras/images/42cursus_gnl_tests1.png)\
+![GitHub Logo](/extras/images/gavinfielder_pft.png)
