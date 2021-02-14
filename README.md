@@ -18,3 +18,18 @@ Floats já estão bons. Não há ll, l, h, hh de floats. Vais fazer agora a norm
 Update: 13-02-2021
 
 Norminette feita. "l" de 'c' e 's' estão feitos. Não conseguiste fazer o 'g'. Fraco.
+
+./reset-to-default-enabled-tests
+./disable-test notintsubject_o
+./enable-test bonus_length
+./enable-test bonus_af
+./enable-test bonus_sp
+./enable-test bonus_as
+./enable-test "bonus*_f_"
+./enable-test "bonus*_n_"
+./enable-test nocrash
+./disable-test "bonus_notrequired"
+./test
+
+Nas options-config.ini alterar o t pequeno para T grande e meter o timeout tipo 5s
+./make re
