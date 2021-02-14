@@ -1,23 +1,18 @@
 # ft_printf
-Update: 31-01-2021
 
-Está quase. Falta as conversions bónus "nfge", resto parece estar tudo bem. 
+###### <i>Recent Update on 13/02/2021.</i>
+Added Norminette v3.\
+Added Old Norminette v3.\
+Added README.md structure.
 
-Update: 02-02-2021
+###### <i>Old Update on 11/02/2021.</i>
+Completed the project without 'e' and 'g' of the bonus section.
 
-Já fizeste o Float para casos normais e arredondados. Vais para o precision agora.
 
-Update: 06-02-2021
+**** Tests ****
 
-Já fizeste o Float para os precisions. Vais agora para os # (altform).
+[pft](https://github.com/gavinfielder/pft)
 
-Update: 07-02-2021
-
-Floats já estão bons. Não há ll, l, h, hh de floats. Vais fazer agora a norminette e começar o 'e'.
-
-Update: 13-02-2021
-
-Norminette feita. "l" de 'c' e 's' estão feitos. Não conseguiste fazer o 'g'. Fraco.
 <pre>
 ./reset-to-default-enabled-tests
 ./disable-test notintsubject_o
@@ -31,23 +26,6 @@ Norminette feita. "l" de 'c' e 's' estão feitos. Não conseguiste fazer o 'g'. 
 ./disable-test "bonus_notrequired"
 ./test
 </pre>
-
-
-# get_next_line
-
-
-###### <i>Recent Update on 13/02/2021.</i>
-Added lvl_1_get_next_line_old_norm.
-
-###### <i>Old Update on 11/02/2021.</i>
-Changed README.md structure.
-
-###### <i>Old Update on 10/02/2021.</i>
-Done with Norminette v3.
-
-**** Tests ****
-
-[pft](https://github.com/gavinfielder/pft)
 
 **** Results ****
 
