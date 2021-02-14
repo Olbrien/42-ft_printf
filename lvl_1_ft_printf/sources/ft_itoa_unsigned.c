@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 05:41:20 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/10 06:02:49 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/14 18:01:41 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ char	*ft_itoa_unsigned(long n)
 	char	*str;
 	long	number;
 
+	str = NULL;
 	number = n;
 	if (number == 0 || number == -0)
 		str = ifzero_unsigned(n);
