@@ -61,7 +61,7 @@ void			char_process(t_plist *plist, char character, t_slist *slist)
 	plist->final_format_lenght++;
 }
 
-void	ifcharacter(t_plist *plist, t_slist *slist, va_list *args)
+void			ifcharacter(t_plist *plist, t_slist *slist, va_list *args)
 {
 	char	send;
 

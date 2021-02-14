@@ -12,7 +12,7 @@
 
 #include "../includes/ft_printf.h"
 
-static int	ft_itoa_len(unsigned long n)
+static int		ft_itoa_len(unsigned long n)
 {
 	long int			len;
 
@@ -26,7 +26,7 @@ static int	ft_itoa_len(unsigned long n)
 	return (len);
 }
 
-static void	ft_itoa_write(char *finish, unsigned long len,
+static void		ft_itoa_write(char *finish, unsigned long len,
 								unsigned long n)
 {
 	while (n > 9)
@@ -37,7 +37,7 @@ static void	ft_itoa_write(char *finish, unsigned long len,
 	finish[len] = n + '0';
 }
 
-char	*ft_itoa_unsigned_long(unsigned long int n)
+char			*ft_itoa_unsigned_long(unsigned long int n)
 {
 	unsigned long int				len;
 	char							*finish;

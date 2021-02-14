@@ -111,7 +111,7 @@ char		*string_process(t_plist *plist, t_slist *slist, char *string)
 	return (string);
 }
 
-void	ifstring(t_plist *plist, t_slist *slist, va_list *args)
+void		ifstring(t_plist *plist, t_slist *slist, va_list *args)
 {
 	char	*string;
 

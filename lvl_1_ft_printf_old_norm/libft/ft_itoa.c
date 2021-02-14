@@ -59,7 +59,7 @@ static void		ft_itoa_write(char *finish, int len, int n, int temp)
 	finish[len] = n + '0';
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int			minus;
 	int			temp;
