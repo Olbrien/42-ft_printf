@@ -13,58 +13,115 @@ SOURCES = 	ft_printf.c\
 			\
 			sources/conversion.c\
 			sources/conversion2.c\
-			sources/conversions/ifpercent.c\
-			sources/conversions/ifcharacter.c\
-			sources/conversions/ifstring.c\
-			sources/conversions/ifstring2.c\
-			sources/conversions/ifpointer.c\
-			sources/conversions/ifpointer2.c\
-			sources/conversions/ifdigit.c\
-			sources/conversions/ifdigit2.c\
-			sources/conversions/ifdigit3.c\
-			sources/conversions/ifinteger.c\
-			sources/conversions/ifinteger2.c\
-			sources/conversions/ifinteger3.c\
-			sources/conversions/ifunsigned.c\
-			sources/conversions/ifunsigned2.c\
-			sources/conversions/ifunsigned3.c\
-			sources/conversions/ifhexadecimallower.c\
-			sources/conversions/ifhexadecimallower2.c\
-			sources/conversions/ifhexadecimallower3.c\
-			sources/conversions/ifhexadecimalupper.c\
-			sources/conversions/ifhexadecimalupper2.c\
-			sources/conversions/ifhexadecimalupper3.c\
-			sources/conversions/ifn.c\
-			sources/conversions/iffloat.c\
-			sources/conversions/iffloat2.c\
-			sources/conversions/iffloat3.c\
-			sources/conversions/iffloat4.c\
-			sources/conversions/iffloat5.c\
+			sources/ifpercent.c\
+			sources/ifcharacter.c\
+			sources/ifstring.c\
+			sources/ifstring2.c\
+			sources/ifpointer.c\
+			sources/ifpointer2.c\
+			sources/ifdigit.c\
+			sources/ifdigit2.c\
+			sources/ifdigit3.c\
+			sources/ifinteger.c\
+			sources/ifinteger2.c\
+			sources/ifinteger3.c\
+			sources/ifunsigned.c\
+			sources/ifunsigned2.c\
+			sources/ifunsigned3.c\
+			sources/ifhexadecimallower.c\
+			sources/ifhexadecimallower2.c\
+			sources/ifhexadecimallower3.c\
+			sources/ifhexadecimalupper.c\
+			sources/ifhexadecimalupper2.c\
+			sources/ifhexadecimalupper3.c\
+			sources/ifn.c\
+			sources/iffloat.c\
+			sources/iffloat2.c\
+			sources/iffloat3.c\
+			sources/iffloat4.c\
+			sources/iffloat5.c\
 			\
-			sources/conversions/lengths/ifdigitlength.c\
-			sources/conversions/lengths/ifdigitlength2.c\
-			sources/conversions/lengths/ifintegerlength.c\
-			sources/conversions/lengths/ifintegerlength2.c\
-			sources/conversions/lengths/ifunsignedlength.c\
-			sources/conversions/lengths/ifhexadecimallowerlength.c\
-			sources/conversions/lengths/ifhexadecimalupperlength.c\
-			sources/conversions/lengths/ifnlength.c\
-			sources/conversions/lengths/ifstringlength.c\
-			sources/conversions/lengths/ifcharacterlength.c\
+			sources/ifdigitlength.c\
+			sources/ifdigitlength2.c\
+			sources/ifintegerlength.c\
+			sources/ifintegerlength2.c\
+			sources/ifunsignedlength.c\
+			sources/ifhexadecimallowerlength.c\
+			sources/ifhexadecimalupperlength.c\
+			sources/ifnlength.c\
+			sources/ifstringlength.c\
+			sources/ifcharacterlength.c\
 			\
 			sources/specifier.c\
-			sources/specifiers/hasflags.c\
-			sources/specifiers/flags/hasminus.c\
-			sources/specifiers/flags/haszeros.c\
-			sources/specifiers/haswidth.c\
-			sources/specifiers/hasprecision.c\
-			sources/specifiers/haslength.c
+			sources/hasflags.c\
+			sources/hasminus.c\
+			sources/haszeros.c\
+			sources/haswidth.c\
+			sources/hasprecision.c\
+			sources/haslength.c
+
+SOURCES_O = initializers.o\
+			ft_strjoinchr.o\
+			ft_itoa_unsigned.o\
+			ft_itoa_unsigned_long.o\
+			ft_itoa_unsigned_longlong.o\
+			ft_itoa_long.o\
+			ft_itoa_longlong.o\
+			\
+			conversion.o\
+			conversion2.o\
+			ifpercent.o\
+			ifcharacter.o\
+			ifstring.o\
+			ifstring2.o\
+			ifpointer.o\
+			ifpointer2.o\
+			ifdigit.o\
+			ifdigit2.o\
+			ifdigit3.o\
+			ifinteger.o\
+			ifinteger2.o\
+			ifinteger3.o\
+			ifunsigned.o\
+			ifunsigned2.o\
+			ifunsigned3.o\
+			ifhexadecimallower.o\
+			ifhexadecimallower2.o\
+			ifhexadecimallower3.o\
+			ifhexadecimalupper.o\
+			ifhexadecimalupper2.o\
+			ifhexadecimalupper3.o\
+			ifn.o\
+			iffloat.o\
+			iffloat2.o\
+			iffloat3.o\
+			iffloat4.o\
+			iffloat5.o\
+			\
+			ifdigitlength.o\
+			ifdigitlength2.o\
+			ifintegerlength.o\
+			ifintegerlength2.o\
+			ifunsignedlength.o\
+			ifhexadecimallowerlength.o\
+			ifhexadecimalupperlength.o\
+			ifnlength.o\
+			ifstringlength.o\
+			ifcharacterlength.o\
+			\
+			specifier.o\
+			hasflags.o\
+			hasminus.o\
+			haszeros.o\
+			haswidth.o\
+			hasprecision.o\
+			haslength.o
 
 OBJS = $(SOURCES:.c=.o)
 
 CC = gcc
 RM = rm -f
-FLAGS = -c # -c -Wall -Wextra -Werror <-- Voltar a por isto
+FLAGS = -c -Wall -Wextra -Werror
 INCLUDES = -I./includes
 
 all : $(NAME)
@@ -77,6 +134,7 @@ $(NAME) :	$(OBJS)
 
 clean :
 			$(MAKE) clean -C ./libft
+			$(RM) $(SOURCES_O)
 			$(RM) $(OBJS)
 
 fclean :

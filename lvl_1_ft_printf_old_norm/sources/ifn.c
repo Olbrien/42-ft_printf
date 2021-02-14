@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   specifier.c                                        :+:      :+:    :+:   */
+/*   ifn.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/16 07:22:17 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 16:06:20 by tisantos         ###   ########.fr       */
+/*   Created: 2021/01/31 17:48:31 by tisantos          #+#    #+#             */
+/*   Updated: 2021/02/14 16:05:39 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	specifier(t_plist *plist, va_list *args, t_slist *slist)
+void	ifn(t_plist *plist, t_slist *slist, va_list *args)
 {
-	hasflags(plist, slist, args);
-	haswidth(plist, slist, args);
-	hasprecision(plist, slist, args);
-	haslength(plist, slist);
-	parse(plist, args, slist);
+	int	*n;
+
+	n = va_arg(*args, int*);
+	if (slist->width > 0)
+		slist->width = 0;
+	*n = plist->final_format_lenght;
+	plist->format_count++;
 }

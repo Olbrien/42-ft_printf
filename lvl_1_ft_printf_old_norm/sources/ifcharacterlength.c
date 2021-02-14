@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   specifier.c                                        :+:      :+:    :+:   */
+/*   ifcharacterlength.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/16 07:22:17 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 16:06:20 by tisantos         ###   ########.fr       */
+/*   Created: 2021/02/13 18:12:26 by tisantos          #+#    #+#             */
+/*   Updated: 2021/02/14 16:04:20 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	specifier(t_plist *plist, va_list *args, t_slist *slist)
+void	ifcharacterl(t_plist *plist, t_slist *slist, va_list *args)
 {
-	hasflags(plist, slist, args);
-	haswidth(plist, slist, args);
-	hasprecision(plist, slist, args);
-	haslength(plist, slist);
-	parse(plist, args, slist);
+	wchar_t	send;
+	int		error;
+
+	error = 0;
+	send = (unsigned int)va_arg(*args, wchar_t);
+	if ((int)send > 127 || (int)send < 0)
+	{
+		send = 127;
+		error = 1;
+	}
+	if (slist->lcerror != 1)
+	{
+		char_process(plist, send, slist);
+	}
+	if (error == 1)
+	{
+		slist->lcerror = 1;
+		plist->final_format_lenght = -1;
+	}
+	plist->format_count++;
 }
