@@ -1,12 +1,17 @@
 # ft_printf
 
+New Norminette still not done. But old Norminette is.\
+
 ###### <i>Recent Update on 13/02/2021.</i>
+Added 'e' conversion.
+
+###### <i>Old Update on 13/02/2021.</i>
 Added Norminette v3.\
 Added old Norminette.\
 Added README.md structure.
 
 ###### <i>Old Update on 11/02/2021.</i>
-Completed the project without 'e' and 'g' of the bonus section.
+Completed the project without 'g' of the bonus section.
 
 
 **** Tests ****
