@@ -1,6 +1,6 @@
 # ft_printf
 
-New Norminette still not done. But old Norminette is.\
+New Norminette still not done. But old Norminette is.
 
 ###### <i>Recent Update on 13/02/2021.</i>
 Added 'e' conversion.
@@ -27,6 +27,7 @@ Completed the project without 'g' of the bonus section.
 ./enable-test bonus_as
 ./enable-test "bonus*_f_"
 ./enable-test "bonus*_n_"
+./enable-test "bonus*_e_"
 ./enable-test nocrash
 ./disable-test "bonus_notrequired"
 ./test
