@@ -4,7 +4,7 @@
 Updated Norminette v3.\
 All Projects complete (without 'g' conversion) with new and old norminette.
 
-###### <i>Recent Update on 13/02/2021.</i>
+###### <i>Old Update on 13/02/2021.</i>
 Added 'e' conversion.
 
 ###### <i>Old Update on 13/02/2021.</i>
