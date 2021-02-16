@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ifdigit2.c                                         :+:      :+:    :+:   */
+/*   ifhexadecimalupper2.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/17 06:07:07 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/16 14:51:36 by tisantos         ###   ########.fr       */
+/*   Created: 2021/01/19 16:10:08 by tisantos          #+#    #+#             */
+/*   Updated: 2021/02/16 14:48:26 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*digit_precision_with_zeros(t_slist *slist, char *string,
-											char *send)
+char	*hexadecimalupper_precision_with_zeros(t_slist *slist,
+												char *string, char *send)
 {
 	int		i;
 	int		to_cut_len;
@@ -34,42 +34,41 @@ char	*digit_precision_with_zeros(t_slist *slist, char *string,
 		temp[i] = '\0';
 		temp = ft_strjoin(temp, string);
 		free(send);
-		if (slist->free == 0)
-			free(string);
 		return (temp);
 	}
 	return (send);
 }
 
-static char	*digit_write_zeros(t_slist *slist, char *string)
+static char	*hexadecimalupper_write_zeros(t_slist *slist, char *string)
 {
-	char	*s;
-	int		add_zeros;
 	int		i;
+	char	*send;
+	int		add_zeros;
 
-	i = 0;
 	add_zeros = slist->zero - ft_strlen(string);
+	i = 0;
 	if (add_zeros > 0)
 	{
-		s = malloc(sizeof(char) * (ft_strlen(string) + add_zeros + 2));
-		if (s == NULL)
+		send = malloc(sizeof(char) * (ft_strlen(string) + add_zeros + 2));
+		if (send == NULL)
 			return (NULL);
-		if (string[i] == '-' || string[i] == '+')
-			s[i++] = string[0];
+		if (string[i] == '-')
+			send[i++] = '-';
 		while (add_zeros > 0)
-			s[i++] = add_zeros_unecessary_function_d(add_zeros--);
-		s[i] = '\0';
-		s = digit_write_zeros2(slist, s, string);
-		if (slist->free == 0)
-			free(string);
-		slist->free = 1;
-		return (s);
+		{
+			send[i++] = '0';
+			add_zeros--;
+		}
+		send[i] = '\0';
+		send = hexaupper_write_zeros2(slist, send, string);
+		free(string);
+		return (send);
 	}
 	return (string);
 }
 
-static int	digit_write_minus_greater(t_plist *plist, t_slist *slist,
-											int i, int length)
+static int	hexadecimalupper_write_minus_greater(
+			t_plist *plist, t_slist *slist, int i, int length)
 {
 	int	count;
 
@@ -92,8 +91,8 @@ static int	digit_write_minus_greater(t_plist *plist, t_slist *slist,
 	return (i);
 }
 
-int	digit_write_width_greater(t_plist *plist, t_slist *slist,
-											int i, int length)
+static int	hexadecimalupper_write_width_greater(
+				t_plist *plist, t_slist *slist, int i, int length)
 {
 	int	count;
 
@@ -116,7 +115,8 @@ int	digit_write_width_greater(t_plist *plist, t_slist *slist,
 	return (i);
 }
 
-void	digit_write(t_plist *plist, char *string, t_slist *slist)
+void	hexadecimalupper_write(t_plist *plist,
+								char *string, t_slist *slist)
 {
 	int	i;
 	int	length;
@@ -125,22 +125,20 @@ void	digit_write(t_plist *plist, char *string, t_slist *slist)
 	if (!plist || !string)
 		return ;
 	length = ft_strlen(string);
-	if (slist->space == 1 && slist->width <= length)
-		digit_space(plist, slist, string, length);
 	if (slist->zero > length)
 	{
-		string = digit_write_zeros(slist, string);
+		string = hexadecimalupper_write_zeros(slist, string);
 		length = ft_strlen(string);
 	}
 	if (slist->width > 0 && slist->minus == 0)
-		i = digit_write_width_greater(plist, slist, i, length);
+		i = hexadecimalupper_write_width_greater(plist, slist, i, length);
 	write(1, string, length);
 	if (slist->minus > 0)
-		i = digit_write_minus_greater(plist, slist, i, length);
+		i = hexadecimalupper_write_minus_greater(plist, slist, i, length);
 	if (plist->final_format == NULL)
 		plist->final_format = ft_strdup(string);
 	else
 		plist->final_format = ft_strjoin(plist->final_format, string);
 	plist->final_format_lenght += length;
-	free_string_digit(string, slist);
+	free(string);
 }

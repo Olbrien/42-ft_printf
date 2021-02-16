@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iffloat3.c                                         :+:      :+:    :+:   */
+/*   ifexponent5.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/07 21:55:02 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 16:04:49 by tisantos         ###   ########.fr       */
+/*   Created: 2021/02/01 03:43:06 by tisantos          #+#    #+#             */
+/*   Updated: 2021/02/16 00:46:08 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*finalize_decimal_with_precision(char *decimal_string,
+char	*finalize_decimal_with_precision_e(char *decimal_string,
 											t_slist *slist)
 {
 	char	*final;
@@ -41,7 +41,7 @@ char	*finalize_decimal_with_precision(char *decimal_string,
 	return (final);
 }
 
-char	*finalize_decimal_no_precision(char *decimal_string)
+char	*finalize_decimal_no_precision_e(char *decimal_string)
 {
 	char	*final;
 	int		i;
@@ -69,7 +69,7 @@ char	*finalize_decimal_no_precision(char *decimal_string)
 	return (final);
 }
 
-char	*finalize_integer(char *integer_string, double n, t_slist *slist)
+char	*finalize_integer_e(char *integer_string, long double n, t_slist *slist)
 {
 	char	*final;
 	int		i;

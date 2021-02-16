@@ -1,16 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ifcharacter.c                                      :+:      :+:    :+:   */
+/*   ifpercent.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/16 07:13:32 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/16 14:51:50 by tisantos         ###   ########.fr       */
+/*   Created: 2021/01/16 07:11:12 by tisantos          #+#    #+#             */
+/*   Updated: 2021/02/16 14:47:30 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+static int	char_write_zeros(t_plist *plist, t_slist *slist, int i)
+{
+	int	a;
+
+	a = 0;
+	if (slist->minus == 0 && slist->zero > 0)
+	{
+		while (a < slist->zero - 1)
+		{
+			write(1, "0", 1);
+			plist->final_format_lenght++;
+			a++;
+		}
+	}
+	return (i);
+}
 
 static int	char_write_minus_greater(t_plist *plist, t_slist *slist, int i)
 {
@@ -36,13 +53,14 @@ static int	char_write_width_greater(t_plist *plist, t_slist *slist, int i)
 	return (i);
 }
 
-void	char_process(t_plist *plist, char character, t_slist *slist)
+static void	percent_process(t_plist *plist, t_slist *slist, char character)
 {
 	int	i;
 
 	i = 0;
-	if (!plist)
+	if (!plist || !character)
 		return ;
+	i = char_write_zeros(plist, slist, i);
 	if (slist->width > 0 && slist->minus == 0)
 		i = char_write_width_greater(plist, slist, i);
 	write(1, &character, 1);
@@ -61,11 +79,8 @@ void	char_process(t_plist *plist, char character, t_slist *slist)
 	plist->final_format_lenght++;
 }
 
-void	ifcharacter(t_plist *plist, t_slist *slist, va_list *args)
+void	ifpercent(t_plist *plist, t_slist *slist)
 {
-	char	send;
-
-	send = (char)va_arg(*args, int);
-	char_process(plist, send, slist);
+	percent_process(plist, slist, '%');
 	plist->format_count++;
 }

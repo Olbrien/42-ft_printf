@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:07:37 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 04:42:56 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/16 14:56:01 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ static void	conversion2(t_plist *plist, va_list *args, t_slist *slist)
 		conversion_path_n(plist, args, slist);
 	else if (format[i] == 'f')
 		iffloat(plist, slist, args);
+	else if (format[i] == 'e')
+		ifexponent(plist, slist, args);
 }
 
 void	conversion(t_plist *plist, va_list *args, t_slist *slist)
@@ -119,6 +121,7 @@ void	conversion(t_plist *plist, va_list *args, t_slist *slist)
 		conversion_path_u(plist, args, slist);
 	else if (format[i] == 'x')
 		conversion_path_x_lower(plist, args, slist);
-	else if (format[i] == 'X' || format[i] == 'n' || format[i] == 'f')
+	else if (format[i] == 'X' || format[i] == 'n' || format[i] == 'f'
+		|| format[i] == 'e')
 		conversion2(plist, args, slist);
 }

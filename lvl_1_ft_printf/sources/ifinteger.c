@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ifdigit.c                                          :+:      :+:    :+:   */
+/*   ifinteger.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/16 07:19:49 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 16:04:24 by tisantos         ###   ########.fr       */
+/*   Created: 2021/01/18 04:01:49 by tisantos          #+#    #+#             */
+/*   Updated: 2021/02/14 16:05:22 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*digit_precision(char *string, t_slist *slist)
+char	*integer_precision(char *string, t_slist *slist)
 {
 	int		len_zeros;
 	int		i;
@@ -41,8 +41,8 @@ char	*digit_precision(char *string, t_slist *slist)
 	return (temp);
 }
 
-char	*digit_precision_error(char *string, t_slist *slist,
-										int value)
+char	*integer_precision_error(char *string, t_slist *slist,
+											int value)
 {
 	if (slist->precision_error == 1 && slist->plus == 0)
 		string[0] = '\0';
@@ -51,13 +51,13 @@ char	*digit_precision_error(char *string, t_slist *slist,
 	else if (slist->precision_error == 1 && slist->plus == 1 && value != 0)
 	{
 		slist->free = 0;
-		string = digit_precision(string, slist);
+		string = integer_precision(string, slist);
 		free(string);
 	}
 	return (string);
 }
 
-char	*digit_plus(t_slist *slist, int value)
+char	*integer_plus(t_slist *slist, int value)
 {
 	char	*temp;
 	char	*send;
@@ -79,14 +79,14 @@ char	*digit_plus(t_slist *slist, int value)
 	return (send);
 }
 
-void	ifdigit(t_plist *plist, t_slist *slist, va_list *args)
+void	ifinteger(t_plist *plist, t_slist *slist, va_list *args)
 {
 	char	*send;
 	int		value;
 	int		send_length;
 
 	value = va_arg(*args, int);
-	send = digit_plus(slist, value);
+	send = integer_plus(slist, value);
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
 	{
 		slist->width = 0;
@@ -101,9 +101,9 @@ void	ifdigit(t_plist *plist, t_slist *slist, va_list *args)
 		send_length = ft_strlen(send);
 	if (slist->precision >= 0 && slist->precision > send_length
 		&& slist->precision_error == 0)
-		send = digit_precision(send, slist);
+		send = integer_precision(send, slist);
 	else if (slist->precision_error == 1)
-		digit_precision_error(send, slist, value);
-	digit_write(plist, send, slist);
+		integer_precision_error(send, slist, value);
+	integer_write(plist, send, slist);
 	plist->format_count++;
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ifdigitlength2.c                                   :+:      :+:    :+:   */
+/*   ifintegerlength2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/29 06:15:28 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 16:04:40 by tisantos         ###   ########.fr       */
+/*   Created: 2021/01/29 18:18:56 by tisantos          #+#    #+#             */
+/*   Updated: 2021/02/14 16:05:35 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*digit_plus_longlong(t_slist *slist, long long value)
+char	*integer_plus_longlong(t_slist *slist, long long value)
 {
 	char	*temp;
 	char	*send;
@@ -34,7 +34,7 @@ char	*digit_plus_longlong(t_slist *slist, long long value)
 	return (send);
 }
 
-char	*digit_plus_long(t_slist *slist, long value)
+char	*integer_plus_long(t_slist *slist, long value)
 {
 	char	*temp;
 	char	*send;
