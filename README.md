@@ -1,6 +1,8 @@
 # ft_printf
 
-New Norminette still not done. But old Norminette is.
+###### <i>Recent Update on 16/02/2021.</i>
+Updated Norminette v3.\
+All Projects complete (without 'g' conversion) with new and old norminette.
 
 ###### <i>Recent Update on 13/02/2021.</i>
 Added 'e' conversion.
