@@ -40,6 +40,13 @@ SOURCES = 	ft_printf.c\
 			sources/iffloat3.c\
 			sources/iffloat4.c\
 			sources/iffloat5.c\
+			sources/ifexponent.c\
+			sources/ifexponent2.c\
+			sources/ifexponent3.c\
+			sources/ifexponent4.c\
+			sources/ifexponent5.c\
+			sources/ifexponent6.c\
+			sources/ifexponent7.c\
 			\
 			sources/ifdigitlength.c\
 			sources/ifdigitlength2.c\
@@ -97,6 +104,11 @@ SOURCES_O = initializers.o\
 			iffloat3.o\
 			iffloat4.o\
 			iffloat5.o\
+			ifexponent.o\
+			ifexponent2.o\
+			ifexponent3.o\
+			ifexponent4.o\
+			ifexponent5.o\
 			\
 			ifdigitlength.o\
 			ifdigitlength2.o\

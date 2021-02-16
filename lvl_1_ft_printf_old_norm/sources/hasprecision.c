@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:26:00 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 16:04:07 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/15 21:31:53 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,9 @@ void		hasprecision(t_plist *plist, t_slist *slist, va_list *args)
 		if (format[i] != '\0' && format[i] == '*')
 		{
 			if ((ft_strchr(NUMBERS, format[i - 2] == 0)
-					&& format[i + 1] == 'f'))
+					&& format[i + 1] == 'f') ||
+					(ft_strchr(NUMBERS, format[i - 2] == 0)
+					&& format[i + 1] == 'e'))
 				slist->precision_error = 1;
 			hasprecision2(plist, slist, args);
 		}

@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 03:51:25 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 05:34:21 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/16 00:48:38 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <stdint.h>
 # include <float.h>
 
-# define CONVERSIONS	"cspdiuxX%nf"
+# define CONVERSIONS	"cspdiuxX%nfe"
 # define SPECIFIERS		"-+0.*lh# 123456789"
 # define FLAGS			"-+0 #"
 # define WIDTH			"123456789"
@@ -66,6 +66,8 @@ typedef struct	s_specifierslist
 	int			free;
 
 	int			lcerror;
+
+	int			exponent;
 }				t_slist;
 
 int				ft_printf(const char *format, ...);
@@ -257,5 +259,40 @@ void			haslength(t_plist *plist, t_slist *slist);
 
 void			hasminus(t_plist *plist, t_slist *slist);
 void			haszeros(t_plist *plist, t_slist *slist, va_list *args);
+
+
+
+
+void			ifexponent(t_plist *plist, t_slist *slist, va_list *args);
+long long		get_decimal_number_unsigned_e(long double n, t_slist *slist,
+					unsigned long long integer);
+double			check_precision_condition_e(long double n, t_slist *slist);
+int				check_bankers_round_e(long double n, t_slist *slist);
+long long		of_power_e(int ten, int after_point);
+char			*finalize_process_e(char *integer_string, char *decimal_string,
+					t_slist *slist, long double n);
+char			*finalize_integer_e(char *integer_string, long double n,
+					t_slist *slist);
+char			*finalize_decimal_no_precision_e(char *decimal_string);
+char			*finalize_decimal_with_precision_e(char *decimal_string,
+					t_slist *slist);
+void			exponent_write(t_plist *plist, char *string, t_slist *slist);
+int				exponent_write_width_greater(t_plist *plist, t_slist *slist,
+					int i, int length);
+char			*exponent_write_zeros2(char *s, char *string);
+void			exponent_space(t_plist *plist, t_slist *slist, char *string,
+					int length);
+void			free_string_exponent(char *string, t_slist *slist);
+long long int check_int_one_digit(t_slist *slist, long long integer);
+long double zero_case_e(long double temp, t_slist *slist);
+long double transform_to_one_integer_e(long double temp, t_slist *slist);
+char		*add_e_number_minus(char *final, t_slist *slist);
+char		*add_e_number_minus_zero(char *final, t_slist *slist);
+char		*add_e_number_plus(char *final, t_slist *slist);
+char		*add_e_number_plus_zero(char *final, t_slist *slist);
+char		*add_e_number(char *final, t_slist *slist);
+
+
+
 
 #endif
