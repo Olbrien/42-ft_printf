@@ -36,3 +36,5 @@ Completed the project without 'g' of the bonus section.
 **** Results ****
 
 ![GitHub Logo](/extras/images/gavinfielder_pft.png)
+
+<i>Results vary from machine to machine. On a Mac some NULL results differ if they were done on Linux or WSL.</i>
