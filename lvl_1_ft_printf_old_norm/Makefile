@@ -109,6 +109,8 @@ SOURCES_O = initializers.o\
 			ifexponent3.o\
 			ifexponent4.o\
 			ifexponent5.o\
+			ifexponent6.o\
+			ifexponent7.o\
 			\
 			ifdigitlength.o\
 			ifdigitlength2.o\
