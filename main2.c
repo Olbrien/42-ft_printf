@@ -10175,4 +10175,213 @@ printf("\nPRECISION 0\n");
 	printf("\n");
 	printf("%d\n", do_printf);
 	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("this %e scientific notation", 1.5);
+	printf("\n");
+	do_ft_printf = ft_printf("this %e scientific notation", 1.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", 7.5);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", 7.5);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", -0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", -0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", 1.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", 1.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", -3.85);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", -3.85);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", 573.924);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", 573.924);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", -958.125);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", -958.125);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", 23.00041);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", 23.00041);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", 0.000039);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", 0.000039);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", -7.00036);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", -7.00036);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", -0.00032);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", -0.00032);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", 9873.000001);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", 9873.000001);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", 999.999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", 999.999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", -99.999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", -99.999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", 0.999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", 0.999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", -0.999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", -0.999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", 23.375094499);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", 23.375094499);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", -985.765426499);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", -985.765426499);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%e", 3.9999999);
+	printf("\n");
+	do_ft_printf = ft_printf("%e", 3.9999999);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.10e", 0.0000000001);
+	printf("\n");
+	do_ft_printf = ft_printf("%.10e", 0.0000000001);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.*e", -3, 3.1415926535);
+	printf("\n");
+	do_ft_printf = ft_printf("%.*e", -3, 3.1415926535);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.1e", -0.00032);
+	printf("\n");
+	do_ft_printf = ft_printf("%.1e", -0.00032);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%.7e", 0.0000039);
+	printf("\n");
+	do_ft_printf = ft_printf("%.7e", 0.0000039);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%-5.0e", 7.3);
+	printf("\n");
+	do_ft_printf = ft_printf("%-5.0e", 7.3);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
+	printf("\n");
+	do_printf = printf("%+.0e", 0.0);
+	printf("\n");
+	do_ft_printf = ft_printf("%+.0e", 0.0);
+	printf("\n");
+	printf("%d\n", do_printf);
+	printf("%d\n", do_ft_printf);
+
 }
