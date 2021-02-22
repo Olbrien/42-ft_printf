@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 04:35:53 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 16:06:06 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/19 18:35:07 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	ifunsigned(t_plist *plist, t_slist *slist, va_list *args)
 	if (slist->precision >= 0 && slist->precision > send_length
 		&& slist->precision_error == 0)
 		send = unsigned_precision(send, slist);
-	else if (slist->precision_error == 1)
+	else if (slist->precision_error == 1 && send[0] == '0')
 		send[0] = '\0';
 	unsigned_write(plist, send, slist);
 	plist->format_count++;

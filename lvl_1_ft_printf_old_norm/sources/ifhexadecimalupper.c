@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 16:09:56 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 16:05:10 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/21 15:02:30 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,9 +113,9 @@ void		ifhexadecimalupper(t_plist *plist,
 									t_slist *slist, va_list *args)
 {
 	char			*send;
-	long long int	hexadecimal_value;
+	unsigned int	hexadecimal_value;
 
-	hexadecimal_value = va_arg(*args, long long int);
+	hexadecimal_value = va_arg(*args, unsigned int);
 	send = malloc(sizeof(char) * 2);
 	if (send == NULL)
 		return ;
@@ -123,10 +123,7 @@ void		ifhexadecimalupper(t_plist *plist,
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
 	{
 		slist->width = 0;
-		if (hexadecimal_value < 0)
-			slist->zero = slist->star_precision + 1;
-		else
-			slist->zero = slist->star_precision;
+		slist->zero = slist->star_precision;
 	}
 	send = convert_return_hexadecimalupper(hexadecimal_value, send, slist);
 	if (slist->precision == 0 && hexadecimal_value == 0

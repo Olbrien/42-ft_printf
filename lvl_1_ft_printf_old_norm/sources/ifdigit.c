@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 07:19:49 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 16:04:24 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/20 19:33:10 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*digit_precision(char *string, t_slist *slist)
 char	*digit_precision_error(char *string, t_slist *slist,
 										int value)
 {
-	if (slist->precision_error == 1 && slist->plus == 0)
+	if (slist->precision_error == 1 && slist->plus == 0 && string[0] == '0')
 		string[0] = '\0';
 	else if (slist->precision_error == 1 && slist->plus == 1 && value == 0)
 		string[1] = '\0';
@@ -89,7 +89,6 @@ void	ifdigit(t_plist *plist, t_slist *slist, va_list *args)
 	send = digit_plus(slist, value);
 	if (slist->has_star_precision == 1 && slist->star_precision != 0)
 	{
-		slist->width = 0;
 		if (value < 0)
 			slist->zero = slist->star_precision + 1;
 		else

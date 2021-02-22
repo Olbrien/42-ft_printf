@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/18 04:05:54 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 16:05:24 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/19 18:02:01 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char		*integer_precision_with_zeros(t_slist *slist, char *string,
 
 	to_cut_len = slist->zero - ft_strlen(string);
 	i = 0;
-	if (slist->zero > 0 && to_cut_len > 0 && slist->precision > 0)
+	if ((slist->zero > 0 && to_cut_len > 0 && slist->precision > 0) ||
+		(slist->zero > 0 && to_cut_len > 0 && slist->precision_error == 1))
 	{
 		temp = malloc(sizeof(char) * ft_strlen(string) + to_cut_len + 2);
 		if (temp == NULL)

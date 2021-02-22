@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/01 03:42:43 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/14 16:04:43 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/21 12:57:32 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void				iffloat(t_plist *plist, t_slist *slist, va_list *args)
 
 	value = va_arg(*args, double);
 	if (slist->has_star_precision == 1 && slist->precision_error == 1)
-		slist->precision = -1;
+		slist->precision = slist->star_precision;
 	send = float_process(value, slist);
 	slist->free = 1;
 	send = float_plus(slist, send);
