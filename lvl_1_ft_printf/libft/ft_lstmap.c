@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 17:21:37 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/16 14:45:56 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/14 05:25:48 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static	void	clear_both(t_list **lst, t_list **new_lst, void (*del)(void *))
 	ft_lstclear(new_lst, del);
 }
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*new_elem;

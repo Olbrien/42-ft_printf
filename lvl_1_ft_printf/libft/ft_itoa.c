@@ -5,84 +5,54 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/19 17:15:08 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/16 14:46:10 by tisantos         ###   ########.fr       */
+/*   Created: 2021/01/04 09:33:37 by ncameiri          #+#    #+#             */
+/*   Updated: 2021/02/11 19:08:50 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_itoa_minus(int *n, int *minus, int *temp)
+static int	absolute_value(int nbr)
 {
-	if (*n == -2147483648)
-	{
-		*n = *n + 1;
-		*minus = -1;
-		*temp = 1;
-		*n = *n * -1;
-	}
-	else if (*n < 0)
-	{
-		*minus = -1;
-		*n = *n * -1;
-		*temp = 0;
-	}
-	else if (*n >= 0)
-	{
-		*minus = 1;
-		*temp = 0;
-	}
+	if (nbr < 0)
+		return (-nbr);
+	return (nbr);
 }
 
-static int	ft_itoa_len(int n)
+static int	get_len(int nbr)
 {
 	int	len;
 
 	len = 0;
-	while (n > 9)
+	if (nbr <= 0)
+		++len;
+	while (nbr != 0)
 	{
-		n = n / 10;
-		len++;
+		++len;
+		nbr = nbr / 10;
 	}
-	len++;
 	return (len);
 }
 
-static void	ft_itoa_write(char *finish, int len, int n, int temp)
+char		*ft_itoa(int n)
 {
-	while (n > 9)
+	char	*result;
+	int		len;
+
+	len = get_len(n);
+	result = malloc(sizeof(char) * (len + 1));
+	if (result == NULL)
+		return (NULL);
+	result[len] = '\0';
+	if (n < 0)
+		result[0] = '-';
+	else if (n == 0)
+		result[0] = '0';
+	while (n != 0)
 	{
-		finish[len--] = (n % 10) + '0' + temp;
+		--len;
+		result[len] = absolute_value(n % 10) + '0';
 		n = n / 10;
-		temp = 0;
 	}
-	finish[len] = n + '0';
-}
-
-char	*ft_itoa(int n)
-{
-	int			minus;
-	int			temp;
-	int			len;
-	char		*finish;
-
-	ft_itoa_minus(&n, &minus, &temp);
-	len = ft_itoa_len(n);
-	if (minus == -1)
-	{
-		finish = malloc((len + 2) * sizeof(char));
-		if (finish == NULL)
-			return (NULL);
-		len++;
-		finish[0] = '-';
-	}
-	else
-	{
-		finish = malloc((len + 1) * sizeof(char));
-		if (finish == NULL)
-			return (NULL);
-	}
-	finish[len--] = '\0';
-	ft_itoa_write(finish, len, n, temp);
-	return (finish);
+	return (result);
 }

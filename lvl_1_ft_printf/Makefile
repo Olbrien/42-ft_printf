@@ -156,3 +156,5 @@ fclean :
 			$(RM) $(NAME)
 
 re :		fclean all
+
+bonus : all

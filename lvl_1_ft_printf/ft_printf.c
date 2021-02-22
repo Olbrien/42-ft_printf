@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 13:43:24 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/16 14:44:03 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/14 05:26:41 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/ft_printf.h"
 
-static int	write_char_minus_greater(t_plist *plist, t_slist *slist, int i)
+static int		write_char_minus_greater(t_plist *plist, t_slist *slist, int i)
 {
 	while (i < slist->minus - 1)
 	{
@@ -24,7 +24,7 @@ static int	write_char_minus_greater(t_plist *plist, t_slist *slist, int i)
 	return (i);
 }
 
-static int	write_char_width_greater(t_plist *plist, t_slist *slist, int i)
+static int		write_char_width_greater(t_plist *plist, t_slist *slist, int i)
 {
 	while (i < slist->width - 1)
 	{
@@ -36,7 +36,7 @@ static int	write_char_width_greater(t_plist *plist, t_slist *slist, int i)
 	return (i);
 }
 
-static void	write_char(t_plist *plist, char character, t_slist *slist)
+static void		write_char(t_plist *plist, char character, t_slist *slist)
 {
 	int	i;
 
@@ -61,7 +61,7 @@ static void	write_char(t_plist *plist, char character, t_slist *slist)
 	plist->final_format_lenght++;
 }
 
-void	parse(t_plist *plist, va_list *args, t_slist *slist)
+void			parse(t_plist *plist, va_list *args, t_slist *slist)
 {
 	int		i;
 	char	*format;
@@ -76,7 +76,7 @@ void	parse(t_plist *plist, va_list *args, t_slist *slist)
 		specifier(plist, args, slist);
 }
 
-int	ft_printf(const char *format, ...)
+int				ft_printf(const char *format, ...)
 {
 	t_plist		plist;
 	t_slist		slist;

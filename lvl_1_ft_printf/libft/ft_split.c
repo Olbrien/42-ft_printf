@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 15:59:52 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/16 14:45:40 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/14 05:28:00 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**freearray(char **array)
+static char		**freearray(char **array)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ static char	**freearray(char **array)
 	return (NULL);
 }
 
-static int	startcopyingfromhere(char const *s, char c, int start)
+static int		startcopyingfromhere(char const *s, char c, int start)
 {
 	int	i;
 	int	count;
@@ -44,7 +44,7 @@ static int	startcopyingfromhere(char const *s, char c, int start)
 	return (i);
 }
 
-static char	*ignorechar(char const *s, char c, int ignore)
+static char		*ignorechar(char const *s, char c, int ignore)
 {
 	int		startlocation;
 	int		i;
@@ -72,7 +72,7 @@ static char	*ignorechar(char const *s, char c, int ignore)
 	return (here);
 }
 
-static int	arraysize(char const *s, char c)
+static int		arraysize(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -88,7 +88,7 @@ static int	arraysize(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	char	**array;
 	char	*temp;

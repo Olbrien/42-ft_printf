@@ -6,13 +6,13 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 17:21:31 by marvin            #+#    #+#             */
-/*   Updated: 2021/02/16 14:45:19 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/14 05:34:57 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ncpy(char *dest, const char *src, unsigned int n)
+static char		*ncpy(char *dest, const char *src, unsigned int n)
 {
 	unsigned int	i;
 
@@ -33,7 +33,7 @@ static char	*ncpy(char *dest, const char *src, unsigned int n)
 	return (dest);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	beg;
 	size_t	end;

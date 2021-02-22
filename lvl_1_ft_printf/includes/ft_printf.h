@@ -6,7 +6,7 @@
 /*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 03:51:25 by tisantos          #+#    #+#             */
-/*   Updated: 2021/02/16 14:59:01 by tisantos         ###   ########.fr       */
+/*   Updated: 2021/02/16 01:17:00 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # define STAR			"*"
 # define NUMBERS		"0123456789"
 
-typedef struct s_printflist
+typedef struct	s_printflist
 {
 	char		*format;
 	int			format_length;
@@ -38,9 +38,9 @@ typedef struct s_printflist
 
 	char		*final_format;
 	int			final_format_lenght;
-}t_plist;
+}				t_plist;
 
-typedef struct s_specifierslist
+typedef struct	s_specifierslist
 {
 	int			minus;
 	int			zero;
@@ -68,7 +68,7 @@ typedef struct s_specifierslist
 	int			lcerror;
 
 	int			exponent;
-}t_slist;
+}				t_slist;
 
 int				ft_printf(const char *format, ...);
 void			parse(t_plist *plist, va_list *args, t_slist *slist);
