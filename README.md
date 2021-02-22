@@ -1,5 +1,10 @@
 # ft_printf
 
+###### <i>Recent Update on 22/02/2021.</i>
+Finished project.\
+All files delivered with Old Norminette.\
+'g' conversion not delivered and error on 'l' conversion. Most likely on %lc and %ls which I did not do correctly.
+
 ###### <i>Recent Update on 16/02/2021.</i>
 Updated Norminette v3.\
 All Projects complete (without 'g' conversion) with new and old norminette.
