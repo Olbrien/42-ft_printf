@@ -25,7 +25,7 @@ Completed the project without 'g' of the bonus section.
 
 **** Tests ****
 
-[pft](https://github.com/gavinfielder/pft)
+[pft](https://github.com/gavinfielder/pft)\
 [printfTester](https://github.com/Tripouille/printfTester)
 
 <pre>
