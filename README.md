@@ -23,7 +23,7 @@ Added README.md structure.
 Completed the project without 'g' of the bonus section.
 
 
-**** Tests ****
+**** Testers ****
 
 [pft](https://github.com/gavinfielder/pft)\
 [printfTester](https://github.com/Tripouille/printfTester)
