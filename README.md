@@ -1,29 +1,29 @@
-# ft_printf
-
 ![GitHub Logo](/extras/images/Success.png)
-
 ###### <i>Recent Update on 22/02/2021.</i>
-Finished the project.\
-All files delivered with Old Norminette.\
-'g' conversion not delivered and error on 'l' conversion. Most likely on %lc and %ls which I did not do correctly.
+• Finished the project.\
+• All files delivered with Old Norminette.\
+• 'g' conversion not delivered and error on 'l' conversion. Most likely on %lc and %ls which I did not do correctly.
 
 ###### <i>Old Update on 16/02/2021.</i>
-Updated Norminette v3.\
-All Projects complete (without 'g' conversion) with new and old norminette.
+• Updated Norminette v3.\
+• All Projects complete (without 'g' conversion) with new and old norminette.
 
 ###### <i>Old Update on 13/02/2021.</i>
-Added 'e' conversion.
+• Added 'e' conversion.
 
 ###### <i>Old Update on 13/02/2021.</i>
-Added Norminette v3.\
-Added old Norminette.\
-Added README.md structure.
+• Added Norminette v3.\
+• Added old Norminette.\
+• Added README.md structure.
 
 ###### <i>Old Update on 11/02/2021.</i>
-Completed the project without 'g' of the bonus section.
+• Completed the project without 'g' of the bonus section.
 
+## Subject:
 
-**** Testers ****
+You can find the subject of this project [here.](https://github.com/Olbrien/42Lisboa-lvl_1_ft_printf/blob/main/extras/lvl_1_ft_printf.subject.pdf)
+
+## Testers:
 
 [pft](https://github.com/gavinfielder/pft)\
 [printfTester](https://github.com/Tripouille/printfTester)
@@ -43,7 +43,7 @@ Completed the project without 'g' of the bonus section.
 ./test
 </pre>
 
-**** Results ****
+## Results:
 
 ![GitHub Logo](/extras/images/gavinfielder_pft.png)
 ![GitHub Logo](/extras/images/tripoulli.png)
